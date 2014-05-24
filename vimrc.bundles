@@ -1,0 +1,89 @@
+set nocompatible
+
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" load Vundle
+Bundle 'gmarik/vundle'
+
+" bow down to the Tim Pope plug-ins!!
+" lots of commands to change words
+Bundle 'tpope/vim-abolish'
+" use <c-g>c to toggle CAPS LOCK
+Bundle 'tpope/vim-capslock'
+" improves ga command
+Bundle 'tpope/vim-characterize'
+" toggle comments with gcc
+Bundle 'tpope/vim-commentary'
+" improves . command to repeat last command
+Bundle 'tpope/vim-repeat'
+" automatically changes tabs to fit file type
+Bundle 'tpope/vim-sleuth'
+" allows you to change/insert/delete tags/quotes/parentheses
+Bundle 'tpope/vim-surround'
+" change lots of options with co or [o/]o
+Bundle 'tpope/vim-unimpaired'
+" better HTML/XML editing
+Bundle 'tpope/vim-ragtag'
+
+" special file type things
+" syntax checker
+Bundle 'Syntastic'
+" sort python imports using pep8
+Bundle 'fisadev/vim-isort'
+" highlight matching HTML/XML tags
+Bundle 'MatchTag'
+" jump to HTML/XML tags with %
+Bundle 'matchit.zip'
+
+" window plug-ins
+" allows you to have split widows that adjust
+Bundle 'zhaocai/GoldenView.Vim'
+" all purpose search plug-in
+Bundle 'Shougo/unite.vim'
+" file explorer
+Bundle 'Shougo/vimfiler.vim'
+" jump to tags in file, such as classes and functions
+Bundle 'Tagbar'
+" better status line and tab bar
+Bundle 'bling/vim-airline'
+
+" auto complete stuff
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'Shougo/neocomplete.vim'
+
+" visual stuff
+" show where marks are
+Bundle 'kshenoy/vim-signature'
+" rainbow parentheses
+Bundle 'rainbow_parentheses.vim'
+" better looking in indents(tabs)
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" others
+" complete math problems inside of Vim
+Bundle 'arecarn/crunch'
+" align text, like by =
+Bundle 'godlygeek/tabular'
+" auto insert (,",`
+Bundle 'delimitMate.vim'
+" use enter to select next area such as () or paragraphs
+Bundle 'gcmt/wildfire.vim'
+" allow for, multiple cursors
+Bundle 'terryma/vim-multiple-cursors'
+" use \\<motion> to jump using that motion
+Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'dkprice/Vim-easygrep'
+" use s and S to move through line
+Bundle 'jayflo/vim-skip'
+" better pasting
+Bundle 'YankRing.vim'
+
+Bundle 'reedes/vim-wordy'
+Bundle 'reedes/vim-litecorrect'
+
+filetype plugin indent on
+
