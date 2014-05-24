@@ -9,7 +9,7 @@ things to them every day.
 
 First you have download the files by using
 
-	git clone git://github.com/edvb54/dotvim.git ~/dotfiles
+	git clone git://github.com/edvb54/dotfiles.git ~/dotfiles
 
 After files have been downloaded you need to link the files to where the system
 thinks they are suppose to be:
@@ -31,8 +31,9 @@ Now refresh the folder:
 Please note that is has only been tested to work on Ubuntu. If you do not use
 Ubuntu this may not work.
 
+##Contact
 
-Check out our website at [techandcode.com](http://techandcode.com) for more,
+Check out my website at [techandcode.com](http://techandcode.com) for more,
 tech and code, stuff. If you have any questions please contact me at
 edvb54@gmail.com or leave a comment wherever.
 
