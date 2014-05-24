@@ -37,6 +37,8 @@ Bundle 'fisadev/vim-isort'
 Bundle 'MatchTag'
 " jump to HTML/XML tags with %
 Bundle 'matchit.zip'
+" test Java code
+Bundle 'JavaRun'
 
 " window plug-ins
 " allows you to have split widows that adjust
@@ -51,8 +53,11 @@ Bundle 'Tagbar'
 Bundle 'bling/vim-airline'
 
 " auto complete stuff
+" implement snippets
 Bundle 'SirVer/ultisnips'
+" snippets for ultisnips
 Bundle 'honza/vim-snippets'
+" auto complete words already in file and syntax's
 Bundle 'Shougo/neocomplete.vim'
 
 " visual stuff

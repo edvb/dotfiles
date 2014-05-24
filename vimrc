@@ -228,7 +228,7 @@ hi Folded ctermfg=241 ctermbg=233
 nnoremap ZS :w<return>
 
 " make jj typed fast while in insert mode switch to normal mode :D
-inoremap jj <Esc>
+inoremap jj <Esc>:w<CR>
 
 " make 0 go to beginning of line but first non-white space
 " but make ^ go to the very first column of line
