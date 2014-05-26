@@ -6,7 +6,7 @@ set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#rc()
 
 " load Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " bow down to the Tim Pope plug-ins!!
 " lots of commands to change words
@@ -37,8 +37,6 @@ Bundle 'fisadev/vim-isort'
 Bundle 'MatchTag'
 " jump to HTML/XML tags with %
 Bundle 'matchit.zip'
-" test Java code
-Bundle 'JavaRun'
 
 " window plug-ins
 " allows you to have split widows that adjust

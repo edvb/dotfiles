@@ -72,6 +72,9 @@ let g:vimfiler_as_default_explorer = 1
 " allow for F3 ro turn on Tagbar plug-in
 nmap <silent> <F3> :TagbarToggle<CR>
 
+" run eclim
+nmap <silent> <F5> :Java<CR>
+
 " set ctrl-m to launch Crunch plug-in
 " allows you to do math inside of vim
 map gm :Crunch<CR>
@@ -87,7 +90,7 @@ nmap [og <Plug>IndentGuidesEnable
 nmap ]og <Plug>IndentGuidesDisable
 
 " Unite plug-in mapping
-nmap <silent> <C-p> :Unite -start-insert file<cr>
+nmap <silent> <C-p> :Unite -start-insert file<CR>
 
 " GoldenView stuff
 nmap <silent> <C-o>  <Plug>GoldenViewSplit

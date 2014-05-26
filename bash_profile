@@ -28,7 +28,6 @@ ${Cyan}❯${Color_Off}❯ "
 PS2='    ${ICyan}❯${Color_Off} '
 
 # basic{{{1
-set -o vi
 bind -m vi-insert '"jj": vi-movement-mode'
 
 export EDITOR='vim'
