@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # prompt statement{{{1
 check="${Green}✓ "
 cross="${Red}✗ "
@@ -25,11 +26,9 @@ ${Cyan}❯${Color_Off}❯ "
 # PS1="${BGreen}\u@\h${Color_Off}:${BBlue}\w${Color_Off}\$ "
 
 # (${BIBlue}$(file_number), $(file_size)${Cyan})-\
-PS2='    ${ICyan}❯${Color_Off} '
+PS2="    ${Cyan}❯${Color_Off} "
 
 # basic{{{1
-bind -m vi-insert '"jj": vi-movement-mode'
-
 export EDITOR='vim'
 
 fortune | cowsay
@@ -53,7 +52,9 @@ alias py2='python2'
 alias vrc='vim ~/.vimrc'
 alias vrcb='vim ~/.vimrc.bundles'
 alias brc='vim ~/.bashrc'
-alias bp='vim ~/.bash_profile'
+alias bp='vim ~/dotfiles/bash_profile'
+alias tconf='vim ~/dotfiles/tmux.conf'
+
 alias v='xmodmap ~/.vim_keyboard'
 
 cd() {
@@ -73,6 +74,4 @@ if [ "$TERM" == "xterm" ]; then
 if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
-
-# export TERM="xterm-256color"
 #}}}

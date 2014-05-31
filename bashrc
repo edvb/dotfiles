@@ -111,4 +111,4 @@ fi
 #}}}
 # load bash_profile
 . ~/dotfiles/colors
-. ~/.bash_profile
+. ~/dotfiles/bash_profile

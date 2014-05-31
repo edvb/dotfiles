@@ -161,6 +161,7 @@ set modelines=5                 " number of lines down vim checks for set comman
 set mouse=a                     " turn on the mouse
 set nrformats=octal,hex,alpha   " allow you to ctrl-a/ctrl-x to increase/decrease letters and numbers
 set scrolloff=7                 " make vim have 7 lines below cursor when moving down
+set t_ut=                       " needed if using vim inside of tmux
 set spell spelllang=en_us       " set language for spell check to United States
 "                                 Great Britain = gb, Canada = ca, Australia = au, New Zealand = nz
 set clipboard=unnamedplus       " vim yanks go to OS's clipboard as well
@@ -288,14 +289,14 @@ vnoremap <C-Down> J
 " move file up and down
 nnoremap J <c-Y>
 nnoremap K <c-E>
-nnoremap <C-K> 15<c-u>
-nnoremap <C-J> 15<c-d>
+nnoremap <C-K> 15<C-U>
+nnoremap <C-J> 15<C-D>
 
 inoremap <C-D> <C-k>
 
 " useful for Neocomplete
-inoremap <C-J> <C-n>
-inoremap <C-K> <C-p>
+inoremap <C-J> <C-N>
+inoremap <C-K> <C-P>
 
 " window movements{{{2
 map <A-h> <C-w>h
