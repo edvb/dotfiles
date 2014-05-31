@@ -1,8 +1,8 @@
 # EDs Dotfiles
 
 This is my dotfile place to store all of my config files like .vimrc, .bashrc,
-and .vim folder. I am trying to add comments to the files to explain them just,
-it takes a while. They are also not done (and never will be) as I am adding new
+and .Vim folder. I am trying to add comments to the files to explain them just,
+it takes a while. They are also not done, and never will be, as I am adding new
 things to them every day.
 
 ## Installation
@@ -19,7 +19,20 @@ thinks they are suppose to be:
 	ln -s ~/dotfiles/bashrc ~/.bashrc
 	ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
-In order to use the powerline plugin you need a special font. To get it use:
+Now we need to install the plug-ins which are found in vimrc.bundles. To do this
+I use Vundle, so enter this into the command line:
+
+	git clone https://github.com/gmarik/Vundle.vim ~/dotfiles/vim/bundle/Vundle.vim
+
+After the repository has been cloned edit the vimrc.bundles file. When inside
+enter this into Vim:
+
+	:VundleInstall
+
+After it has finished installing you can exit the Vundle window and the plug-ins
+should be installed.
+
+In order to use the powerline plug-in you need a special font. To get it use:
 
 	cd ~/.fonts/
 	git clone https://github.com/scotu/ubuntu-mono-powerline.git
@@ -34,7 +47,7 @@ Ubuntu this may not work.
 ##Contact
 
 Check out my website at [techandcode.com](http://techandcode.com) for more,
-tech and code, stuff. If you have any questions please contact me at
+tech and code. If you have any questions please contact me at
 edvb54@gmail.com or leave a comment wherever.
 
 -ED
