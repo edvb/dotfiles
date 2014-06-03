@@ -15,8 +15,8 @@ set t_Co=256
 set background=dark
 " colorscheme badwolf
 " colorscheme hybrid
-" colorscheme jellybeans
-colorscheme molokai
+colorscheme jellybeans
+" colorscheme molokai
 " colorscheme skittles_berry
 " colorscheme solarized
 
@@ -221,10 +221,10 @@ au BufRead,BufNewFile *.ino set filetype=arduino
 " turn off the background for the end of line signs and make faster
 hi clear NonText
 
-hi SignColumn ctermbg=16
+" hi SignColumn ctermbg=16
 
 " better folding color
-hi Folded ctermfg=241 ctermbg=233
+" hi Folded ctermfg=241 ctermbg=233
 
 " mapping{{{1
 " make ZS save without closing

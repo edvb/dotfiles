@@ -1,37 +1,38 @@
-#!/usr/bin/env bash
 # prompt statement{{{1
-check="${Green}✓ "
-cross="${Red}✗ "
-cmd_check="\[\`if [[ \$? = "0" ]]; then echo '$check'; else echo '$cross'; fi\`"
+cmd_check() {
+    if [[ $? = 0 ]]; then
+        echo "${Green}:)";
+    else
+        echo "${Red}:(";
+    fi;
+}
 
-# file_number="\[\`/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //'\`"
-# file_number="\[\`ls -1 | wc -l\`"
+PS1='\
+[${Blue}\u\
+ $(cmd_check) ${White}]\
+${White}$(__git_ps1 "[${Cyan}%s${White}]")${White}\
+\$${Color_Off} \
+'
 
-if [[ "$@" = "cd" ]]; then
-    connector="┝";
-else
-    connector="┌";
-fi
-
-PS1="${Cyan}${connector}─${Cyan}\
-(${BIBlue}\u${Cyan})─\
-(${BIBlue}\h${Cyan})─\
-(${BIBlue}\j${Cyan})
-${Cyan}└─\
-${Cyan}(${cmd_check}${Cyan})\
-${Cyan}❯${Color_Off}❯ "
+# PS1="\
+# ${Cyan}┌─${Cyan}\
+# (${BIBlue}\u${Cyan})─\
+# (${BIBlue}\h${Cyan})─\
+# (${BIBlue}\j${Cyan})
+# ${Cyan}└─\
+# ${Cyan}($(cmd_check)${Cyan})\
+# ${Cyan}❯${Color_Off}❯ \
+# "
 
 # PS1="${Blue}\u@\h${Color_Off}:${Cyan}\w${IBlue}❯${Color_Off}❯ "
-# PS1="${Blue}\$${Color_Off} "
-# PS1="${BGreen}\u@\h${Color_Off}:${BBlue}\w${Color_Off}\$ "
+# PS1='C:${PWD////\\\\}>'
 
-# (${BIBlue}$(file_number), $(file_size)${Cyan})-\
-PS2="    ${Cyan}❯${Color_Off} "
+PS2="\$"
 
 # basic{{{1
 export EDITOR='vim'
 
-fortune | cowsay
+# fortune | cowsay
 
 # alias stuff{{{1
 bind '"\t":menu-complete'
@@ -46,21 +47,17 @@ alias cp='cp -i'
 alias ln='ln -i'
 alias rm='rm -i'
 
-alias py='python3'
-alias py2='python2'
-
 alias vrc='vim ~/.vimrc'
 alias vrcb='vim ~/.vimrc.bundles'
 alias brc='vim ~/.bashrc'
 alias bp='vim ~/dotfiles/bash_profile'
 alias tconf='vim ~/dotfiles/tmux.conf'
 
-alias v='xmodmap ~/.vim_keyboard'
+alias py='python3'
+alias py2='python2'
+alias ta='tmux attach -t'
 
-cd() {
-    builtin cd "$@"
-    echo -e "${Cyan}┌${Color_Off}(${BBlack}"`pwd`"${Color_Off})"
-}
+alias v='xmodmap ~/.vim_keyboard'
 
 # function stuff{{{1
 function ipls
