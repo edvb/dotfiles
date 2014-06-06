@@ -1,18 +1,34 @@
 # prompt statement{{{1
+random_happy_ned() {
+    local faces=(":)" ":D" ":)" ":D" ":)" ":D" ":)")
+    local l=${#faces[*]}
+    local sym=${faces[$(($RANDOM % $l))]}
+    echo $sym
+}
+
+random_sad_ned() {
+    local faces=(":P" ":'(" ":(" ":O" ":\\" ":|" ":(" ":(")
+    local l=${#faces[*]}
+    local sym=${faces[$(($RANDOM % $l))]}
+    echo $sym
+}
+
 cmd_check() {
     if [[ $? = 0 ]]; then
-        echo "${Green}:)";
+        echo "${Green}$(random_happy_ned)";
     else
-        echo "${Red}:(";
+        echo "${Red}$(random_sad_ned)";
     fi;
 }
 
-PS1='\
-[${Blue}\u\
- $(cmd_check) ${White}]\
-${White}$(__git_ps1 "[${Cyan}%s${White}]")${White}\
-\$${Color_Off} \
-'
+# PS1='\
+# [${Blue}\u\
+# $(cmd_check) ${White}]\
+# ${White}$(__git_ps1 "[${Cyan}%s${White}]")${White}\
+# \$${Color_Off} \
+# '
+
+PS1='${Blue}\u ${White}$(__git_ps1 "${Cyan}%s ")$(cmd_check) ${White}\$${Color_Off} '
 
 # PS1="\
 # ${Cyan}┌─${Cyan}\
