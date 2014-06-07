@@ -15,41 +15,16 @@ set t_Co=256
 set background=dark
 " colorscheme badwolf
 " colorscheme hybrid
-colorscheme jellybeans
+" colorscheme jellybeans
 " colorscheme molokai
 " colorscheme skittles_berry
-" colorscheme solarized
+colorscheme solarized
 
 " options{{{2
 " airline stuff
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
-" turn off default GoldenView mappings
-let g:goldenview__enable_default_mapping = 0
-
-" Supertab plug-in option
-let g:SuperTabDefaultCompletionType = "context"
-
-" just some UltiSnips options
-" let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<S-Right>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Left>"
-
-" more UltiSnips optoins
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=Black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=DarkGrey
-
-" Indent Guides options
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_default_mapping = 0
-" let g:indent_guides_start_level = 2
-" let g:indent_guides_guide_size  = 2
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
 " Neocomplete options
 let g:acp_enableAtStartup = 0
@@ -62,11 +37,26 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\~$']
-let NERDTreeShowBookmarks=1
-let NERDTreeQuitOnOpen=1
+" allow for neocomplete and eclim/tmuxcomplete to work
+let g:EclimCompletionMethod = 'omnifunc'
+let g:tmuxcomplete#trigger  = 'omnifunc'
 
-let g:vimfiler_as_default_explorer = 1
+" Neosnippet options
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+" vim-pencil plug-in options
+let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
+augroup pencil
+  autocmd!
+  autocmd FileType markdown call pencil#init()
+  autocmd FileType textile call pencil#init()
+  autocmd FileType text call pencil#init({'wrap': 'hard'})
+augroup END
+
+let g:yankring_history_file = '.yankring_history'
 
 " mappings{{{2
 " allow for F3 ro turn on Tagbar plug-in
@@ -75,7 +65,7 @@ nmap <silent> <F3> :TagbarToggle<CR>
 " run eclim
 nmap <silent> <F5> :Java<CR>
 
-" set ctrl-m to launch Crunch plug-in
+" set gm to launch Crunch plug-in
 " allows you to do math inside of vim
 map gm :Crunch<CR>
 
@@ -84,15 +74,8 @@ nmap [of :syntax on<CR>
 nmap ]of :syntax off<CR>
 syntax on
 
-" Impaired plug-in styled IndentGuides options
-nmap cog <Plug>IndentGuidesToggle
-nmap [og <Plug>IndentGuidesEnable
-nmap ]og <Plug>IndentGuidesDisable
-
-" Unite plug-in mapping
-nmap <silent> <C-p> :Unite -start-insert file<CR>
-
 " GoldenView stuff
+let g:goldenview__enable_default_mapping = 0
 nmap <silent> <C-o>  <Plug>GoldenViewSplit
 nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
 nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
@@ -111,11 +94,19 @@ inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
 inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
 inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
 
-let g:yankring_replace_n_pkey = '<c-l>'
-let g:yankring_replace_n_nkey = '<c-h>'
+" Neosnippet mappings
+imap <C-l> <Plug>(neosnippet_expand_or_jump)
+smap <C-l> <Plug>(neosnippet_expand_or_jump)
+xmap <C-l> <Plug>(neosnippet_expand_target)
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 
 " turn on VimFiler plug-in
-map <silent> <C-i> :VimFiler<CR>
+map <silent> <C-i> :FileBeagle<CR>
 
 "}}}
 " rainbow parentheses stuff{{{2
@@ -207,24 +198,18 @@ set gdefault
 " highlight the 81st column so you know when your line is to long
 call matchadd('Error', '\%81v', 100)
 
-" make spell check underline instead of highlight
-hi clear SpellBad
-hi SpellBad ctermfg=red cterm=underline
-
-" turn on highlighting of line
-set cursorline
-set cursorcolumn
-
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
+au BufRead,BufNewFile *.md  set filetype=markdown
 
-" turn off the background for the end of line signs and make faster
-hi clear NonText
+hi SpellBad ctermfg=red cterm=underline
 
-" hi SignColumn ctermbg=16
+hi CursorLine ctermbg=23
+hi CursorColumn ctermbg=23
 
-" better folding color
-" hi Folded ctermfg=241 ctermbg=233
+hi Normal ctermbg=0
+
+hi SignColumn ctermbg=0
 
 " mapping{{{1
 " make ZS save without closing
@@ -317,8 +302,7 @@ endif
 
 " folding{{{2
 set foldmethod=marker
-setlocal foldexpr=(getline(v:lnum)=~'^$')?-1:((indent(v:lnum)<indent(v:lnum+1))?('>'.indent(v:lnum+1)):indent(v:lnum))
-set foldcolumn=3
+set foldcolumn=2
 
 function! NeatFoldText()
   let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
