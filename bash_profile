@@ -23,12 +23,17 @@ cmd_check() {
 
 # PS1='\
 # [${Blue}\u\
-# $(cmd_check) ${White}]\
+#  $(cmd_check) ${White}]\
 # ${White}$(__git_ps1 "[${Cyan}%s${White}]")${White}\
 # \$${Color_Off} \
 # '
 
-PS1='${Blue}\u ${White}$(__git_ps1 "${Cyan}%s ")$(cmd_check) ${White}\$${Color_Off} '
+PS1='\
+${Blue}\u\
+ $(cmd_check) \
+$(__git_ps1 "${Cyan}%s ")${White}\
+\$${Color_Off} \
+'
 
 # PS1="\
 # ${Cyan}┌─${Cyan}\
