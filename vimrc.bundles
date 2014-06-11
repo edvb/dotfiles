@@ -8,7 +8,7 @@ call vundle#rc()
 " load Vundle
 Plugin 'gmarik/Vundle.vim'
 
-""" bow down to the Tim Pope plug-ins!!
+""" bow down to the tpope plug-ins!!
 " lots of commands to change words
 Bundle 'tpope/vim-abolish'
 " use <c-g>c to toggle CAPS LOCK
@@ -27,12 +27,12 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 " better HTML/XML editing
 Bundle 'tpope/vim-ragtag'
+" git plug-in
+Bundle 'tpope/vim-fugitive'
 
 """ language specific plug-ins
 " syntax checker
 Bundle 'Syntastic'
-" sort python imports using pep8
-Bundle 'fisadev/vim-isort'
 " highlight matching HTML/XML tags
 Bundle 'MatchTag'
 " jump to HTML/XML tags with %
@@ -41,30 +41,38 @@ Bundle 'matchit.zip'
 """ window plug-ins
 " allows you to have split widows that adjust
 Bundle 'zhaocai/GoldenView.Vim'
-" all purpose search plug-in
-Bundle 'Shougo/unite.vim'
 " better file explorer
-Bundle 'Shougo/vimfiler.vim'
+Bundle 'jeetsukumaran/vim-filebeagle'
 " jump to tags in file, such as classes and functions
 Bundle 'Tagbar'
 " better status line and tab bar
 Bundle 'bling/vim-airline'
 
-""" auto complete stuff
+""" auto complete plug-ins
 " implement snippets
-Bundle 'SirVer/ultisnips'
-" snippets for ultisnips
+Bundle 'Shougo/neosnippet'
+" snippets for Neocomplete
+Bundle 'Shougo/neosnippet-snippets'
+" better snippets for Neocomplete
 Bundle 'honza/vim-snippets'
 " auto complete words already in file and syntax's
 Bundle 'Shougo/neocomplete.vim'
+" addition to neocomplete, allows auto complete of text in other tmux panes
+Bundle 'wellle/tmux-complete.vim'
 
-""" visual stuff
+""" visual plug-ins
 " show where marks are
 Bundle 'kshenoy/vim-signature'
 " rainbow parentheses
 Bundle 'rainbow_parentheses.vim'
-" better looking in indents
-Bundle 'nathanaelkane/vim-indent-guides'
+" see where lines are added, removed, or changed in a git repo
+Bundle 'airblade/vim-gitgutter'
+
+""" writing plug-ins
+Bundle 'reedes/vim-wordy'
+Bundle 'reedes/vim-litecorrect'
+Bundle 'reedes/vim-pencil'
+Bundle 'junegunn/goyo.vim'
 
 """ others
 " complete math problems inside of Vim
@@ -79,16 +87,12 @@ Bundle 'gcmt/wildfire.vim'
 Bundle 'terryma/vim-multiple-cursors'
 " use \\<motion> to jump using that motion
 Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'dkprice/Vim-easygrep'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
 " better pasting
 Bundle 'YankRing.vim'
 " find and replace words in all buffers
 Bundle 'jeetsukumaran/vim-buffersaurus'
-
-Bundle 'reedes/vim-wordy'
-Bundle 'reedes/vim-litecorrect'
 
 filetype plugin indent on
 
