@@ -55,9 +55,7 @@ export EDITOR='vim'
 
 # fortune | cowsay
 
-if [ -e ~/.git-prompt.sh ]; then
-    . ~/.git-prompt.sh
-fi
+. ~/dotfiles/git-prompt.sh
 
 # alias stuff{{{1
 bind '"\t":menu-complete'
