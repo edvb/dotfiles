@@ -1,4 +1,4 @@
-set nocompatible " make vim not vi (see bottom for why)
+set nocompatible " make Vim not vi (see bottom for why)
 " plug-ins{{{1
 
 " run separate bundles vimrc
@@ -48,7 +48,7 @@ endif
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " vim-pencil plug-in options
-let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
+let g:pencil#wrapModeDefault = 'hard'
 augroup pencil
   autocmd!
   autocmd FileType markdown call pencil#init()
@@ -56,7 +56,29 @@ augroup pencil
   autocmd FileType text call pencil#init({'wrap': 'hard'})
 augroup END
 
+"set yankring file
 let g:yankring_history_file = '.yankring_history'
+
+let g:startify_custom_header = [
+      \ '██╗   ██╗██╗███╗   ███╗',
+      \ '██║   ██║██║████╗ ████║',
+      \ '██║   ██║██║██╔████╔██║',
+      \ '╚██╗ ██╔╝██║██║╚██╔╝██║',
+      \ ' ╚████╔╝ ██║██║ ╚═╝ ██║',
+      \ '  ╚═══╝  ╚═╝╚═╝     ╚═╝',
+      \ '',
+      \ '',
+      \ ]
+
+let g:startify_bookmarks = [
+  \ '~/dotfiles/bashrc',
+  \ '~/dotfiles/bash_profile',
+  \ '~/dotfiles/tmux.conf',
+  \ '~/dotfiles/vimrc',
+  \ '~/dotfiles/vimrc.bundles',
+  \ ]
+
+let g:startify_session_dir = '~/.vim-session'
 
 " mappings{{{2
 " allow for F3 ro turn on Tagbar plug-in
@@ -66,13 +88,8 @@ nmap <silent> <F3> :TagbarToggle<CR>
 nmap <silent> <F5> :Java<CR>
 
 " set gm to launch Crunch plug-in
-" allows you to do math inside of vim
+" allows you to do math inside of Vim
 map gm :Crunch<CR>
-
-" Impaired plug-in stlyed toggle syntax highlighting
-nmap [of :syntax on<CR>
-nmap ]of :syntax off<CR>
-syntax on
 
 " GoldenView stuff
 let g:goldenview__enable_default_mapping = 0
@@ -105,8 +122,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
 
-" turn on VimFiler plug-in
-map <silent> <C-i> :FileBeagle<CR>
+let g:multi_cursor_next_key='<C-l>'
+let g:multi_cursor_prev_key='<C-h>'
 
 "}}}
 " rainbow parentheses stuff{{{2
@@ -133,33 +150,37 @@ nnoremap <Leader>r :call rainbow_parentheses#toggle()<CR>
 " change color of rainbow
 let g:rbpt_max = 15
 " basic{{{1
+syntax on
 set autoindent                  " I hope you know what this does
 set autowrite                   " automatically write before running commands that need it to be written
+set gdefault                    " make global the default for the :s command
 set hidden                      " hide buffers when they are abandoned
+set hlsearch                    " highlight previous search pattern
+set ignorecase                  " make search non case sensitive
+set incsearch                   " show the next match while entering a search
 set nojoinspaces                " turn off putting a space after join command
 set noshowmode                  " turn off "--INSERT--" at bottom of screen
 set nowrap                      " change what happens when there is no more space on screen
 set shiftround                  " make indents always be at a multiple of the tab width
 set showcmd                     " show commands that you are typing
-set title                       " turn on the vim title at the top of the window
-set ttyfast                     " makes vim faster
+set showmatch                   " when a bracket is inserted, briefly jump to the matching one.
+set smartcase                   " allow you to search with more charters
+set title                       " turn on the Vim title at the top of the window
+set ttyfast                     " makes Vim faster
 set visualbell                  " use visual bell instead of beeping
 set backspace=2                 " turn on backspace
 set completeopt-=preview        " disable pop-up when using Neocomplete
-set cryptmethod=blowfish        " change the way vim encrypts files to blowfish from zip
-set iskeyword+=.                " better python auto complete for . names
-set modelines=5                 " number of lines down vim checks for set commands
+set cryptmethod=blowfish        " change the way Vim encrypts files to blowfish from zip
+" set iskeyword+=.                " better python auto complete for . names
+set modelines=5                 " number of lines down Vim checks for set commands
 set mouse=a                     " turn on the mouse
 set nrformats=octal,hex,alpha   " allow you to ctrl-a/ctrl-x to increase/decrease letters and numbers
-set scrolloff=7                 " make vim have 7 lines below cursor when moving down
-set t_ut=                       " needed if using vim inside of tmux
+set scrolloff=7                 " make Vim have 7 lines below cursor when moving down
+set t_ut=                       " needed if using Vim inside of tmux
 set spell spelllang=en_us       " set language for spell check to United States
 "                                 Great Britain = gb, Canada = ca, Australia = au, New Zealand = nz
-set clipboard=unnamedplus       " vim yanks go to OS's clipboard as well
+set clipboard=unnamedplus       " Vim yanks go to OS's clipboard as well
 "                                 remove "plus" if not on Linux(you should use Linux)
-
-" TODO: not working
-" set wildignore+=*.swp,*.zip,*.pyc
 
 " set up menu stuff
 set wildmenu
@@ -168,31 +189,25 @@ set wildmode=list,longest,full
 " make line numbers go 1,2,3,4...
 set nu
 " make the line your cursor is on 0
-" set relativenumber
-" NOTE: only have one of the above uncommented!
+set relativenumber
 
 "extra chars like the end of line one and when text raps to next line
 set list
 set listchars=tab:\┃\ ,eol:¬,extends:❯,precedes:❮
 
-" filetype on
-" filetype plugin on
+" make Vim save every time it leaves insert mode
+au InsertLeave * if &mod && expand('%')!=''|write|endif
+
+" save line number line when reopening file
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " NOTE: my info, you need to change!
 let g:snips_author="ED"
 let g:snips_email="edvb54@gmail.com"
 let g:snips_github="edvb54"
 
-" make Vim save every time it leaves insert mode
-" au InsertLeave * if &mod && expand('%')!=''|write|endif
-
-" search{{{2
-set ignorecase  " make search non case sensitive
-set smartcase   " allow you to search with more charters
-set incsearch   " show the next match while entering a search
-set showmatch
-set hlsearch
-set gdefault
 
 " highlighting{{{1
 " highlight the 81st column so you know when your line is to long
@@ -202,14 +217,19 @@ au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
 au BufRead,BufNewFile *.md  set filetype=markdown
 
+" spell check
 hi SpellBad ctermfg=red cterm=underline
+if version >= 700
+    set spl=en spell
+    set nospell
+endif
 
+" better highlighting for solarized
 hi CursorLine ctermbg=23
 hi CursorColumn ctermbg=23
-
 hi Normal ctermbg=0
-
 hi SignColumn ctermbg=0
+hi Visual ctermfg=10 ctermbg=7
 
 " mapping{{{1
 " make ZS save without closing
@@ -217,7 +237,7 @@ hi SignColumn ctermbg=0
 nnoremap ZS :w<return>
 
 " make jj typed fast while in insert mode switch to normal mode :D
-inoremap jj <Esc>:w<CR>
+inoremap jj <Esc>
 
 " make 0 go to beginning of line but first non-white space
 " but make ^ go to the very first column of line
@@ -228,21 +248,11 @@ nnoremap ^ 0
 nnoremap Q @='n.'<CR>
 
 " C changes until end of line and D deletes until end of line, so why not Y?
-nnoremap Y y$
+nmap Y y$
 
 " put : or ; at end of line
-nnoremap y; A;<ESC>
-nnoremap y: A:<ESC>
-
-" insert space in front of cursor
-nnoremap y<space> i<space><esc>
-
-" sort selected area alphabetically
-vnoremap <silent> gs :sort<Cr>
-
-" add fold markers
-nnoremap g{ A{{<Esc>i{<Esc>hi
-nnoremap g} o}}<Esc>i}<Esc>hi
+nnoremap g; A;<ESC>
+nnoremap g: A:<ESC>
 
 " turn off highlighted search with g-enter
 nnoremap <silent> g<CR> :noh<CR>
@@ -255,27 +265,13 @@ nnoremap <space> za
 vnoremap <space> zf
 
 " turn off ctrl-z and make it lower number cursor is on
-nnoremap <C-z> <C-x>
+" nnoremap <C-z> <C-x>
 
 " indent using the arrow keys
 nnoremap <Right> >>
 nnoremap <Left>  <<
 vnoremap <Right> >gv
 vnoremap <Left>  <gv
-
-" insert and remove lines above and below cursor
-nnoremap <Up>     O<Esc>j
-nnoremap <Down>   o<Esc>k
-nnoremap <S-Up>   jddk
-nnoremap <S-Down> kdd
-nnoremap <C-Down> J
-vnoremap <C-Down> J
-
-" move file up and down
-nnoremap J <c-Y>
-nnoremap K <c-E>
-nnoremap <C-K> 15<C-U>
-nnoremap <C-J> 15<C-D>
 
 inoremap <C-D> <C-k>
 
@@ -288,19 +284,7 @@ map <A-h> <C-w>h
 map <A-j> <C-w>j
 map <A-k> <C-w>k
 map <A-l> <C-w>l
-" functions{{{1
-" save line number line when reopening file
-if has("autocmd")
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" spell check
-if version >= 700
-    set spl=en spell
-    set nospell
-endif
-
-" folding{{{2
+" folding{{{1
 set foldmethod=marker
 set foldcolumn=2
 
@@ -316,7 +300,7 @@ function! NeatFoldText()
 endfunction
 set foldtext=NeatFoldText()
 
-" Linux stuff{{{2
+" Linux stuff{{{1
 let g:clipbrdDefaultReg = '+'
 
 " turn on alt key
@@ -331,9 +315,9 @@ set timeout ttimeoutlen=50
 
 " why nocompatible{{{1
 " There is a lot of controversy over to use "set nocompatible" or not in the
-" vim world. This is because if vim sees a .vimrc file in the home directory
+" Vim world. This is because if Vim sees a .vimrc file in the home directory
 " then it auto-magically sets it. But however if you load a .vimrc using
-" "vim -u .new_vimrc" or ":so .new_vimrc" then it will load vim being
+" "vim -u .new_vimrc" or ":so .new_vimrc" then it will load Vim being
 " compatible with vi. It is also a case of better safe than sorry.
 
 "}}}
