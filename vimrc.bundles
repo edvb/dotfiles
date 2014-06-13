@@ -37,6 +37,8 @@ Bundle 'Syntastic'
 Bundle 'MatchTag'
 " jump to HTML/XML tags with %
 Bundle 'matchit.zip'
+" collection of language packs
+Bundle 'sheerun/vim-polyglot'
 
 """ window plug-ins
 " allows you to have split widows that adjust
@@ -45,8 +47,10 @@ Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'jeetsukumaran/vim-filebeagle'
 " jump to tags in file, such as classes and functions
 Bundle 'Tagbar'
-" better status line and tab bar
+" better status line and buffer bar
 Bundle 'bling/vim-airline'
+" improved Vim start screen
+Bundle 'mhinz/vim-startify'
 
 """ auto complete plug-ins
 " implement snippets
@@ -57,7 +61,7 @@ Bundle 'Shougo/neosnippet-snippets'
 Bundle 'honza/vim-snippets'
 " auto complete words already in file and syntax's
 Bundle 'Shougo/neocomplete.vim'
-" addition to neocomplete, allows auto complete of text in other tmux panes
+" addition to Neocomplete, allows auto complete of text in other TMUX panes
 Bundle 'wellle/tmux-complete.vim'
 
 """ visual plug-ins
@@ -69,9 +73,12 @@ Bundle 'rainbow_parentheses.vim'
 Bundle 'airblade/vim-gitgutter'
 
 """ writing plug-ins
+" advanced spell check
 Bundle 'reedes/vim-wordy'
 Bundle 'reedes/vim-litecorrect'
+" auto wrap text in markdown and text files
 Bundle 'reedes/vim-pencil'
+" distraction free writing
 Bundle 'junegunn/goyo.vim'
 
 """ others
