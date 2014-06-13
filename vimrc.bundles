@@ -41,7 +41,7 @@ Bundle 'matchit.zip'
 Bundle 'sheerun/vim-polyglot'
 
 """ window plug-ins
-" allows you to have split widows that adjust
+" split widows that adjust
 Bundle 'zhaocai/GoldenView.Vim'
 " better file explorer
 Bundle 'jeetsukumaran/vim-filebeagle'
@@ -51,6 +51,8 @@ Bundle 'Tagbar'
 Bundle 'bling/vim-airline'
 " improved Vim start screen
 Bundle 'mhinz/vim-startify'
+" use same keys for moving around TMUX and Vim splits
+Bundle 'christoomey/vim-tmux-navigator'
 
 """ auto complete plug-ins
 " implement snippets

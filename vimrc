@@ -279,11 +279,6 @@ inoremap <C-D> <C-k>
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
-" window movements{{{2
-map <A-h> <C-w>h
-map <A-j> <C-w>j
-map <A-k> <C-w>k
-map <A-l> <C-w>l
 " folding{{{1
 set foldmethod=marker
 set foldcolumn=2
