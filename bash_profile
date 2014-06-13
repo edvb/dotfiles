@@ -55,28 +55,26 @@ export EDITOR='vim'
 
 # fortune | cowsay
 
+. ~/dotfiles/git-prompt.sh
+
 # alias stuff{{{1
 bind '"\t":menu-complete'
 alias sb='source ~/.bashrc'
-alias ..='cd ..'
-
-alias c='clear'
 alias r='reset'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
 alias rm='rm -i'
 
-alias vrc='vim ~/.vimrc'
-alias vrcb='vim ~/.vimrc.bundles'
-alias brc='vim ~/.bashrc'
+alias vrc='vim ~/dotfiles/vimrc'
+alias vrcb='vim ~/dotfiles/vimrc.bundles'
+alias brc='vim ~/dotfiles/bashrc'
 alias bp='vim ~/dotfiles/bash_profile'
 alias tconf='vim ~/dotfiles/tmux.conf'
-
-alias py='python3'
-alias py2='python2'
-alias ta='tmux attach -t'
 
 alias v='xmodmap ~/.vim_keyboard'
 
