@@ -122,8 +122,17 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
 
+" multiple-cursor plug-in mappings
 let g:multi_cursor_next_key='<C-l>'
 let g:multi_cursor_prev_key='<C-h>'
+
+" tmux-navigator plug-in mappings
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
 
 "}}}
 " rainbow parentheses stuff{{{2
