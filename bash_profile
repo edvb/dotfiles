@@ -55,8 +55,6 @@ export EDITOR='vim'
 
 # fortune | cowsay
 
-. ~/dotfiles/git-prompt.sh
-
 # alias stuff{{{1
 bind '"\t":menu-complete'
 alias sb='source ~/.bashrc'

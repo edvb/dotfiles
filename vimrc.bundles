@@ -53,6 +53,8 @@ Bundle 'bling/vim-airline'
 Bundle 'mhinz/vim-startify'
 " use same keys for moving around TMUX and Vim splits
 Bundle 'christoomey/vim-tmux-navigator'
+" fuzzy finder for Vim and Bash
+Bundle 'junegunn/fzf'
 
 """ auto complete plug-ins
 " implement snippets

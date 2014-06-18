@@ -110,5 +110,8 @@ if ! shopt -oq posix; then
 fi
 #}}}
 # load bash_profile
-. ~/dotfiles/colors
-. ~/dotfiles/bash_profile
+source ~/dotfiles/bash_profile
+source ~/dotfiles/colors
+source ~/.fzf.bash
+source ~/dotfiles/git-prompt.sh
+
