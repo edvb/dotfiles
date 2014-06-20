@@ -23,7 +23,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sleuth'
 " allows you to change/insert/delete tags/quotes/parentheses
 Bundle 'tpope/vim-surround'
-" change lots of options with co or [o/]o
+" change lots of options with co or [o/ ]o
 Bundle 'tpope/vim-unimpaired'
 " better HTML/XML editing
 Bundle 'tpope/vim-ragtag'
@@ -48,7 +48,7 @@ Bundle 'jeetsukumaran/vim-filebeagle'
 " jump to tags in file, such as classes and functions
 Bundle 'Tagbar'
 " better status line and buffer bar
-Bundle 'bling/vim-airline'
+" Bundle 'bling/vim-airline'
 " improved Vim start screen
 Bundle 'mhinz/vim-startify'
 " use same keys for moving around TMUX and Vim splits
@@ -96,8 +96,6 @@ Bundle 'delimitMate.vim'
 Bundle 'gcmt/wildfire.vim'
 " allow for, multiple cursors
 Bundle 'terryma/vim-multiple-cursors'
-" use \\<motion> to jump using that motion
-Bundle 'Lokaltog/vim-easymotion'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
 " better pasting

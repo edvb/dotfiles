@@ -1,4 +1,4 @@
-set nocompatible " make Vim not vi (see bottom for why)
+set nocompatible " make Vim not vi (see README for why)
 " plug-ins{{{1
 
 " run separate bundles vimrc
@@ -171,7 +171,7 @@ set hlsearch                    " highlight previous search pattern
 set ignorecase                  " make search non case sensitive
 set incsearch                   " show the next match while entering a search
 set nojoinspaces                " turn off putting a space after join command
-set noshowmode                  " turn off "--INSERT--" at bottom of screen
+set showmode                  " turn off "--INSERT--" at bottom of screen
 set nowrap                      " change what happens when there is no more space on screen
 set shiftround                  " make indents always be at a multiple of the tab width
 set showcmd                     " show commands that you are typing
@@ -183,7 +183,7 @@ set visualbell                  " use visual bell instead of beeping
 set backspace=2                 " turn on backspace
 set completeopt-=preview        " disable pop-up when using Neocomplete
 set cryptmethod=blowfish        " change the way Vim encrypts files to blowfish from zip
-" set iskeyword+=.                " better python auto complete for . names
+set foldmethod=marker           " set the folding method to use three { to start and three } to end
 set modelines=5                 " number of lines down Vim checks for set commands
 set mouse=a                     " turn on the mouse
 set nrformats=octal,hex,alpha   " allow you to ctrl-a/ctrl-x to increase/decrease letters and numbers
@@ -199,7 +199,7 @@ set wildmenu
 set wildmode=list,longest,full
 
 " make line numbers go 1,2,3,4...
-set nu
+set number
 " make the line your cursor is on 0
 set relativenumber
 
@@ -251,11 +251,6 @@ nnoremap ZS :w<return>
 " make jj typed fast while in insert mode switch to normal mode :D
 inoremap jj <Esc>
 
-" make 0 go to beginning of line but first non-white space
-" but make ^ go to the very first column of line
-nnoremap 0 ^
-nnoremap ^ 0
-
 " make Q go to next search and run last command
 nnoremap Q @='n.'<CR>
 
@@ -272,40 +267,17 @@ nnoremap <silent> g<CR> :noh<CR>
 " @: was not working :(
 nnoremap @: :<Up><CR>
 
-" make space toggle folds or insert them
-nnoremap <space> za
-vnoremap <space> zf
-
-" turn off ctrl-z and make it lower number cursor is on
-" nnoremap <C-z> <C-x>
-
 " indent using the arrow keys
 nnoremap <Right> >>
 nnoremap <Left>  <<
 vnoremap <Right> >gv
 vnoremap <Left>  <gv
 
-inoremap <C-D> <C-k>
-
 " useful for Neocomplete
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
-" folding{{{1
-set foldmethod=marker
-set foldcolumn=2
-
-function! NeatFoldText()
-  let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-  let lines_count = v:foldend - v:foldstart + 1
-  let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-  let foldchar = matchstr(&fillchars, 'fold:\zs.')
-  let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-  let foldtextend = lines_count_text . repeat(foldchar, 8)
-  let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
-  return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
-endfunction
-set foldtext=NeatFoldText()
+inoremap <C-D> <C-K>
 
 " Linux stuff{{{1
 let g:clipbrdDefaultReg = '+'
@@ -320,11 +292,40 @@ endw
 
 set timeout ttimeoutlen=50
 
-" why nocompatible{{{1
-" There is a lot of controversy over to use "set nocompatible" or not in the
-" Vim world. This is because if Vim sees a .vimrc file in the home directory
-" then it auto-magically sets it. But however if you load a .vimrc using
-" "vim -u .new_vimrc" or ":so .new_vimrc" then it will load Vim being
-" compatible with vi. It is also a case of better safe than sorry.
+" status line{{{1
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline ctermfg=4   ctermbg=15
+    hi SLgreen    ctermfg=236 ctermbg=4
+    hi SLblue     ctermfg=236 ctermbg=4
+    hi SLteal     ctermfg=236 ctermbg=4
+  elseif a:mode == 'r'
+    hi statusline ctermfg=9 ctermbg=15
+    hi SLgreen    ctermfg=236 ctermbg=9
+    hi SLblue     ctermfg=236 ctermbg=9
+    hi SLteal     ctermfg=236 ctermbg=9
+  else
+    hi statusline ctermfg=236 ctermbg=15
+  endif
+endfunction
 
-"}}}
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline ctermfg=236 ctermbg=15
+au InsertLeave * hi SLgreen    ctermfg=2   ctermbg=236
+au InsertLeave * hi SLblue     ctermfg=4   ctermbg=236
+au InsertLeave * hi SLteal     ctermfg=6   ctermbg=236
+
+hi statusline ctermfg=236 ctermbg=15
+hi SLgreen    ctermfg=2   ctermbg=236
+hi SLblue     ctermfg=4   ctermbg=236
+hi SLteal     ctermfg=6   ctermbg=236
+
+set statusline=%#SLblue#%f          " file name
+set statusline+=%#SLteal#\ %Y       " filetype
+set statusline+=%#SLgreen#\ %m      " modified flag
+
+set statusline+=\ %=                " align left
+set statusline+=%#SLteal#[%p%%]     " [percent of file]
+set statusline+=%#SLblue#\ %l/%L:%c " line:column
+set statusline+=%#ErrorMsg#%{SyntasticStatuslineFlag()} " Syntastic Error
+
