@@ -44,6 +44,16 @@ Now refresh the folder:
 Please note that is has only been tested to work on Ubuntu. If you do not use
 Ubuntu this may not work.
 
+## Why You Should Use "set nocompatible"
+
+There is a lot of controversy over the use of `set nocompatible` in the
+Vim world. This command makes Vim use the new features that they added and
+not bee compatible with Vi. This is because if Vim sees a .vimrc file in
+the home directory then it auto-magically sets no compatibility. But
+however if you load a .vimrc using `vim -u .new_vimrc` or `:so .new_vimrc`
+then it will load Vim being compatible with vi. It is also a case of
+better safe than sorry.
+
 ##Contact
 
 Check out my website at [techandcode.com](http://techandcode.com) for more,
