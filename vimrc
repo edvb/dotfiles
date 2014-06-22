@@ -298,12 +298,12 @@ function! InsertStatuslineColor(mode)
     hi statusline ctermfg=4   ctermbg=15
     hi SLgreen    ctermfg=236 ctermbg=4
     hi SLblue     ctermfg=236 ctermbg=4
-    hi SLteal     ctermfg=236 ctermbg=4
+    hi SLcyan     ctermfg=236 ctermbg=4
   elseif a:mode == 'r'
     hi statusline ctermfg=9 ctermbg=15
     hi SLgreen    ctermfg=236 ctermbg=9
     hi SLblue     ctermfg=236 ctermbg=9
-    hi SLteal     ctermfg=236 ctermbg=9
+    hi SLcyan     ctermfg=236 ctermbg=9
   else
     hi statusline ctermfg=236 ctermbg=15
   endif
@@ -313,19 +313,20 @@ au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi statusline ctermfg=236 ctermbg=15
 au InsertLeave * hi SLgreen    ctermfg=2   ctermbg=236
 au InsertLeave * hi SLblue     ctermfg=4   ctermbg=236
-au InsertLeave * hi SLteal     ctermfg=6   ctermbg=236
+au InsertLeave * hi SLcyan     ctermfg=6   ctermbg=236
 
 hi statusline ctermfg=236 ctermbg=15
 hi SLgreen    ctermfg=2   ctermbg=236
 hi SLblue     ctermfg=4   ctermbg=236
-hi SLteal     ctermfg=6   ctermbg=236
+hi SLcyan     ctermfg=6   ctermbg=236
 
-set statusline=%#SLblue#%f          " file name
-set statusline+=%#SLteal#\ %Y       " filetype
-set statusline+=%#SLgreen#\ %m      " modified flag
+set statusline=%#SLblue#%f        " file name
+set statusline+=%#SLgreen#\ %Y    " filetype
+set statusline+=%#SLcyan#\ %M     " modified flag
 
-set statusline+=\ %=                " align left
-set statusline+=%#SLteal#[%p%%]     " [percent of file]
-set statusline+=%#SLblue#\ %l/%L:%c " line:column
+set statusline+=\ %=              " align left
+set statusline+=%#SLcyan#%c       " column
+set statusline+=%#SLgreen#\ %p%%  " percent of file
+set statusline+=%#SLblue#\ %l/%L  " line/total lines
 set statusline+=%#ErrorMsg#%{SyntasticStatuslineFlag()} " Syntastic Error
 
