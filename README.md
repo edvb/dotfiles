@@ -1,4 +1,4 @@
-# EDs Dotfiles
+# ED's Dotfiles
 
 This is my dotfile place to store all of my config files like .vimrc, .bashrc,
 and .Vim folder. I am trying to add comments to the files to explain them just,
@@ -31,18 +31,6 @@ enter this into Vim:
 
 After it has finished installing you can exit the Vundle window and the plug-ins
 should be installed.
-
-In order to use the powerline plug-in you need a special font. To get it use:
-
-	cd ~/.fonts/
-	git clone https://github.com/scotu/ubuntu-mono-powerline.git
-
-Now refresh the folder:
-
-	fc-cache -vf ~/.fonts.
-
-Please note that is has only been tested to work on Ubuntu. If you do not use
-Ubuntu this may not work.
 
 ## Why You Should Use "set nocompatible"
 
