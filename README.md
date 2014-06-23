@@ -1,30 +1,31 @@
 # ED's Dotfiles
 
-This is my dotfile place to store all of my config files like .vimrc, .bashrc,
-and .Vim folder. I am trying to add comments to the files to explain them just,
-it takes a while. They are also not done, and never will be, as I am adding new
-things to them every day.
+This is the place I use to store all my configuration files for programs such
+as Vim, Bash, and Tmux. These files are designed to be used on Linux and most
+likely won't work on other machines. I recommend you not to just copy whole
+files, but instead copy one line at a time that you understand and slowly build
+up a huge file. This way you have a setup that fits you best.
 
 ## Installation
 
-First you have download the files by using
+First you have to download the files by using:
 
 	git clone git://github.com/edvb54/dotfiles.git ~/dotfiles
 
-After files have been downloaded you need to link the files to where the system
-thinks they are suppose to be:
+After the files have been downloaded you need to link the files to where the
+system looks for them:
 
 	ln -s ~/dotfiles/vim ~/.vim
 	ln -s ~/dotfiles/vimrc ~/.vimrc
 	ln -s ~/dotfiles/bashrc ~/.bashrc
 	ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
-Now we need to install the plug-ins which are found in vimrc.bundles. To do this
+Now we need to install the plug-ins which are found in `vimrc.bundles`. To do this
 I use Vundle, so enter this into the command line:
 
 	git clone https://github.com/gmarik/Vundle.vim ~/dotfiles/vim/bundle/Vundle.vim
 
-After the repository has been cloned edit the vimrc.bundles file. When inside
+After the repository has been cloned open the `vimrc.bundles` file. When inside
 enter this into Vim:
 
 	:VundleInstall
@@ -34,13 +35,14 @@ should be installed.
 
 ## Why You Should Use "set nocompatible"
 
-There is a lot of controversy over the use of `set nocompatible` in the
-Vim world. This command makes Vim use the new features that they added and
-not bee compatible with Vi. This is because if Vim sees a .vimrc file in
-the home directory then it auto-magically sets no compatibility. But
-however if you load a .vimrc using `vim -u .new_vimrc` or `:so .new_vimrc`
-then it will load Vim being compatible with vi. It is also a case of
-better safe than sorry.
+There is a lot of controversy over the use of `set nocompatible` in the Vim
+world. This command makes Vim use the new features that they added, extending
+Vi, thus not being compatible with it. However, people say this redundant
+because if Vim sees a `.vimrc` file in the home directory then it automatically
+sets no compatibility. But however, if you load a `.vimrc` using `vim -u
+.new_vimrc` or `:so .new_vimrc` then it will load Vim being compatible with Vi,
+if it does not contain `set nocompatible`. It is also a case of better safe
+than sorry, adding one line of 16 charaters to your `.vimrc` file won't hurt.
 
 ##Contact
 
@@ -49,3 +51,4 @@ tech and code. If you have any questions please contact me at
 edvb54@gmail.com or leave a comment wherever.
 
 -ED
+
