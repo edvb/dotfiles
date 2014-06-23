@@ -13,19 +13,17 @@ set t_Co=256
 
 " different color schemes to choose from
 set background=dark
-" colorscheme badwolf
-" colorscheme hybrid
-" colorscheme jellybeans
-" colorscheme molokai
-" colorscheme skittles_berry
-colorscheme solarized
+" let s:color = 'badwolf'
+" let s:color = 'hybrid'
+" let s:color = 'jellybeans'
+" let s:color = 'molokai'
+" let s:color = 'zenburn'
+" let s:color = 'skittles_berry'
+let s:color = 'solarized'
+
+execute 'colorscheme '.s:color
 
 " options{{{2
-" airline stuff
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-
 " Neocomplete options
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -171,7 +169,7 @@ set hlsearch                    " highlight previous search pattern
 set ignorecase                  " make search non case sensitive
 set incsearch                   " show the next match while entering a search
 set nojoinspaces                " turn off putting a space after join command
-set showmode                  " turn off "--INSERT--" at bottom of screen
+set noshowmode                  " turn off "--INSERT--" at bottom of screen
 set nowrap                      " change what happens when there is no more space on screen
 set shiftround                  " make indents always be at a multiple of the tab width
 set showcmd                     " show commands that you are typing
@@ -184,6 +182,7 @@ set backspace=2                 " turn on backspace
 set completeopt-=preview        " disable pop-up when using Neocomplete
 set cryptmethod=blowfish        " change the way Vim encrypts files to blowfish from zip
 set foldmethod=marker           " set the folding method to use three { to start and three } to end
+set laststatus=2                " always turn on status line
 set modelines=5                 " number of lines down Vim checks for set commands
 set mouse=a                     " turn on the mouse
 set nrformats=octal,hex,alpha   " allow you to ctrl-a/ctrl-x to increase/decrease letters and numbers
@@ -201,7 +200,7 @@ set wildmode=list,longest,full
 " make line numbers go 1,2,3,4...
 set number
 " make the line your cursor is on 0
-set relativenumber
+" set relativenumber
 
 "extra chars like the end of line one and when text raps to next line
 set list
@@ -220,7 +219,6 @@ let g:snips_author="ED"
 let g:snips_email="edvb54@gmail.com"
 let g:snips_github="edvb54"
 
-
 " highlighting{{{1
 " highlight the 81st column so you know when your line is to long
 call matchadd('Error', '\%81v', 100)
@@ -228,6 +226,9 @@ call matchadd('Error', '\%81v', 100)
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
 au BufRead,BufNewFile *.md  set filetype=markdown
+
+au BufRead,BufNewFile *bash_profile set filetype=sh
+au BufRead,BufNewFile *tmux.conf    set filetype=sh
 
 " spell check
 hi SpellBad ctermfg=red cterm=underline
@@ -237,19 +238,31 @@ if version >= 700
 endif
 
 " better highlighting for solarized
-hi CursorLine ctermbg=23
-hi CursorColumn ctermbg=23
-hi Normal ctermbg=0
-hi SignColumn ctermbg=0
-hi Visual ctermfg=10 ctermbg=7
+if s:color == 'solarized'
+  hi CursorLine   ctermbg=23
+  hi CursorColumn ctermbg=23
+  hi Normal       ctermbg=0
+  hi SignColumn   ctermbg=0
+  hi Visual       ctermbg=7 ctermfg=10
+  hi Folded       cterm=bold
+endif
+
+" better highlighting for molokai
+if s:color == 'molokai'
+  hi NonText ctermbg=none
+  hi Folded  ctermbg=none ctermfg=59
+endif
 
 " mapping{{{1
 " make ZS save without closing
 " ZZ is save and quit and ZQ is just quit
-nnoremap ZS :w<return>
+nnoremap ZS :w<CR>
 
 " make jj typed fast while in insert mode switch to normal mode :D
 inoremap jj <Esc>
+
+" make ctrl+c completely like ESC
+inoremap <C-c> <Esc>
 
 " make Q go to next search and run last command
 nnoremap Q @='n.'<CR>
@@ -257,27 +270,12 @@ nnoremap Q @='n.'<CR>
 " C changes until end of line and D deletes until end of line, so why not Y?
 nmap Y y$
 
-" put : or ; at end of line
-nnoremap g; A;<ESC>
-nnoremap g: A:<ESC>
-
-" turn off highlighted search with g-enter
-nnoremap <silent> g<CR> :noh<CR>
-
 " @: was not working :(
 nnoremap @: :<Up><CR>
 
-" indent using the arrow keys
-nnoremap <Right> >>
-nnoremap <Left>  <<
-vnoremap <Right> >gv
-vnoremap <Left>  <gv
-
-" useful for Neocomplete
-inoremap <C-J> <C-N>
-inoremap <C-K> <C-P>
-
-inoremap <C-D> <C-K>
+" better indenting for visual mode
+vnoremap > >gv
+vnoremap < <gv
 
 " Linux stuff{{{1
 let g:clipbrdDefaultReg = '+'
