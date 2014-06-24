@@ -109,7 +109,7 @@ if ! shopt -oq posix; then
   fi
 fi
 #}}}
-# load bash_profile
+# load other files
 source ~/dotfiles/bash_profile
 source ~/dotfiles/colors
 source ~/.fzf.bash

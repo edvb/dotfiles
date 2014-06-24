@@ -7,7 +7,7 @@ random_happy_ned() {
 }
 
 random_sad_ned() {
-    local faces=(":P" ":'(" ":(" ":O" ":\\" ":|" ":(" ":(")
+    local faces=(":P" ":(" ":(" ":O" ":\\" ":|" ":(" ":(")
     local l=${#faces[*]}
     local sym=${faces[$(($RANDOM % $l))]}
     echo $sym
@@ -74,7 +74,9 @@ alias brc='vim ~/dotfiles/bashrc'
 alias bp='vim ~/dotfiles/bash_profile'
 alias tconf='vim ~/dotfiles/tmux.conf'
 
-alias v='xmodmap ~/.vim_keyboard'
+alias v='xmodmap ~/.vim-keys.xmodmap'
+alias emacs='emacs -nw'
+alias vless='vim -u /usr/share/vim/vim74/macros/less.vim'
 
 # function stuff{{{1
 function ipls
