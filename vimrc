@@ -241,9 +241,8 @@ endif
 if s:color == 'solarized'
   hi CursorLine   ctermbg=23
   hi CursorColumn ctermbg=23
-  hi Normal       ctermbg=0
+  hi Normal       ctermbg=none
   hi SignColumn   ctermbg=0
-  hi Visual       ctermbg=7 ctermfg=10
   hi Folded       cterm=bold
 endif
 
@@ -252,6 +251,44 @@ if s:color == 'molokai'
   hi NonText ctermbg=none
   hi Folded  ctermbg=none ctermfg=59
 endif
+
+" status line{{{1
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline ctermfg=4   ctermbg=15
+    hi SLgreen    ctermfg=0 ctermbg=4
+    hi SLblue     ctermfg=0 ctermbg=4
+    hi SLcyan     ctermfg=0 ctermbg=4
+  elseif a:mode == 'r'
+    hi statusline ctermfg=9 ctermbg=15
+    hi SLgreen    ctermfg=0 ctermbg=9
+    hi SLblue     ctermfg=0 ctermbg=9
+    hi SLcyan     ctermfg=0 ctermbg=9
+  else
+    hi statusline ctermfg=0 ctermbg=15
+  endif
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline ctermfg=0 ctermbg=15
+au InsertLeave * hi SLgreen    ctermfg=2   ctermbg=0
+au InsertLeave * hi SLblue     ctermfg=4   ctermbg=0
+au InsertLeave * hi SLcyan     ctermfg=6   ctermbg=0
+
+hi statusline ctermfg=0 ctermbg=15
+hi SLgreen    ctermfg=2   ctermbg=0
+hi SLblue     ctermfg=4   ctermbg=0
+hi SLcyan     ctermfg=6   ctermbg=0
+
+set statusline=%#SLblue#%f        " file name
+set statusline+=%#SLgreen#\ %Y    " filetype
+set statusline+=%#SLcyan#\ %M     " modified flag
+
+set statusline+=\ %=              " align left
+set statusline+=%#SLcyan#%c       " column
+set statusline+=%#SLgreen#\ %p%%  " percent of file
+set statusline+=%#SLblue#\ %l/%L  " line/total lines
+set statusline+=%#ErrorMsg#%{SyntasticStatuslineFlag()} " Syntastic Error
 
 " mapping{{{1
 " make ZS save without closing
@@ -289,42 +326,4 @@ while c <= 'z'
 endw
 
 set timeout ttimeoutlen=50
-
-" status line{{{1
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi statusline ctermfg=4   ctermbg=15
-    hi SLgreen    ctermfg=236 ctermbg=4
-    hi SLblue     ctermfg=236 ctermbg=4
-    hi SLcyan     ctermfg=236 ctermbg=4
-  elseif a:mode == 'r'
-    hi statusline ctermfg=9 ctermbg=15
-    hi SLgreen    ctermfg=236 ctermbg=9
-    hi SLblue     ctermfg=236 ctermbg=9
-    hi SLcyan     ctermfg=236 ctermbg=9
-  else
-    hi statusline ctermfg=236 ctermbg=15
-  endif
-endfunction
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi statusline ctermfg=236 ctermbg=15
-au InsertLeave * hi SLgreen    ctermfg=2   ctermbg=236
-au InsertLeave * hi SLblue     ctermfg=4   ctermbg=236
-au InsertLeave * hi SLcyan     ctermfg=6   ctermbg=236
-
-hi statusline ctermfg=236 ctermbg=15
-hi SLgreen    ctermfg=2   ctermbg=236
-hi SLblue     ctermfg=4   ctermbg=236
-hi SLcyan     ctermfg=6   ctermbg=236
-
-set statusline=%#SLblue#%f        " file name
-set statusline+=%#SLgreen#\ %Y    " filetype
-set statusline+=%#SLcyan#\ %M     " modified flag
-
-set statusline+=\ %=              " align left
-set statusline+=%#SLcyan#%c       " column
-set statusline+=%#SLgreen#\ %p%%  " percent of file
-set statusline+=%#SLblue#\ %l/%L  " line/total lines
-set statusline+=%#ErrorMsg#%{SyntasticStatuslineFlag()} " Syntastic Error
 
