@@ -54,9 +54,6 @@ augroup pencil
   autocmd FileType text call pencil#init({'wrap': 'hard'})
 augroup END
 
-"set yankring file
-let g:yankring_history_file = '.yankring_history'
-
 let g:startify_custom_header = [
       \ '██╗   ██╗██╗███╗   ███╗',
       \ '██║   ██║██║████╗ ████║',
@@ -77,6 +74,8 @@ let g:startify_bookmarks = [
   \ ]
 
 let g:startify_session_dir = '~/.vim-session'
+
+let g:netrw_liststyle = 3
 
 " mappings{{{2
 " allow for F3 ro turn on Tagbar plug-in
@@ -119,10 +118,6 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
-
-" multiple-cursor plug-in mappings
-let g:multi_cursor_next_key='<C-l>'
-let g:multi_cursor_prev_key='<C-h>'
 
 " tmux-navigator plug-in mappings
 let g:tmux_navigator_no_mappings = 1
@@ -170,7 +165,7 @@ set ignorecase                  " make search non case sensitive
 set incsearch                   " show the next match while entering a search
 set nojoinspaces                " turn off putting a space after join command
 set noshowmode                  " turn off "--INSERT--" at bottom of screen
-set nowrap                      " change what happens when there is no more space on screen
+set nowrap                      " change what happens when you get to edge of screen.
 set shiftround                  " make indents always be at a multiple of the tab width
 set showcmd                     " show commands that you are typing
 set showmatch                   " when a bracket is inserted, briefly jump to the matching one.
@@ -204,7 +199,8 @@ set number
 
 "extra chars like the end of line one and when text raps to next line
 set list
-set listchars=tab:\┃\ ,eol:¬,extends:❯,precedes:❮
+" set listchars=tab:\┃\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:\|\ ,eol:¬,extends:❯,precedes:❮
 
 " make Vim save every time it leaves insert mode
 au InsertLeave * if &mod && expand('%')!=''|write|endif
@@ -304,15 +300,39 @@ inoremap <C-c> <Esc>
 " make Q go to next search and run last command
 nnoremap Q @='n.'<CR>
 
-" C changes until end of line and D deletes until end of line, so why not Y?
-nmap Y y$
-
 " @: was not working :(
 nnoremap @: :<Up><CR>
 
 " better indenting for visual mode
 vnoremap > >gv
 vnoremap < <gv
+
+" pair completion{{{2
+inoremap {     {}<Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {{    {
+inoremap {}    {}
+
+inoremap (     ()<Left>
+inoremap (<CR> (<CR>)<Esc>O
+inoremap ((    (
+inoremap ()    ()
+
+inoremap [     []<Left>
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [[    [
+inoremap []    []
+
+inoremap <     <><Left>
+inoremap <<    <
+inoremap <>    <>
+
+inoremap "     ""<Left>
+inoremap ""    "
+inoremap '     ''<Left>
+inoremap ''    '
+inoremap `     ``<Left>
+inoremap ``    `
 
 " Linux stuff{{{1
 let g:clipbrdDefaultReg = '+'
