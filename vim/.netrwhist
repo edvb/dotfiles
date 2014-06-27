@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/ed/dotfiles/vim/bundle'
-let g:netrw_dirhist_2='/home/ed/dotfiles/vim'
-let g:netrw_dirhist_3='/home/ed/dotfiles'
-let g:netrw_dirhist_4='/home/ed'
-let g:netrw_dirhist_5='/home/ed/vim'
-let g:netrw_dirhist_6='/home/ed'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/ed'
+let g:netrw_dirhist_2='/home/ed/dotfiles'
+let g:netrw_dirhist_3='/home/ed'
+let g:netrw_dirhist_4='/home/ed/dotfiles'
+let g:netrw_dirhist_5='/home/ed'
+let g:netrw_dirhist_6='/home/ed/dotfiles'
+let g:netrw_dirhist_7='/home/ed'
+let g:netrw_dirhist_8='/home/ed/dotfiles'

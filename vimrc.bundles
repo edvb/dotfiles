@@ -11,12 +11,12 @@ Plugin 'gmarik/Vundle.vim'
 """ bow down to the tpope plug-ins!!
 " lots of commands to change words
 Bundle 'tpope/vim-abolish'
-" use <c-g>c to toggle CAPS LOCK
-Bundle 'tpope/vim-capslock'
-" improves ga command
-Bundle 'tpope/vim-characterize'
 " toggle comments with gcc
 Bundle 'tpope/vim-commentary'
+" git plug-in
+Bundle 'tpope/vim-fugitive'
+" auto add endfunction/endif/etc
+Bundle 'tpope/vim-endwise'
 " improves . command to repeat last command
 Bundle 'tpope/vim-repeat'
 " automatically changes indents to fit file type
@@ -27,8 +27,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 " better HTML/XML editing
 Bundle 'tpope/vim-ragtag'
-" git plug-in
-Bundle 'tpope/vim-fugitive'
 
 """ language specific plug-ins
 " syntax checker
@@ -43,18 +41,18 @@ Bundle 'sheerun/vim-polyglot'
 """ window plug-ins
 " split widows that adjust
 Bundle 'zhaocai/GoldenView.Vim'
-" better file explorer
-Bundle 'jeetsukumaran/vim-filebeagle'
 " jump to tags in file, such as classes and functions
 Bundle 'Tagbar'
-" better status line and buffer bar
-" Bundle 'bling/vim-airline'
 " improved Vim start screen
 Bundle 'mhinz/vim-startify'
-" use same keys for moving around TMUX and Vim splits
+" use same keys for moving around Tmux and Vim splits
 Bundle 'christoomey/vim-tmux-navigator'
 " fuzzy finder for Vim and Bash
 Bundle 'junegunn/fzf'
+" list "FIXME", "TODO", "XXX" in new window
+Bundle 'vim-scripts/TaskList.vim'
+" temporary zoom in on a window with <C-W>o
+Bundle 'ZoomWin'
 
 """ auto complete plug-ins
 " implement snippets
@@ -65,7 +63,7 @@ Bundle 'Shougo/neosnippet-snippets'
 Bundle 'honza/vim-snippets'
 " auto complete words already in file and syntax's
 Bundle 'Shougo/neocomplete.vim'
-" addition to Neocomplete, allows auto complete of text in other TMUX panes
+" addition to Neocomplete, allows auto complete of text in other Tmux panes
 Bundle 'wellle/tmux-complete.vim'
 
 """ visual plug-ins
@@ -86,22 +84,10 @@ Bundle 'reedes/vim-pencil'
 Bundle 'junegunn/goyo.vim'
 
 """ others
-" complete math problems inside of Vim
-Bundle 'arecarn/crunch'
-" align text, like by =
-Bundle 'godlygeek/tabular'
-" auto insert ),",`
-Bundle 'delimitMate.vim'
-" use enter to select next area such as () or ""
-Bundle 'gcmt/wildfire.vim'
-" allow for, multiple cursors
-Bundle 'terryma/vim-multiple-cursors'
+" easily align text by spaces,=,ect.
+Bundle 'junegunn/vim-easy-align'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
-" better pasting
-Bundle 'YankRing.vim'
-" find and replace words in all buffers
-Bundle 'jeetsukumaran/vim-buffersaurus'
 
 filetype plugin indent on
 
