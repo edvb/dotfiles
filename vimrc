@@ -31,7 +31,7 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
@@ -77,6 +77,16 @@ let g:startify_session_dir = '~/.vim-session'
 
 let g:netrw_liststyle = 3
 
+" change color of rainbow
+let g:rbpt_max = 15
+
+" load rainbow_parentheses plug-in
+au VimEnter * RainbowParenthesesToggle
+au VimEnter * RainbowParenthesesLoadRound
+au VimEnter * RainbowParenthesesLoadSquare
+au VimEnter * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParenthesesLoadChevrons
+
 " mappings{{{2
 " allow for F3 ro turn on Tagbar plug-in
 nmap <silent> <F3> :TagbarToggle<CR>
@@ -84,21 +94,11 @@ nmap <silent> <F3> :TagbarToggle<CR>
 " run eclim
 nmap <silent> <F5> :Java<CR>
 
-" set gm to launch Crunch plug-in
-" allows you to do math inside of Vim
-map gm :Crunch<CR>
-
 " GoldenView stuff
 let g:goldenview__enable_default_mapping = 0
 nmap <silent> <C-o>  <Plug>GoldenViewSplit
 nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
 nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
-
-" Tabular short cuts
-nmap gA= :Tab /=<CR>
-vmap gA= :Tab /=<CR>
-nmap gA: :Tab /:\zs<CR>
-vmap gA: :Tab /:\zs<CR>
 
 " Neocomplete tab to select
 " inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
@@ -130,30 +130,11 @@ nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
 " mapping for FZF plug-in
 nnoremap <silent> <C-I> :FZF!<CR>
 
+" Easy Align mappings
+vmap <Enter> <Plug>(EasyAlign)
+nmap gA      <Plug>(EasyAlign)
+
 "}}}
-" rainbow parentheses stuff{{{2
-function! Config_Rainbow()
-    call rainbow_parentheses#load(0)
-    call rainbow_parentheses#load(1)
-    call rainbow_parentheses#load(2)
-    autocmd! TastetheRainbow VimEnter * call Load_Rainbow()
-endfunction
-
-function! Load_Rainbow()
-    call rainbow_parentheses#activate()
-endfunction
-
-augroup TastetheRainbow
-    autocmd!
-    autocmd Syntax * call Config_Rainbow()
-    autocmd VimEnter * call Load_Rainbow()
-augroup END
-
-" rainbow parentheses toggle
-nnoremap <Leader>r :call rainbow_parentheses#toggle()<CR>
-
-" change color of rainbow
-let g:rbpt_max = 15
 " basic{{{1
 syntax on
 set autoindent                  " I hope you know what this does
@@ -297,6 +278,9 @@ inoremap jj <Esc>
 " make ctrl+c completely like ESC
 inoremap <C-c> <Esc>
 
+" C changes until end of line and D deletes until end of line, so why not Y?
+noremap Y y$
+
 " make Q go to next search and run last command
 nnoremap Q @='n.'<CR>
 
@@ -327,12 +311,9 @@ inoremap <     <><Left>
 inoremap <<    <
 inoremap <>    <>
 
-inoremap "     ""<Left>
-inoremap ""    "
-inoremap '     ''<Left>
-inoremap ''    '
-inoremap `     ``<Left>
-inoremap ``    `
+inoremap ""    ""<Left>
+inoremap ''    ''<Left>
+inoremap ``    ``<Left>
 
 " Linux stuff{{{1
 let g:clipbrdDefaultReg = '+'
