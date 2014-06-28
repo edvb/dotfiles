@@ -19,6 +19,7 @@ system looks for them:
 	ln -s ~/dotfiles/vimrc ~/.vimrc
 	ln -s ~/dotfiles/bashrc ~/.bashrc
 	ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+	ln -s ~/dotfiles/gitconfig ~/.gitconfig
 
 Now we need to install the plug-ins which are found in `vimrc.bundles`. To do this
 I use Vundle, so enter this into the command line:
@@ -46,9 +47,13 @@ than sorry, adding one line of 16 charaters to your `.vimrc` file won't hurt.
 
 ##Contact
 
-Check out my website at [techandcode.com](http://techandcode.com) for more,
-tech and code. If you have any questions please contact me at
-edvb54@gmail.com or leave a comment wherever.
+Check out our website at [techandcode.com](http://techandcode.com) for more,
+tech and code. If you have any questions please contact me at edvb54@gmail.com
+or leave a comment wherever.
 
 -ED
+
+## License
+
+GPL v3 License
 
