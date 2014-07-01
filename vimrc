@@ -134,6 +134,10 @@ nnoremap <silent> <C-I> :FZF!<CR>
 vmap <Enter> <Plug>(EasyAlign)
 nmap gA      <Plug>(EasyAlign)
 
+" useful mapping for Vundle
+au BufRead,BufNewFile *vimrc* nmap gb :w<CR>:source %<CR>:VundleInstall<CR>
+au BufRead,BufNewFile *vimrc* nmap gB :w<CR>:source %<CR>:VundleClean<CR>
+
 "}}}
 " basic{{{1
 syntax on
