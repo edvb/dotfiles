@@ -27,6 +27,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 " better HTML/XML editing
 Bundle 'tpope/vim-ragtag'
+" better netrw file explorer
+Bundle 'tpope/vim-vinegar'
+" Readline in insert mode
+Bundle 'tpope/vim-rsi'
 
 """ language specific plug-ins
 " syntax checker
