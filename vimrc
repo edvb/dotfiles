@@ -8,18 +8,21 @@ endif
 
 filetype plugin indent on
 
+" use matchit plug-in for jumping to HTML/XML tags with %
+runtime! macros/matchit.vim
+
 " turn on colors
 set t_Co=256
 
 " different color schemes to choose from
 set background=dark
-" let s:color = 'badwolf'
+let s:color = 'badwolf'
 " let s:color = 'hybrid'
 " let s:color = 'jellybeans'
 " let s:color = 'molokai'
 " let s:color = 'zenburn'
 " let s:color = 'skittles_berry'
-let s:color = 'solarized'
+" let s:color = 'solarized'
 
 execute 'colorscheme '.s:color
 
@@ -85,7 +88,6 @@ au VimEnter * RainbowParenthesesToggle
 au VimEnter * RainbowParenthesesLoadRound
 au VimEnter * RainbowParenthesesLoadSquare
 au VimEnter * RainbowParenthesesLoadBraces
-au VimEnter * RainbowParenthesesLoadChevrons
 
 " mappings{{{2
 " allow for F3 ro turn on Tagbar plug-in
@@ -147,7 +149,7 @@ set gdefault                    " make global the default for the :s command
 set hidden                      " hide buffers when they are abandoned
 set hlsearch                    " highlight previous search pattern
 set ignorecase                  " make search non case sensitive
-set incsearch                   " show the next match while entering a search
+set incsearch                   " show the search result before you finish typing
 set nojoinspaces                " turn off putting a space after join command
 set noshowmode                  " turn off "--INSERT--" at bottom of screen
 set nowrap                      " change what happens when you get to edge of screen.

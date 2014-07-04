@@ -31,14 +31,16 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-vinegar'
 " Readline in insert mode
 Bundle 'tpope/vim-rsi'
+" better compiling in Vim
+Bundle 'tpope/vim-dispatch'
+" UNIX commands in Vim
+Bundle 'tpope/vim-eunuch'
 
 """ language specific plug-ins
 " syntax checker
 Bundle 'Syntastic'
 " highlight matching HTML/XML tags
 Bundle 'MatchTag'
-" jump to HTML/XML tags with %
-Bundle 'matchit.zip'
 " collection of language packs
 Bundle 'sheerun/vim-polyglot'
 
@@ -49,7 +51,7 @@ Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'Tagbar'
 " improved Vim start screen
 Bundle 'mhinz/vim-startify'
-" use same keys for moving around Tmux and Vim splits
+" use same keys for moving around TMUX and Vim splits
 Bundle 'christoomey/vim-tmux-navigator'
 " fuzzy finder for Vim and Bash
 Bundle 'junegunn/fzf'
@@ -67,7 +69,7 @@ Bundle 'Shougo/neosnippet-snippets'
 Bundle 'honza/vim-snippets'
 " auto complete words already in file and syntax's
 Bundle 'Shougo/neocomplete.vim'
-" addition to Neocomplete, allows auto complete of text in other Tmux panes
+" addition to Neocomplete, allows auto complete of text in other TMUX panes
 Bundle 'wellle/tmux-complete.vim'
 
 """ visual plug-ins
@@ -84,8 +86,6 @@ Bundle 'reedes/vim-wordy'
 Bundle 'reedes/vim-litecorrect'
 " auto wrap text in markdown and text files
 Bundle 'reedes/vim-pencil'
-" distraction free writing
-Bundle 'junegunn/goyo.vim'
 
 """ others
 " easily align text by spaces,=,ect.
