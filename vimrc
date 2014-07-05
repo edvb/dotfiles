@@ -100,7 +100,6 @@ nmap <silent> <F5> :Java<CR>
 let g:goldenview__enable_default_mapping = 0
 nmap <silent> <C-o>  <Plug>GoldenViewSplit
 nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
 
 " Neocomplete tab to select
 " inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
@@ -145,12 +144,8 @@ au BufRead,BufNewFile *vimrc* nmap gB :w<CR>:source %<CR>:VundleClean<CR>
 syntax on
 set autoindent                  " I hope you know what this does
 set autowrite                   " automatically write before running commands that need it to be written
-set gdefault                    " make global the default for the :s command
-set hidden                      " hide buffers when they are abandoned
-set hlsearch                    " highlight previous search pattern
 set ignorecase                  " make search non case sensitive
 set incsearch                   " show the search result before you finish typing
-set nojoinspaces                " turn off putting a space after join command
 set noshowmode                  " turn off "--INSERT--" at bottom of screen
 set nowrap                      " change what happens when you get to edge of screen.
 set shiftround                  " make indents always be at a multiple of the tab width
