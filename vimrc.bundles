@@ -25,9 +25,9 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 " change lots of options with co or [o/ ]o
 Bundle 'tpope/vim-unimpaired'
-" better HTML/XML editing
+" useful HTML/XML mapping
 Bundle 'tpope/vim-ragtag'
-" better netrw file explorer
+" improve netrw file explorer
 Bundle 'tpope/vim-vinegar'
 " Readline in insert mode
 Bundle 'tpope/vim-rsi'
@@ -35,6 +35,8 @@ Bundle 'tpope/vim-rsi'
 Bundle 'tpope/vim-dispatch'
 " UNIX commands in Vim
 Bundle 'tpope/vim-eunuch'
+" better sessions
+Bundle 'tpope/vim-obsession'
 
 """ language specific plug-ins
 " syntax checker
@@ -49,8 +51,6 @@ Bundle 'sheerun/vim-polyglot'
 Bundle 'zhaocai/GoldenView.Vim'
 " jump to tags in file, such as classes and functions
 Bundle 'Tagbar'
-" improved Vim start screen
-Bundle 'mhinz/vim-startify'
 " use same keys for moving around TMUX and Vim splits
 Bundle 'christoomey/vim-tmux-navigator'
 " fuzzy finder for Vim and Bash

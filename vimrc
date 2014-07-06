@@ -57,27 +57,6 @@ augroup pencil
   autocmd FileType text call pencil#init({'wrap': 'hard'})
 augroup END
 
-let g:startify_custom_header = [
-      \ '██╗   ██╗██╗███╗   ███╗',
-      \ '██║   ██║██║████╗ ████║',
-      \ '██║   ██║██║██╔████╔██║',
-      \ '╚██╗ ██╔╝██║██║╚██╔╝██║',
-      \ ' ╚████╔╝ ██║██║ ╚═╝ ██║',
-      \ '  ╚═══╝  ╚═╝╚═╝     ╚═╝',
-      \ '',
-      \ '',
-      \ ]
-
-let g:startify_bookmarks = [
-  \ '~/dotfiles/bashrc',
-  \ '~/dotfiles/bash_profile',
-  \ '~/dotfiles/tmux.conf',
-  \ '~/dotfiles/vimrc',
-  \ '~/dotfiles/vimrc.bundles',
-  \ ]
-
-let g:startify_session_dir = '~/.vim-session'
-
 let g:netrw_liststyle = 3
 
 " change color of rainbow
