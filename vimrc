@@ -16,13 +16,13 @@ set t_Co=256
 
 " different color schemes to choose from
 set background=dark
-let s:color = 'badwolf'
+" let s:color = 'badwolf'
 " let s:color = 'hybrid'
 " let s:color = 'jellybeans'
 " let s:color = 'molokai'
 " let s:color = 'zenburn'
 " let s:color = 'skittles_berry'
-" let s:color = 'solarized'
+let s:color = 'solarized'
 
 execute 'colorscheme '.s:color
 
