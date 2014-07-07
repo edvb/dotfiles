@@ -111,8 +111,8 @@ fi
 #}}}
 # load other files
 source ~/dotfiles/bash_profile
-source ~/dotfiles/colors
-source ~/dotfiles/git-prompt.sh
+source ~/dotfiles/bin/colors.sh
+source ~/dotfiles/bin/git-prompt.sh
 if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 fi
