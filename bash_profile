@@ -45,6 +45,7 @@ PS2="\$"
 
 # basic{{{1
 export EDITOR='vim'
+# export EDITOR='emacs'
 
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
@@ -65,11 +66,11 @@ alias cp='cp -i'
 alias ln='ln -i'
 alias rm='rm -i'
 
-alias vrc='vim ~/dotfiles/vimrc'
-alias vrcb='vim ~/dotfiles/vimrc.bundles'
-alias brc='vim ~/dotfiles/bashrc'
-alias bp='vim ~/dotfiles/bash_profile'
-alias tconf='vim ~/dotfiles/tmux.conf'
+alias vrc='$EDITOR ~/dotfiles/vimrc'
+alias vrcb='$EDITOR ~/dotfiles/vimrc.bundles'
+alias brc='$EDITOR ~/dotfiles/bashrc'
+alias bp='$EDITOR ~/dotfiles/bash_profile'
+alias tconf='$EDITOR ~/dotfiles/tmux.conf'
 
 alias v='xmodmap ~/.vim-keys.xmodmap'
 alias emacs='emacs -nw'
