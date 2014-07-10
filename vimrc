@@ -39,7 +39,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " allow for neocomplete and eclim/tmuxcomplete to work
-let g:EclimCompletionMethod = 'omnifunc'
 let g:tmuxcomplete#trigger  = 'omnifunc'
 
 " Neosnippet options
@@ -72,9 +71,6 @@ au VimEnter * RainbowParenthesesLoadBraces
 " allow for F3 ro turn on Tagbar plug-in
 nmap <silent> <F3> :TagbarToggle<CR>
 
-" run eclim
-nmap <silent> <F5> :Java<CR>
-
 " GoldenView stuff
 let g:goldenview__enable_default_mapping = 0
 nmap <silent> <C-o>  <Plug>GoldenViewSplit
@@ -92,12 +88,6 @@ inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
 imap <C-l> <Plug>(neosnippet_expand_or_jump)
 smap <C-l> <Plug>(neosnippet_expand_or_jump)
 xmap <C-l> <Plug>(neosnippet_expand_target)
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
 
 " tmux-navigator plug-in mappings
 let g:tmux_navigator_no_mappings = 1
@@ -287,10 +277,7 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap [[    [
 inoremap []    []
 
-inoremap <     <><Left>
-inoremap <<    <
-inoremap <>    <>
-
+inoremap <<    <><Left>
 inoremap ""    ""<Left>
 inoremap ''    ''<Left>
 inoremap ``    ``<Left>
