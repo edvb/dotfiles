@@ -251,11 +251,8 @@ inoremap <C-c> <Esc>
 " C changes until end of line and D deletes until end of line, so why not Y?
 noremap Y y$
 
-" make Q go to next search and run last command
-nnoremap Q @='n.'<CR>
-
-" @: was not working :(
-nnoremap @: :<Up><CR>
+" repeat colon commands
+nnoremap Q :<Up><CR>
 
 " better indenting for visual mode
 vnoremap > >gv
