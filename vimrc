@@ -77,8 +77,8 @@ nmap <silent> <C-o>  <Plug>GoldenViewSplit
 nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
 
 " Neocomplete tab to select
-" inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
 inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
 inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
@@ -246,7 +246,7 @@ nnoremap ZS :w<CR>
 inoremap jj <Esc>
 
 " make ctrl+c completely like ESC
-inoremap <C-c> <Esc>
+inoremap <C-c> <Esc><Esc>
 
 " C changes until end of line and D deletes until end of line, so why not Y?
 noremap Y y$
@@ -274,7 +274,7 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap [[    [
 inoremap []    []
 
-inoremap <<    <><Left>
+inoremap <>    <><Left>
 inoremap ""    ""<Left>
 inoremap ''    ''<Left>
 inoremap ``    ``<Left>
