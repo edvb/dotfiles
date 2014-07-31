@@ -2,8 +2,8 @@ set nocompatible " make Vim not vi (see README for why)
 " plug-ins{{{1
 
 " run separate bundles vimrc
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/dotfiles/vimrc.bundles"))
+  source ~/dotfiles/vimrc.bundles
 endif
 
 filetype plugin indent on
