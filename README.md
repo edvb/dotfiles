@@ -20,6 +20,7 @@ system looks for them:
 	ln -s ~/dotfiles/bashrc ~/.bashrc
 	ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 	ln -s ~/dotfiles/gitconfig ~/.gitconfig
+	ln -s ~/dotfiles/bin ~/bin
 
 Now we need to install the plug-ins which are found in `vimrc.bundles`. To do this
 I use Vundle, so enter this into the command line:
