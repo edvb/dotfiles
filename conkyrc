@@ -1,0 +1,63 @@
+alignment top_left
+background yes
+cpu_avg_samples 2
+default_color grey
+default_outline_color green
+default_shade_color red
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 3
+gap_y 35
+minimum_size 200 530
+no_buffers yes
+override_utf8_locale no
+own_window yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type normal
+total_run_times 0
+update_interval 3.0
+use_xft yes
+xftalpha 0.5
+xftfont monospace:size=8
+
+TEXT
+$alignc${font Arial Black:size:24}${time %H:%M}$font
+$alignc${Time %A %m/%d/%Y}
+$alignc Uptime: $uptime
+
+${color 0066CC}SYSTEM ${hr 2}$color
+$alignc${color 00CCFF}$sysname $kernel on $machine
+$alignc${color 0099CC}${exec whoami}@$nodename$color
+${color 9966CC}${cpugraph}$color
+Core 1: ${color 33CC99}${cpu cpu0}% ${color 9966CC}${cpubar cpu0}$color
+Core 2: ${color 33CC99}${cpu cpu1}% ${color 9966CC}${cpubar cpu1}$color
+Core 3: ${color 33CC99}${cpu cpu2}% ${color 9966CC}${cpubar cpu2}$color
+Core 4: ${color 33CC99}${cpu cpu3}% ${color 9966CC}${cpubar cpu3}$color
+Core 5: ${color 33CC99}${cpu cpu4}% ${color 9966CC}${cpubar cpu4}$color
+Core 6: ${color 33CC99}${cpu cpu5}% ${color 9966CC}${cpubar cpu5}$color
+
+RAM:  ${color 33CC99}$memperc%  ${color 6666FF}${membar 6}$color
+Swap: ${color 33CC99}$swapperc% ${color 0099FF} ${swapbar 6}$color
+Disk: ${color 33CC99}$fs_used_perc% ${color 000066}$fs_bar
+
+${color 0066CC}Network (${addr eth0}) ${hr 2}$color
+Inbound $alignr ${color 33CC99}${downspeed eth0}
+${color CC0099}${downspeedgraph eth0}$color
+Outbound $alignr ${color 33CC99}${upspeed eth0}
+${color 9900FF}${upspeedgraph eth0}$color
+
+${color 0066CC}PROCESSES ${hr 2}$color
+NAME $alignr CPU    RAM
+${color 999999}${top name 1} $alignr ${color 9966CC}${top cpu 1} ${color 6666FF}${top mem 1}
+${color 999999}${top name 2} $alignr ${color 9966CC}${top cpu 2} ${color 6666FF}${top mem 2}
+${color 999999}${top name 3} $alignr ${color 9966CC}${top cpu 3} ${color 6666FF}${top mem 3}
+${color 999999}${top name 4} $alignr ${color 9966CC}${top cpu 4} ${color 6666FF}${top mem 4}
+${color 999999}${top name 5} $alignr ${color 9966CC}${top cpu 5} ${color 6666FF}${top mem 5}
+${color 999999}${top name 6} $alignr ${color 9966CC}${top cpu 6} ${color 6666FF}${top mem 6}
+${color 999999}${top name 7} $alignr ${color 9966CC}${top cpu 7} ${color 6666FF}${top mem 7}
+${color 999999}${top name 8} $alignr ${color 9966CC}${top cpu 8} ${color 6666FF}${top mem 8}
+
