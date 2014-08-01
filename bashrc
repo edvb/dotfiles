@@ -121,12 +121,6 @@ alias cp='cp -i'
 alias ln='ln -i'
 alias rm='rm -i'
 
-alias vrc='$EDITOR ~/dotfiles/vimrc'
-alias vrcb='$EDITOR ~/dotfiles/vimrc.bundles'
-alias brc='$EDITOR ~/dotfiles/bashrc'
-alias bp='$EDITOR ~/dotfiles/bash_profile'
-alias tconf='$EDITOR ~/dotfiles/tmux.conf'
-
 # other
 alias v='xmodmap ~/.vim-keys.xmodmap'
 alias emacs='emacs -nw'
