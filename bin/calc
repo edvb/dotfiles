@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# calc: preform fast calculations on the go
+#
+# Tired of having to open a new terminal, run `bc`, type the calculation, only
+# to exit right after seeing the answer? Suffer no longer! Now just type
+# `calc 2+2` and instantly see the answer!
+
+echo "$@" | bc -l

@@ -131,9 +131,4 @@ ipls () {
     ifconfig | grep 'inet addr:' | awk {'print $2'}
 }
 
-# do calculations in bash faster
-calc () {
-  echo $1 | bc -l
-}
-
 #}}}
