@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# manually change this path if you want to use your own folder
+tododir="$HOME/.todo/"
+
+# make sure $tododir exists
+if [ ! -d $tododir ]; then
+	echo -n "Warning: $tododir Does Not Exist, Making it For You ... "
+	mkdir $tododir
+	echo "done"
+fi
+
+# handle options and file creation
+# use `todoium -l` to list your todos
+if [[ $1 == -l ]]; then
+	echo "`ls $tododir`"
+# use `todoium -p` to echo where the todos are being stored
+elif [[ $1 == -p ]]; then
+	echo $tododir
+# if no options is specified then use $1 to create file 
+else
+	touch $tododir$1
+fi
+
