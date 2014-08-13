@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# set varibles
+version="v1.0"
+progname="`basename $0`"
+
 # manually change this path if you want to use your own folder
 tododir="$HOME/.todo/"
 
@@ -10,10 +14,33 @@ if [ ! -d $tododir ]; then
 	echo "done"
 fi
 
+todohelp() {
+	echo "\
+Todoium $version - GPL v3
+Usage: $progname [-hltp] [todo]\
+"
+}
+
+todotree() {
+	local treevar="`tree $tododir`"
+	local treevar="`echo "$treevar" | sed -e "s/files/todos/g" -`"
+	local treevar="`echo "$treevar" | sed -e "s/directory/sub-folders/g" -`"
+	echo "$treevar"
+}
+
 # handle options and file creation
+# if nothing is typed show the help
+if [[ $1 == "" ]]; then
+	todohelp
+# use `todoium -h` to show help
+elif [[ $1 == -h ]]; then
+	todohelp
 # use `todoium -l` to list your todos
-if [[ $1 == -l ]]; then
+elif [[ $1 == -l ]]; then
 	echo "`ls $tododir`"
+# use `todoium -t` to list your todos in a tree
+elif [[ $1 == -t ]]; then
+	todotree
 # use `todoium -p` to echo where the todos are being stored
 elif [[ $1 == -p ]]; then
 	echo $tododir
