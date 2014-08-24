@@ -86,6 +86,7 @@ fi
 
 # load other files
 source ~/dotfiles/bin/git-prompt.sh
+source ~/dotfiles/bin/z.sh
 if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 fi
