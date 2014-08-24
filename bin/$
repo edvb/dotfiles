@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "\033[0;31mWHY YOU COPY COMMANDS FROM THE INTERNET?!?!\033[m"
+"$@"
+
