@@ -22,4 +22,5 @@
 	lastdiff = diff --cached HEAD^
 	diffw = diff --word-diff
 	diffc = diff --cached
+	s = status
 
