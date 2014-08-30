@@ -67,6 +67,12 @@ au VimEnter * RainbowParenthesesLoadRound
 au VimEnter * RainbowParenthesesLoadSquare
 au VimEnter * RainbowParenthesesLoadBraces
 
+" catium.vim options
+let g:catium#trail = 0
+let g:catium#body  = 3
+let g:catium#face  = 1
+let g:catium#space = 4
+
 " mappings{{{2
 " allow for F3 ro turn on Tagbar plug-in
 nmap <silent> <F3> :TagbarToggle<CR>
@@ -150,7 +156,6 @@ set number
 
 "extra chars like the end of line one and when text raps to next line
 set list
-" set listchars=tab:\┃\ ,eol:¬,extends:❯,precedes:❮
 set listchars=tab:\|\ ,eol:¬,extends:❯,precedes:❮
 
 " make Vim save every time it leaves insert mode
@@ -230,6 +235,7 @@ hi SLcyan     ctermfg=6   ctermbg=0
 set statusline=%#SLblue#%f        " file name
 set statusline+=%#SLgreen#\ %Y    " filetype
 set statusline+=%#SLcyan#\ %M     " modified flag
+set statusline+=\ %{g:Catium()}
 
 set statusline+=\ %=              " align left
 set statusline+=%#SLcyan#%c       " column

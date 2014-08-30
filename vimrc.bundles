@@ -38,6 +38,10 @@ Bundle 'tpope/vim-eunuch'
 " better sessions
 Bundle 'tpope/vim-obsession'
 
+""" my plug-ins
+" add nyan cat to status bar
+Bundle 'edvb54/catium.vim'
+
 """ language specific plug-ins
 " syntax checker
 Bundle 'Syntastic'
