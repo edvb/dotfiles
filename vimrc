@@ -175,12 +175,11 @@ let g:snips_github="edvb54"
 " highlight the 81st column so you know when your line is to long
 call matchadd('Error', '\%81v', 100)
 
-au BufRead,BufNewFile *.pde set filetype=arduino
-au BufRead,BufNewFile *.ino set filetype=arduino
 au BufRead,BufNewFile *.md  set filetype=markdown
-
-au BufRead,BufNewFile *bash_profile set filetype=sh
-au BufRead,BufNewFile *tmux.conf    set filetype=sh
+au BufRead,BufNewFile *bash_profile* set filetype=sh
+au BufRead,BufNewFile *tmux.conf*    set filetype=sh
+au BufRead,BufNewFile *conkyrc*      set filetype=sh
+au BufRead,BufNewFile *gitconfig*    set filetype=gitconfig
 
 " spell check
 hi SpellBad ctermfg=red cterm=underline
