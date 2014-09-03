@@ -119,6 +119,7 @@ au BufRead,BufNewFile *vimrc* nmap gB :w<CR>:source %<CR>:VundleClean<CR>
 syntax on
 set autoindent                  " I hope you know what this does
 set autowrite                   " automatically write before running commands that need it to be written
+set hlsearch                    " turn on highlighting of searches
 set ignorecase                  " make search non case sensitive
 set incsearch                   " show the search result before you finish typing
 set noshowmode                  " turn off "--INSERT--" at bottom of screen
@@ -133,6 +134,7 @@ set visualbell                  " use visual bell instead of beeping
 set backspace=2                 " turn on backspace
 set completeopt-=preview        " disable pop-up when using Neocomplete
 set cryptmethod=blowfish        " change the way Vim encrypts files to blowfish from zip
+set formatoptions+=w            " when text get over the number set by `set textwidth`, wrap it to next line
 set foldmethod=marker           " set the folding method to use three { to start and three } to end
 set laststatus=2                " always turn on status line
 set modelines=5                 " number of lines down Vim checks for set commands
@@ -140,6 +142,7 @@ set mouse=a                     " turn on the mouse
 set nrformats=octal,hex,alpha   " allow you to ctrl-a/ctrl-x to increase/decrease letters and numbers
 set scrolloff=7                 " make Vim have 7 lines below cursor when moving down
 set t_ut=                       " needed if using Vim inside of tmux
+set textwidth=79                " set what line to wrap charters at.
 set spell spelllang=en_us       " set language for spell check to United States
 "                                 Great Britain = gb, Canada = ca, Australia = au, New Zealand = nz
 set clipboard=unnamedplus       " Vim yanks go to OS's clipboard as well
