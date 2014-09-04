@@ -128,6 +128,7 @@ set shiftround                  " make indents always be at a multiple of the ta
 set showcmd                     " show commands that you are typing
 set showmatch                   " when a bracket is inserted, briefly jump to the matching one.
 set smartcase                   " allow you to search with more charters
+set timeout                     " set timeout for mappings
 set title                       " turn on the Vim title at the top of the window
 set ttyfast                     " makes Vim faster
 set visualbell                  " use visual bell instead of beeping
@@ -143,6 +144,7 @@ set nrformats=octal,hex,alpha   " allow you to ctrl-a/ctrl-x to increase/decreas
 set scrolloff=7                 " make Vim have 7 lines below cursor when moving down
 set t_ut=                       " needed if using Vim inside of tmux
 set textwidth=79                " set what line to wrap charters at.
+set ttimeoutlen=50              " change wait time for `timeout`
 set spell spelllang=en_us       " set language for spell check to United States
 "                                 Great Britain = gb, Canada = ca, Australia = au, New Zealand = nz
 set clipboard=unnamedplus       " Vim yanks go to OS's clipboard as well
@@ -157,9 +159,12 @@ set number
 " make the line your cursor is on 0
 " set relativenumber
 
-"extra chars like the end of line one and when text raps to next line
+" extra chars like the end of line one and when text raps to next line
 set list
 set listchars=tab:\|\ ,eol:¬,extends:❯,precedes:❮
+
+" make Vim's clipboard the same as OS's clipboard
+let g:clipbrdDefaultReg = '+'
 
 " make Vim save every time it leaves insert mode
 au InsertLeave * if &mod && expand('%')!=''|write|endif
@@ -168,6 +173,14 @@ au InsertLeave * if &mod && expand('%')!=''|write|endif
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+" turn on alt key
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
 
 " NOTE: my info, you need to change!
 let g:snips_author="ED"
@@ -288,17 +301,4 @@ inoremap <>    <><Left>
 inoremap ""    ""<Left>
 inoremap ''    ''<Left>
 inoremap ``    ``<Left>
-
-" Linux stuff{{{1
-let g:clipbrdDefaultReg = '+'
-
-" turn on alt key
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
-set timeout ttimeoutlen=50
 
