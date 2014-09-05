@@ -12,8 +12,8 @@ if [ "$EDITOR" = "" ]; then
 	echo "Temporary setting EDITOR to $EDITOR"
 fi
 
-if [ "$1" = "" ]; then
+if [[ "$@" == "" ]]; then
 	$EDITOR .
 else
-	$EDITOR $1
+	$EDITOR $@
 fi
