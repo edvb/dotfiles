@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#
+# A very tiny script I made to run my install of firefox.
+#
+
+# change this to where your firefox install is.
+$HOME/.firefox/firefox
+
