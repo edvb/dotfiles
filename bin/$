@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# $: a script for blindly copying commands from the internet
+#
+# A useful script for when you copy command line commands off the internet that
+# start with `$`
+#
+
+# if you don't like humor you can remove this line :(
 echo "\033[0;31mWHY YOU COPY COMMANDS FROM THE INTERNET?!?!\033[m"
 "$@"
 
