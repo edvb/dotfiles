@@ -1,4 +1,4 @@
-alignment top_left
+alignment top_right
 background yes
 cpu_avg_samples 2
 default_color grey
@@ -25,6 +25,9 @@ xftalpha 0.5
 xftfont monospace:size=8
 
 TEXT
+
+
+
 $alignc${font Arial Black:size:24}${time %H:%M}$font
 $alignc${Time %A %m/%d/%Y}
 $alignc Uptime: $uptime
