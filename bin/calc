@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+
 # calc: preform fast calculations on the go
 #
 # Tired of having to open a new terminal, run `bc`, type the calculation, only
