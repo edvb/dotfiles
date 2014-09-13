@@ -91,8 +91,6 @@ if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 fi
 
-# fortune | cowsay
-
 # alias stuff{{{1
 # better tab complete
 bind '"\t":menu-complete'
