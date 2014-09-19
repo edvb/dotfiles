@@ -56,6 +56,7 @@ augroup pencil
   autocmd FileType text call pencil#init({'wrap': 'hard'})
 augroup END
 
+" chnage netrw style to a tree
 let g:netrw_liststyle = 3
 
 " change color of rainbow
