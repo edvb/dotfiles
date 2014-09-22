@@ -23,4 +23,7 @@
 	diffw = diff --word-diff
 	diffc = diff --cached
 	s = status
+	c = commit
+	p = push
+	a = add -A .
 
