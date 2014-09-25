@@ -80,6 +80,7 @@ PS2="\$"
 export EDITOR='vim'
 # export EDITOR='emacs'
 
+# allow for color support in terminal
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
