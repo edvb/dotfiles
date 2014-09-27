@@ -132,6 +132,7 @@ ipls () {
     ifconfig | grep 'inet addr:' | awk {'print $2'}
 }
 
+# mkdir and cd in one command
 mkcd () {
     [ -n "$1" ] && mkdir -p "$@" && cd "$1"
 }
