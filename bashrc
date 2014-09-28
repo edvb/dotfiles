@@ -128,10 +128,6 @@ alias vless='vim -u /usr/share/vim/vim74/macros/less.vim'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias t='todoium'
 
-ipls () {
-    ifconfig | grep 'inet addr:' | awk {'print $2'}
-}
-
 # mkdir and cd in one command
 mkcd () {
     [ -n "$1" ] && mkdir -p "$@" && cd "$1"
