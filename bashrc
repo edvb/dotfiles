@@ -99,7 +99,7 @@ bind '"\t":menu-complete'
 # enable color support
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -F'
     alias grep='grep --color=auto'
 fi
 
@@ -113,7 +113,6 @@ alias ....='cd ../../..'
 # better ls-ing
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
 
 # make these commands safer
 alias mv='mv -i'
