@@ -25,5 +25,5 @@
 	s = status
 	c = commit
 	p = push
-	a = add -A .
+	A = add -A .
 
