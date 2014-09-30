@@ -33,14 +33,6 @@ if ! shopt -oq posix; then
   fi
 fi
 #}}}
-# colors{{{
-Color_Off=$'\033[m'
-Red=$'\033[0;31m'
-Green=$'\033[0;32m'
-Blue=$'\033[0;34m'
-Cyan=$'\033[0;36m'
-White=$'\033[0;37m'
-#}}}
 # prompt statement{{{1
 random_happy_face() {
     local faces=(":)" ":D" ":)" ":D" ":)" ":D" ":)")
@@ -86,6 +78,7 @@ if [ "$TERM" == "xterm" ]; then
 fi
 
 # load other files
+source ~/dotfiles/bin/colors.sh
 source ~/dotfiles/bin/git-prompt.sh
 source ~/dotfiles/bin/z.sh
 if [ -f ~/.fzf.bash ]; then
