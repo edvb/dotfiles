@@ -56,10 +56,30 @@ cmd_check() {
     fi;
 }
 
+# change color of branch name
+git_color() {
+    if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
+        local color="${Cyan}"
+
+        # modified
+        git diff --no-ext-diff --quiet --exit-code || color="${Red}"
+
+        # staged
+        if git rev-parse --quiet --verify HEAD >/dev/null; then
+            git diff-index --cached --quiet HEAD -- || color="${IRed}"
+        fi
+
+        # stashed
+        git rev-parse --verify refs/stash >/dev/null 2>&1 && color="${Yellow}"
+
+        echo "$color"
+    fi
+}
+
 PS1='\
 ${Blue}\u\
  $(cmd_check) \
-$(__git_ps1 "${Cyan}%s ")${White}\
+$(__git_ps1 "$(git_color)%s ")${White}\
 \$${Color_Off} \
 '
 
