@@ -3,5 +3,5 @@
 # terminal='terminator'
 terminal='gnome-terminal'
 
-exec $terminal -e "tmux -2"
+exec $terminal $@
 
