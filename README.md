@@ -23,6 +23,9 @@ system looks for them:
 	ln -s ~/dotfiles/gmrunrc ~/.gmrunrc
 	ln -s ~/dotfiles/bin ~/bin
 	ln -s ~/dotfiles/config/clipit/ ~/.config/
+	ln -s ~/dotfiles/config/htop/ ~/.config/
+	ln -s ~/dotfiles/config/openbox/ ~/.config/
+	ln -s ~/dotfiles/config/terminator/ ~/.config/
 
 Now we need to install the plug-ins which are found in `vimrc.bundles`. To do this
 I use Vundle, so enter this into the command line:
