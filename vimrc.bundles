@@ -61,8 +61,6 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'junegunn/fzf'
 " list "FIXME", "TODO", "XXX" in new window
 Bundle 'vim-scripts/TaskList.vim'
-" temporary zoom in on a window with <C-W>o
-Bundle 'ZoomWin'
 
 """ auto complete plug-ins
 " implement snippets
