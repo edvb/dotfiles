@@ -98,6 +98,7 @@ if [ "$TERM" == "xterm" ]; then
 fi
 
 # load other files
+source ~/dotfiles/bin/edium.sh
 source ~/dotfiles/bin/colors.sh
 source ~/dotfiles/bin/git-prompt.sh
 source ~/dotfiles/bin/z.sh
