@@ -94,6 +94,8 @@ Bundle 'reedes/vim-pencil'
 Bundle 'junegunn/vim-easy-align'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
+" some programs use this to embed vim
+Bundle 'ardagnir/vimbed'
 
 filetype plugin indent on
 
