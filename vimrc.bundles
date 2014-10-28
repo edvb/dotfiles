@@ -83,9 +83,6 @@ Bundle 'rainbow_parentheses.vim'
 Bundle 'airblade/vim-gitgutter'
 
 """ writing plug-ins
-" advanced spell check
-Bundle 'reedes/vim-wordy'
-Bundle 'reedes/vim-litecorrect'
 " auto wrap text in markdown and text files
 Bundle 'reedes/vim-pencil'
 
