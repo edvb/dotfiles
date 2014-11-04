@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # ed: EDit file or folder with your EDITOR
-# hey
 
 ed() {
 	if [[ "$@" == "" ]]; then
