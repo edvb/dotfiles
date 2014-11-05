@@ -22,11 +22,12 @@ system looks for them:
 	ln -s ~/dotfiles/gitconfig ~/.gitconfig
 	ln -s ~/dotfiles/gmrunrc ~/.gmrunrc
 	ln -s ~/dotfiles/bin ~/bin
+	ln -s ~/dotfiles/themes ~/.themes/
+	ln -s ~/dotfiles/pentadactyl/ ~/.pentadactyl/
 	ln -s ~/dotfiles/config/clipit/ ~/.config/
 	ln -s ~/dotfiles/config/htop/ ~/.config/
 	ln -s ~/dotfiles/config/openbox/ ~/.config/
 	ln -s ~/dotfiles/config/terminator/ ~/.config/
-	ln -s ~/dotfiles/themes ~/.themes/
 
 Now we need to install the plug-ins which are found in `vimrc.bundles`. To do this
 I use Vundle, so enter this into the command line:
