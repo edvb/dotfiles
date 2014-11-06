@@ -24,6 +24,7 @@ system looks for them:
 	ln -s ~/dotfiles/bin ~/bin
 	ln -s ~/dotfiles/themes ~/.themes/
 	ln -s ~/dotfiles/pentadactyl/ ~/.pentadactyl/
+	ln -s ~/dotfiles/pentadactylrc ~/.pentadactylrc
 	ln -s ~/dotfiles/config/clipit/ ~/.config/
 	ln -s ~/dotfiles/config/htop/ ~/.config/
 	ln -s ~/dotfiles/config/openbox/ ~/.config/
