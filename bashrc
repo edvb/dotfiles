@@ -34,28 +34,6 @@ if ! shopt -oq posix; then
 fi
 #}}}
 # prompt statement{{{1
-random_happy_face() {
-    local faces=(":)" ":D" ":)" ":D" ":)" ":D" ":)")
-    local l=${#faces[*]}
-    local sym=${faces[$(($RANDOM % $l))]}
-    echo $sym
-}
-
-random_sad_face() {
-    local faces=(":P" ":(" ":(" ":O" ":\\" ":|" ":(" ":(")
-    local l=${#faces[*]}
-    local sym=${faces[$(($RANDOM % $l))]}
-    echo $sym
-}
-
-cmd_check() {
-    if [[ $? = 0 ]]; then
-        echo "${Green}$(random_happy_face)";
-    else
-        echo "${Red}$(random_sad_face)";
-    fi;
-}
-
 # change color of branch name
 git_color() {
     if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
@@ -76,12 +54,10 @@ git_color() {
     fi
 }
 
-PS1='\
-${Blue}\u\
- $(cmd_check) \
-$(__git_ps1 "$(git_color)%s ")${White}\
-\$${Color_Off} \
-'
+PS1='\[${Blue}\]\u \
+\[$(check_color)\]$(random_face) \
+$(__git_ps1 "$(git_color)%s ")\[${White}\]\
+\$\[${Color_Off}\] '
 
 # PS1="${Blue}\u@\h${Color_Off}:${Cyan}\w${White}❯❯${Color_Off} "
 # PS1='C:${PWD////\\\\}>'
@@ -99,6 +75,7 @@ fi
 
 # load other files
 source ~/dotfiles/bin/edium.sh
+source ~/dotfiles/bin/checkium.sh
 source ~/dotfiles/bin/colors.sh
 source ~/dotfiles/bin/git-prompt.sh
 source ~/dotfiles/bin/z.sh
