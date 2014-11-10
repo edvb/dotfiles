@@ -94,9 +94,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
 fi
 
-# shortcuts
-alias sb='source ~/.bashrc'
-alias r='reset'
+# easily change back directories
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -111,11 +109,9 @@ alias cp='cp -i'
 alias ln='ln -i'
 alias rm='rm -i'
 
-# other
-alias v='xmodmap ~/.vim-keys.xmodmap'
-alias emacs='emacs -nw'
-alias vless='vim -u /usr/share/vim/vim74/macros/less.vim'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# shortcuts
+alias sb='source ~/.bashrc'
+alias emacs='emacs --no-window-system'
 alias t='todoium'
 
 # mkdir and cd in one command
