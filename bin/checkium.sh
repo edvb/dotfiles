@@ -2,10 +2,10 @@
 
 check_color() {
     if [[ $? -eq 0 ]]; then
-        echo "${Green}"
+        echo -ne "\033[0;32m"
         return 0
     else
-        echo "${Red}"
+        echo -ne "\033[0;31m"
         return 1
     fi
 }
