@@ -73,6 +73,9 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
+# update TMUX if ssh'ed into computer in TMUX
+[[ -z "$TMUX" ]] && exec tmux -2
+
 # load other files
 source ~/dotfiles/bin/edium.sh
 source ~/dotfiles/bin/checkium.sh
