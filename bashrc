@@ -56,7 +56,7 @@ git_color() {
 
 PS1='\[${Blue}\]\u \
 \[$(check_color)\]$(random_face) \
-$(__git_ps1 "$(git_color)%s ")\[${White}\]\
+\[$(git_color)\]$(__git_ps1 "%s ")\[${White}\]\
 \$\[${Color_Off}\] '
 
 # PS1="${Blue}\u@\h${Color_Off}:${Cyan}\w${White}❯❯${Color_Off} "
