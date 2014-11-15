@@ -114,6 +114,7 @@ alias rm='rm -i'
 
 # shortcuts
 alias sb='source ~/.bashrc'
+alias cmon='sudo "$BASH" -c "$(history -p !!)"'
 alias emacs='emacs --no-window-system'
 alias t='todoium'
 
