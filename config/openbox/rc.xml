@@ -40,7 +40,7 @@
                     'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare</name>
+    <name>Turquoise Nights Ob</name>
     <titleLayout>DSLMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -356,33 +356,6 @@
           <name>Lock screen</name>
         </startupnotify>
         <command>cb-lock</command>
-      </action>
-    </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Editor</name>
-        </startupnotify>
-        <command>geany</command>
-      </action>
-    </keybind>
-    <keybind key="W-m">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Mediaplayer</name>
-        </startupnotify>
-        <command>vlc</command>
-      </action>
-    </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Volume</name>
-        </startupnotify>
-        <command>pavucontrol</command>
       </action>
     </keybind>
     <keybind key="W-x">
