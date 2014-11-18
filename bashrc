@@ -62,7 +62,7 @@ PS1='\[${Blue}\]\u \
 # PS1="${Blue}\u@\h${Color_Off}:${Cyan}\w${White}❯❯${Color_Off} "
 # PS1='C:${PWD////\\\\}>'
 
-PS2="\$"
+PS2='\[${White}\]\$\[${Color_Off}\] '
 
 # basic{{{1
 export EDITOR='vim'
