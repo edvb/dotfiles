@@ -213,6 +213,9 @@ if s:color == 'solarized'
   hi SignColumn   ctermbg=0
   hi Folded       cterm=bold
   hi VertSplit    ctermbg=0
+  hi TabLine      term=none cterm=none
+  hi TabLineFill  term=none cterm=none
+  hi TabLineSel   term=none cterm=none
 endif
 
 " better highlighting for molokai
