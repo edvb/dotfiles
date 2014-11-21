@@ -81,6 +81,8 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'rainbow_parentheses.vim'
 " see where lines are added, removed, or changed in a git repo
 Bundle 'airblade/vim-gitgutter'
+" use tabline to display buffers
+Bundle 'ap/vim-buftabline'
 
 """ writing plug-ins
 " auto wrap text in markdown and text files
