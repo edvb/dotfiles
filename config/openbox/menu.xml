@@ -164,6 +164,30 @@
 				</action>
 			</item>
 		</menu>
+		<menu id="system" label="System">
+		    <menu execute="cb-printing-pipemenu" id="PrintingPipeMenu" label="Printers"/>
+		    <item label="GParted">
+				<action name="Execute">
+					<command>
+						gksudo gparted
+					</command>
+				</action>
+			</item>
+			<item label="Synaptic Package Manager">
+				<action name="Execute">
+					<command>
+						gksudo synaptic
+					</command>
+				</action>
+			</item>
+			<item label="User Login Settings">
+				<action name="Execute">
+					<command>
+						gksudo slimconf
+					</command>
+				</action>
+			</item>
+		</menu>
 		<separator/>
 		<menu id="settings" label="Settings">
 			<menu execute="cb-compositor" id="CompositingPipeMenu" label="Compositor"/>
@@ -388,30 +412,6 @@
 				<action name="Execute">
 					<command>
 						nitrogen ~/images/wallpapers/
-					</command>
-				</action>
-			</item>
-		</menu>
-		<menu id="system" label="System">
-		    <menu execute="cb-printing-pipemenu" id="PrintingPipeMenu" label="Printers"/>
-		    <item label="GParted">
-				<action name="Execute">
-					<command>
-						gksudo gparted
-					</command>
-				</action>
-			</item>
-			<item label="Synaptic Package Manager">
-				<action name="Execute">
-					<command>
-						gksudo synaptic
-					</command>
-				</action>
-			</item>
-			<item label="User Login Settings">
-				<action name="Execute">
-					<command>
-						gksudo slimconf
 					</command>
 				</action>
 			</item>
