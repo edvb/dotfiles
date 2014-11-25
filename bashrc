@@ -55,7 +55,7 @@ git_color() {
 }
 
 PS1='\[${Blue}\]\u \
-\[$(check_color)\]$(random_face) \
+\[$(checkium_color)\]$(checkium_random_face) \
 \[$(git_color)\]$(__git_ps1 "%s ")\[${White}\]\
 \$\[${Color_Off}\] '
 
