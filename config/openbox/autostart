@@ -74,10 +74,3 @@ xset b off &
 ## Run the conky
 conky -q &
 
-## Run firefox
-firefox &
-
-## Start terminal for dotfiles
-# gnome-terminal --maximize --title="Dotfiles" -e "mux s dot" &
-terminator --maximise --title "Dotfiles" --command="mux s dot" &
-
