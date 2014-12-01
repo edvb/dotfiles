@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # set varibles
-version="v1.2"
+version="v0.3"
 progname="`basename $0`"
 
 # manually change this path if you want to use your own folder
@@ -9,29 +9,31 @@ tododir="$HOME/.todo/"
 
 # make sure $tododir exists
 if [ ! -d $tododir ]; then
-	echo -ne "Warning: $tododir does not exist\nMaking it for you ... "
+	printf "Warning: %s does not exist\n" $tododir
+	printf "Making it for you ... "
 	mkdir -p $tododir
-	echo "done"
+	printf "done\n"
 fi
 
-todohelp() {
-	echo "\
-Todoium $version - GPL v3
-Usage: $progname [-holtp] [todo]\
+todo_help() {
+	printf "\
+Todoium %s - GPL v3
+Usage: %s [OPTION] [todo]
+" $version $progname 
+	printf "\n"
+	printf "\
+  -h, --help    display help
 "
+	printf "\n"
+	printf "\
+  -l, --list    list todos
+  -t, --tree    list todos in tree form
+  -p, --path    show path of where todos are kept
+"
+	printf "\n"
 }
 
-todooptions() {
-echo "\
--h > show help/ info
--o > list options
--l > list todos
--t > list todos in tree form
--p > show path of todos\
-"
-}
-
-todotree() {
+todo_tree() {
 	local treevar="`tree $tododir`"
 	local treevar="`echo "$treevar" | sed -e "s/files/todos/g" -`"
 	local treevar="`echo "$treevar" | sed -e "s/directory/sub-folder/g" -`"
@@ -40,31 +42,28 @@ todotree() {
 }
 
 # handle options and file creation
-# if nothing is typed show the help
-if [[ $1 == "" ]]; then
-	todohelp
-# use `todoium -h` to show help
-# elif [[ $1 == -h || "--help" ]]; then
-elif [[ $1 == -h ]]; then
-	todohelp
-# use 'todoium -o' to list options
-# elif [[ $1 == -o || "--options" ]]; then
-elif [[ $1 == -o ]]; then
-	todooptions
-# use `todoium -l` to list your todos
-# elif [[ $1 == -l || "--ls" ]]; then
-elif [[ $1 == -l ]]; then
-	echo "`ls $tododir`"
-# use `todoium -t` to list your todos in a tree
-# elif [[ $1 == -t || "--tree" ]]; then
-elif [[ $1 == -t ]]; then
-	todotree
-# use `todoium -p` to echo where the todos are being stored
-# elif [[ $1 == -p || "--path" ]]; then
-elif [[ $1 == -p ]]; then
-	echo $tododir
-# if no options is specified then use $1 to create file 
-else
-	touch $tododir$1
-fi
+case "$1" in
+	# if nothing is typed show the help
+	""|-h|--help)
+		todo_help
+		;;
+	# use `todoium -l` to list your todos
+	-l|--list)
+		ls -1 $tododir
+		;;
+	# use `todoium -t` to list your todos in a tree
+	-t|--tree)
+		todo_tree
+		;;
+	# use `todoium -p` to echo where the todos are being stored
+	-p|--path)
+		printf "%s\n" $tododir
+		;;
+	# if no options is specified then use $1 to create file 
+	*)
+		cd $tododir
+		touch "$1"
+		;;
+esac
 
+# vim: set shiftwidth=4 tabstop=4 expandtab:
