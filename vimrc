@@ -56,8 +56,10 @@ augroup pencil
   autocmd FileType text call pencil#init({'wrap': 'hard'})
 augroup END
 
-" chnage netrw style to a tree
+" change netrw style to a tree
 let g:netrw_liststyle = 3
+" man netrw show numbers
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 " change color of rainbow
 let g:rbpt_max = 15
