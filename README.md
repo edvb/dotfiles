@@ -52,13 +52,12 @@ because if Vim sees a `.vimrc` file in the home directory then it automatically
 sets no compatibility. But however, if you load a `.vimrc` using `vim -u
 .new_vimrc` or `:so .new_vimrc` then it will load Vim being compatible with Vi,
 if it does not contain `set nocompatible`. It is also a case of better safe
-than sorry, adding one line of 16 charaters to your `.vimrc` file won't hurt.
+than sorry, adding one line of 16 characters to your `.vimrc` file won't hurt.
 
 ##Contact
 
-Check out our website at [techandcode.com](http://techandcode.com) for more,
-tech and code. If you have any questions please contact me at edvb54@gmail.com
-or leave a comment wherever.
+If you have any questions or comments please contact me at edvb54@gmail.com or
+leave a comment wherever.
 
 -ED
 
