@@ -402,6 +402,31 @@
         <command>cb-aerosnap --right</command>
       </action>
     </keybind>
+    <!-- Launch tmuxinator templates -->
+    <!-- Open dotfiles -->
+    <keybind key="W-d">
+      <action name="Execute">
+        <command>terminator --maximise --title "Dotfiles" --command="mux s dot" </command>
+      </action>
+    </keybind>
+    <!-- Open utilities -->
+    <keybind key="W-u">
+      <action name="Execute">
+        <command>terminator --maximise --title "Utilities" --command="mux s util" </command>
+      </action>
+    </keybind>
+    <!-- Open utilities -->
+    <keybind key="W-i">
+      <action name="Execute">
+        <command>terminator --maximise --title "Internet" --command="mux s internet" </command>
+      </action>
+    </keybind>
+    <!-- Open scripts -->
+    <keybind key="W-s">
+      <action name="Execute">
+        <command>terminator --maximise --title "Scripts" --command="mux s scripts" </command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
