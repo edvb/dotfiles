@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-check_color() {
+checkium_color() {
     if [[ $? -eq 0 ]]; then
         echo -ne "\033[0;32m"
         return 0
@@ -10,7 +10,16 @@ check_color() {
     fi
 }
 
-face() {
+checkium_check() {
+    if [[ $? -eq 0 ]]; then
+        local char="✓"
+    else
+        local char="✗ "
+    fi
+    echo $char
+}
+
+checkium_face() {
     if [[ $? -eq 0 ]]; then
         local face=":)"
     else
@@ -19,7 +28,7 @@ face() {
     echo $face
 }
 
-random_face() {
+checkium_random_face() {
     if [[ $? -eq 0 ]]; then
         local faces=(":)" ":D")
     else
