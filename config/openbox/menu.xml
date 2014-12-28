@@ -356,30 +356,18 @@
 					</action>
 				</item>
 			</menu>
-			<menu id="DisplaySettings" label="Display Settings">
-			    <item label="ARandR Screen Layout Editor">
-				    <action name="Execute">
-					    <command>
-						    arandr
-					    </command>
-				    </action>
-			    </item>
-			    <separator label="Help?"/>
-			    <item label="man xrandr">
-				    <action name="Execute">
-					    <command>
-						    terminator --command="man xrandr"
-					    </command>
-				    </action>
-			    </item>
-			</menu>
-			<menu id="Notifications" label="Notifications">
-				<item label="settings">
-					<action name="Execute">
-						<command>xfce4-notifyd-config</command>
-					</action>
-				</item>
-			</menu>
+			<item label="Display Settings">
+				<action name="Execute">
+					<command>
+						arandr
+					</command>
+				</action>
+			</item>
+			<item label="Notifications Settings">
+				<action name="Execute">
+					<command>xfce4-notifyd-config</command>
+				</action>
+			</item>
 			<item label="Edit Default Applications">
 				<action name="Execute">
 					<command>
@@ -411,7 +399,7 @@
 			<item label="Choose Wallpaper">
 				<action name="Execute">
 					<command>
-						nitrogen ~/images/wallpapers/
+						nitrogen
 					</command>
 				</action>
 			</item>
