@@ -288,6 +288,9 @@ nnoremap Q :<Up><CR>
 vnoremap > >gv
 vnoremap < <gv
 
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
 " pair completion{{{2
 inoremap {     {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
