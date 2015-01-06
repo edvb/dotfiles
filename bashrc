@@ -76,7 +76,7 @@ if [ "$TERM" == "xterm" ]; then
 fi
 
 # update TMUX if ssh'ed into computer in TMUX
-[[ -z "$TMUX" ]] && exec tmux -2
+# [[ -z "$TMUX" ]] && exec tmux -2
 
 # load other files
 source ~/dotfiles/bin/edium.sh
