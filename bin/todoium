@@ -2,16 +2,16 @@
 
 # set varibles
 version="v0.3"
-progname="`basename $0`"
+progname="$(basename "$0")"
 
 # manually change this path if you want to use your own folder
 tododir="$HOME/.todo/"
 
 # make sure $tododir exists
-if [ ! -d $tododir ]; then
-	printf "Warning: %s does not exist\n" $tododir
+if [ ! -d "$tododir" ]; then
+	printf "Warning: %s does not exist\n" "$tododir"
 	printf "Making it for you ... "
-	mkdir -p $tododir
+	mkdir -p "$tododir"
 	printf "done\n"
 fi
 
@@ -34,22 +34,22 @@ Usage: %s [OPTION] [todo]
 }
 
 todo_tree() {
-	local treevar="`tree $tododir`"
-	local treevar="`echo "$treevar" | sed -e "s/files/todos/g" -`"
-	local treevar="`echo "$treevar" | sed -e "s/directory/sub-folder/g" -`"
-	local treevar="`echo "$treevar" | sed -e "s/directories/sub-folders/g" -`"
+	local treevar="$(tree "$tododir")"
+	local treevar="$(echo "$treevar" | sed -e "s/files/todos/g" -)"
+	local treevar="$(echo "$treevar" | sed -e "s/directory/sub-folder/g" -)"
+	local treevar="$(echo "$treevar" | sed -e "s/directories/sub-folders/g" -)"
 	echo "$treevar"
 }
 
 # handle options and file creation
 case "$1" in
-	# if nothing is typed show the help
-	""|-h|--help)
-		todo_help
+	# type `todoium -l` or `todoium` to list your todos
+	""|-l|--list)
+		ls -tr1 "$tododir"
 		;;
-	# use `todoium -l` to list your todos
-	-l|--list)
-		ls -1 $tododir
+	# use `todoium -h` to show help
+	-h|--help)
+		todo_help
 		;;
 	# use `todoium -t` to list your todos in a tree
 	-t|--tree)
@@ -57,13 +57,13 @@ case "$1" in
 		;;
 	# use `todoium -p` to echo where the todos are being stored
 	-p|--path)
-		printf "%s\n" $tododir
+		printf "%s\n" "$tododir"
 		;;
 	# if no options is specified then use $1 to create file 
 	*)
-		cd $tododir
+		cd "$tododir"
 		touch "$1"
 		;;
 esac
 
-# vim: set shiftwidth=4 tabstop=4 expandtab:
+# vim: set shiftwidth=4 tabstop=4:

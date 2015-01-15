@@ -6,7 +6,7 @@ ed() {
 	if [[ "$@" == "" ]]; then
 		$EDITOR .
 	else
-		$EDITOR $@
+		$EDITOR "$@"
 	fi
 }
 
