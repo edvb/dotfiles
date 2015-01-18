@@ -1,7 +1,8 @@
 #!/bin/sh
 
-terminal='terminator'
+# terminal='terminator'
 # terminal='gnome-terminal'
+terminal='st'
 
 exec $terminal $@
 
