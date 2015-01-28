@@ -19,7 +19,14 @@ todo_help() {
 	printf "\
 Todoium %s - GPL v3
 Usage: %s [OPTION] [todo]
+A todo \"manager\" that simply creates and lists todos.
 " $version $progname 
+	printf "\n"
+	printf "\
+Todoium is designed to follow the UNIX philosophy by simply creating and
+listing todos, you should not need to learn some strange commands to delete or
+rename these todos when you can just use rm and mv.
+"
 	printf "\n"
 	printf "\
   -h, --help    display help
