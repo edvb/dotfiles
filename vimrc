@@ -292,20 +292,23 @@ nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
 " pair completion{{{2
-inoremap {     {}<Left>
-inoremap {<CR> {<CR>}<Esc>O
-inoremap {{    {
-inoremap {}    {}
+inoremap {        {}<Left>
+inoremap {<CR>    {<CR>}<Esc>O
+inoremap {<Space> {<Space><Space>}<Left><Left>
+inoremap {{       {
+inoremap {}       {}
 
-inoremap (     ()<Left>
-inoremap (<CR> (<CR>)<Esc>O
-inoremap ((    (
-inoremap ()    ()
+inoremap (        ()<Left>
+inoremap (<CR>    (<CR>)<Esc>O
+inoremap (<Space> (<Space><Space>)<Left><Left>
+inoremap ((       (
+inoremap ()       ()
 
-inoremap [     []<Left>
-inoremap [<CR> [<CR>]<Esc>O
-inoremap [[    [
-inoremap []    []
+inoremap [        []<Left>
+inoremap [<CR>    [<CR>]<Esc>O
+inoremap [<Space> [<Space><Space>]<Left><Left>
+inoremap [[       [
+inoremap []       []
 
 inoremap <>    <><Left>
 inoremap ""    ""<Left>
