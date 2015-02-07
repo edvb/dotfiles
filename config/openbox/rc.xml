@@ -406,25 +406,31 @@
     <!-- Open dotfiles -->
     <keybind key="W-d">
       <action name="Execute">
-        <command>terminator --maximise --title "Dotfiles" --command="mux s dot" </command>
+        <command>st -t "Dotfiles" -e mux s dot </command>
       </action>
     </keybind>
     <!-- Open utilities -->
     <keybind key="W-u">
       <action name="Execute">
-        <command>terminator --maximise --title "Utilities" --command="mux s util" </command>
+        <command>st -t "Utilities" -e mux s util </command>
       </action>
     </keybind>
-    <!-- Open utilities -->
+    <!-- Open internet applications -->
     <keybind key="W-i">
       <action name="Execute">
-        <command>terminator --maximise --title "Internet" --command="mux s internet" </command>
+        <command>terminator --title "Internet" --command="mux s internet" </command>
       </action>
     </keybind>
     <!-- Open scripts -->
     <keybind key="W-s">
       <action name="Execute">
-        <command>terminator --maximise --title "Scripts" --command="mux s scripts" </command>
+        <command>st -t "Scripts" -e mux s scripts </command>
+      </action>
+    </keybind>
+    <!-- Open ratium project -->
+    <keybind key="W-r">
+      <action name="Execute">
+        <command>st -t "Ratium" -e mux s ratium </command>
       </action>
     </keybind>
   </keyboard>
