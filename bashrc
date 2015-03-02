@@ -56,7 +56,8 @@ git_color() {
 
 PS1='\[${Blue}\]\u \
 \[$(checkium_color)\]$(checkium_random_face) \
-\[$(git_color)\]$(__git_ps1 "%s ")\[${White}\]\
+\[$(git_color)\]$(__git_ps1 "%s ")\[${Yellow}\]\
+$([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 \$\[${Color_Off}\] '
 
 # PS1="${Blue}\u@\h${Color_Off}:${Cyan}\w${White}❯❯${Color_Off} "
