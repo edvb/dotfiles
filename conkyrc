@@ -10,7 +10,7 @@ draw_graph_borders yes
 draw_outline no
 draw_shades no
 gap_x 3
-gap_y 35
+gap_y 5
 minimum_size 200 530
 no_buffers yes
 override_utf8_locale no
