@@ -40,7 +40,7 @@
                     'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Turquoise Nights Ob</name>
+    <name>Numix Solarized</name>
     <titleLayout>DSLMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -722,16 +722,6 @@
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
@@ -934,6 +924,9 @@
         <x>center</x>
         <y>center</y>
       </position>
+    </application>
+    <application class="*">
+      <decor>no</decor>
     </application>
   </applications>
 </openbox_config>
