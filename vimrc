@@ -132,7 +132,7 @@ set showcmd                     " show commands that you are typing
 set showmatch                   " when a bracket is inserted, briefly jump to the matching one.
 set smartcase                   " allow you to search with more charters
 set timeout                     " set timeout for mappings
-set title                       " turn on the Vim title at the top of the window
+set notitle                     " turn off the Vim title at the top of the window
 set ttyfast                     " makes Vim faster
 set visualbell                  " use visual bell instead of beeping
 set backspace=2                 " turn on backspace
@@ -151,7 +151,7 @@ set ttimeoutlen=50              " change wait time for `timeout`
 set spell spelllang=en_us       " set language for spell check to United States
 "                                 Great Britain = gb, Canada = ca, Australia = au, New Zealand = nz
 set clipboard=unnamedplus       " Vim yanks go to OS's clipboard as well
-"                                 remove "plus" if not on Linux(you should use Linux)
+"                                 remove "plus" if not on Linux
 
 " set up menu stuff
 set wildmenu
@@ -174,7 +174,7 @@ au InsertLeave * if &mod && expand('%')!=''|write|endif
 
 " save line number line when reopening file
 if has("autocmd")
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 " turn on alt key
@@ -184,11 +184,6 @@ while c <= 'z'
   exec "imap \e".c." <A-".c.">"
   let c = nr2char(1+char2nr(c))
 endw
-
-" NOTE: my info, you need to change!
-let g:snips_author="ED"
-let g:snips_email="edvb54@gmail.com"
-let g:snips_github="edvb54"
 
 " highlighting{{{1
 " highlight the 81st column so you know when your line is to long
@@ -288,6 +283,7 @@ nnoremap Q :<Up><CR>
 vnoremap > >gv
 vnoremap < <gv
 
+" easily change buffers
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
