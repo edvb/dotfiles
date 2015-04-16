@@ -1,4 +1,4 @@
-# stuff{{{1
+# stuff {{{1
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -33,7 +33,7 @@ if ! shopt -oq posix; then
   fi
 fi
 #}}}
-# prompt statement{{{1
+# prompt statement {{{1
 # change color of branch name
 git_color() {
     if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
@@ -65,7 +65,7 @@ $([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 
 PS2='\[${White}\]\$\[${Color_Off}\] '
 
-# basic{{{1
+# basic {{{1
 export EDITOR='vim'
 # export EDITOR='emacs'
 
@@ -89,7 +89,7 @@ if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 fi
 
-# alias stuff{{{1
+# aliases {{{1
 # better tab complete
 bind '"\t":menu-complete'
 
@@ -117,6 +117,7 @@ alias rm='rm -i'
 
 # shortcuts
 alias sb='source ~/.bashrc'
+alias cls='clear; ls'
 alias cmon='sudo "$BASH" -c "$(history -p !!)"'
 alias emacs='emacs --no-window-system'
 alias t='todoium'
