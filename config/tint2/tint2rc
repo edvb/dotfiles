@@ -1,11 +1,6 @@
 #---------------------------------------------
 # TINT2 CONFIG FILE
 #---------------------------------------------
-# For more information about tint2, see:
-# http://code.google.com/p/tint2/wiki/Welcome
-#
-# For more config file examples, see:
-# http://crunchbanglinux.org/forums/topic/3232/my-tint2-config/
 
 # Background definitions
 # ID 1
@@ -65,7 +60,7 @@ panel_margin = 0 -1
 panel_padding = 0 0
 panel_dock = 0
 wm_menu = 1
-panel_layer = bottom
+panel_layer = top
 panel_background_id = 1
 
 # Panel Autohide
@@ -163,7 +158,7 @@ mouse_scroll_down = iconify
 # Battery
 battery = 1
 battery_low_status = 20
-battery_low_cmd = notify-send "battery low"
+battery_low_cmd = notify-send "Battery Low"
 battery_hide = 96
 bat1_font = Liberation Mono 8
 bat2_font = Liberation Mono 8
