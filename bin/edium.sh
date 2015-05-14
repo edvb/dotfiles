@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# ed: EDit file or folder with your EDITOR
-
+# ed: EDit with your EDITOR
 ed() {
 	if [[ "$@" == "" ]]; then
 		$EDITOR .
@@ -11,7 +10,6 @@ ed() {
 }
 
 # ED: Rotate between EDITORs
-
 ED() {
 	local EDITOR_new
 	if [[ $EDITOR == "vim" ]]; then
