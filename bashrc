@@ -60,6 +60,7 @@ PS1='\[${Blue}\]\u \
 $([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 \$\[${Color_Off}\] '
 
+# PS1='\[${White}\]\$\[${Color_Off}\] '
 # PS1="${Blue}\u@\h${Color_Off}:${Cyan}\w${White}❯❯${Color_Off} "
 # PS1='C:${PWD////\\\\}>'
 
