@@ -310,6 +310,15 @@
         <command>~/.config/dmenu/dmenu-bind.sh</command>
       </action>
     </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>dmenu-calc</name>
+        </startupnotify>
+        <command>dmenu-calc.sh</command>
+      </action>
+    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <startupnotify>
