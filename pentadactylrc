@@ -1,9 +1,0 @@
-"hg7127
-
-loadplugins '\.(js|penta)$'
-colorscheme solarized-dark
-group user
-set guioptions=bCrsBT
-js editor.defaultRegister="+"
-
-" vim: set ft=pentadactyl:
