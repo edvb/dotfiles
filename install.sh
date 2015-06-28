@@ -4,10 +4,11 @@ backup_dir="$HOME/dotfiles-old"
 
 for file in *; do
 
-  # target="$HOME/Remote/.$file"
+  # target="$HOME/remote/.$file"
   target="$HOME/.$file"
 
-  if [[ $file != "install.sh" && $file != "README.md" && $file != "LICENSE" ]]; then
+  if [[ $file != "install.sh" && $file != "README.md" && $file != "LICENSE" &&
+        $file != "config" ]]; then
     if [ -e "$target" ]; then           # check if file exists
       if [ ! -L "$target" ]; then       # check if file is not a symlink.
         if [ ! -d "$backup_dir" ]; then # check if file backup_dir exists
