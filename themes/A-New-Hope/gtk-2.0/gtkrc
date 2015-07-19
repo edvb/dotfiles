@@ -8,7 +8,7 @@
 
 
 ##########################################
-# COLOR SCHEME	
+# COLOR SCHEME
 ##########################################
 gtk_color_scheme	= "bg_color:#073642\nfg_color:#93A1A1"				# Window Colours
 gtk_color_scheme	= "selected_bg_color:#268BD2\nselected_fg_color:#FDF6E3"	# Selected Items
