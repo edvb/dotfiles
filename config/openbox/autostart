@@ -32,10 +32,12 @@ hsetroot -solid "#2E3436" &
 ## 4. tint2 panel
 (\
 nitrogen --restore && \
-cb-compositor --start && \
-sleep 2s && \
-tint2 \
+cb-compositor --start \
+#sleep 2s && \
+#tint2 \
 ) &
+
+tint2 &
 
 ## Volume control for systray
 (sleep 2s && pnmixer) &
@@ -64,6 +66,7 @@ xscreensaver -no-splash &
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
 xset r rate 250 25 &
+xset mouse 2/1 0
 
 ## Turn on/off system beep
 xset b off &
