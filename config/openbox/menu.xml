@@ -409,14 +409,14 @@
 		<item label="Lock Screen">
 			<action name="Execute">
 				<command>
-					cb-lock
+					cbpp-lock
 				</command>
 			</action>
 		</item>
 		<item label="Exit">
 			<action name="Execute">
 				<command>
-					cb-exit
+					cbpp-exit
 				</command>
 			</action>
 		</item>
