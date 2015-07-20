@@ -15,10 +15,10 @@ for file in *; do
           mkdir -p "$backup_dir" # create it if it does not
         fi
         echo -n "Backing up .$file to $backup_dir/$file ... "
-        cp "$target" "$backup_dir/$file" # backup file if it exists
+        cp "$target" "$backup_dir/$file" # backup file if it exists and is not a symlink
         echo "done"
       fi
-      rm -rf "$target" # if it is a synlink then remove it
+      rm -rf "$target" # if it is a symlink then remove it
     fi
     echo -n "Linking .$file ... "
     ln -s "$PWD/$file" "$target"
