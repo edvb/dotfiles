@@ -47,28 +47,25 @@ if has('conceal')
 endif
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
-" vim-pencil plug-in options
-let g:pencil#wrapModeDefault = 'hard'
-augroup pencil
-  autocmd!
-  autocmd FileType markdown call pencil#init()
-  autocmd FileType textile call pencil#init()
-  autocmd FileType text call pencil#init({'wrap': 'hard'})
-augroup END
-
 " change netrw style to a tree
 let g:netrw_liststyle = 3
 " man netrw show numbers
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
-" change color of rainbow
-let g:rbpt_max = 15
+let g:rainbow_conf = {
+    \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+    \   'ctermfgs': ['red', 'darkred', 'red', 'darkred'],
+    \   'operators': '_,_',
+    \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    \   'separately': {
+    \       '*': {},
+    \       'vim': {
+    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    \       },
+    \   }
+    \}
 
-" load rainbow_parentheses plug-in
-au VimEnter * RainbowParenthesesToggle
-au VimEnter * RainbowParenthesesLoadRound
-au VimEnter * RainbowParenthesesLoadSquare
-au VimEnter * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
 
 " catium.vim options
 let g:catium#trail = 0
