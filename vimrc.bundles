@@ -9,8 +9,6 @@ call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
 
 """ bow down to the tpope plug-ins!!
-" lots of commands to change words
-Bundle 'tpope/vim-abolish'
 " toggle comments with gcc
 Bundle 'tpope/vim-commentary'
 " git plug-in
@@ -25,18 +23,10 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 " change lots of options with co or [o/ ]o
 Bundle 'tpope/vim-unimpaired'
-" useful HTML/XML mapping
-Bundle 'tpope/vim-ragtag'
 " improve netrw file explorer
 Bundle 'tpope/vim-vinegar'
 " Readline in insert mode
 Bundle 'tpope/vim-rsi'
-" better compiling in Vim
-Bundle 'tpope/vim-dispatch'
-" UNIX commands in Vim
-Bundle 'tpope/vim-eunuch'
-" better sessions
-Bundle 'tpope/vim-obsession'
 
 """ my plug-ins
 " add nyan cat to status bar
@@ -57,18 +47,10 @@ Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'Tagbar'
 " use same keys for moving around TMUX and Vim splits
 Bundle 'christoomey/vim-tmux-navigator'
-" fuzzy finder for Vim and Bash
-Bundle 'junegunn/fzf'
 " list "FIXME", "TODO", "XXX" in new window
 Bundle 'vim-scripts/TaskList.vim'
 
 """ auto complete plug-ins
-" implement snippets
-Bundle 'Shougo/neosnippet'
-" snippets for Neocomplete
-Bundle 'Shougo/neosnippet-snippets'
-" better snippets for Neocomplete
-Bundle 'honza/vim-snippets'
 " auto complete words already in file and syntax's
 Bundle 'Shougo/neocomplete.vim'
 " addition to Neocomplete, allows auto complete of text in other TMUX panes
@@ -78,23 +60,18 @@ Bundle 'wellle/tmux-complete.vim'
 " show where marks are
 Bundle 'kshenoy/vim-signature'
 " rainbow parentheses
-Bundle 'rainbow_parentheses.vim'
+" Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'luochen1990/rainbow'
 " see where lines are added, removed, or changed in a git repo
 Bundle 'airblade/vim-gitgutter'
 " use tabline to display buffers
 Bundle 'ap/vim-buftabline'
-
-""" writing plug-ins
-" auto wrap text in markdown and text files
-Bundle 'reedes/vim-pencil'
 
 """ others
 " easily align text by spaces,=,ect.
 Bundle 'junegunn/vim-easy-align'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
-" some programs use this to embed vim
-Bundle 'ardagnir/vimbed'
 
 filetype plugin indent on
 
