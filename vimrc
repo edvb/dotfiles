@@ -218,6 +218,16 @@ if s:color == 'molokai'
   hi Folded  ctermbg=none ctermfg=59
 endif
 
+" fix highlighting of special symbols
+function! C_Syntax()
+  syntax match _Operator "[-+&|<>=!\*~.,:%&^?]"
+  syntax match _Operator "/ \|/="
+  syntax match _Semicolon "[;]"
+  hi link _Operator Operator
+  hi _Semicolon ctermfg=red
+endfunction
+autocmd! BufRead,BufNewFile,BufEnter *.{c,cpp,h,hpp,} call C_Syntax()
+
 " status line{{{1
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
