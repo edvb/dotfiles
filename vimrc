@@ -157,7 +157,7 @@ set wildmode=list,longest,full
 " make line numbers go 1,2,3,4...
 set number
 " make the line your cursor is on 0
-" set relativenumber
+set relativenumber
 
 " extra chars like the end of line one and when text raps to next line
 set list
