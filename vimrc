@@ -297,6 +297,9 @@ nnoremap <C-P> :bprev<CR>
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
 
+" TODO: Fix this
+nnoremap ~ ~h
+
 " pair completion{{{2
 inoremap {        {}<Left>
 inoremap {<CR>    {<CR>}<Esc>O
