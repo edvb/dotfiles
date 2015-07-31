@@ -294,10 +294,12 @@ vnoremap < <gv
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
+" improve up and down shortcuts
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
 
 " TODO: Fix this
+" stop ~ from shifting over one every use
 nnoremap ~ ~h
 
 " pair completion{{{2
