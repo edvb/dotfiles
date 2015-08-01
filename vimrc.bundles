@@ -72,9 +72,10 @@ Bundle 'ap/vim-buftabline'
 Bundle 'junegunn/vim-easy-align'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
+" ui for changing to open buffer
+Bundle 'mihaifm/bufstop'
 
 " Bundle 'itchyny/vim-cursorword'
-Bundle 'mihaifm/bufstop'
 
 filetype plugin indent on
 
