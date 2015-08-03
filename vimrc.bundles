@@ -75,7 +75,7 @@ Bundle 'jayflo/vim-skip'
 " ui for changing to open buffer
 Bundle 'mihaifm/bufstop'
 
-" Bundle 'itchyny/vim-cursorword'
+Bundle 'itchyny/vim-cursorword'
 
 filetype plugin indent on
 
