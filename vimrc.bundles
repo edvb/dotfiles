@@ -66,6 +66,8 @@ Bundle 'luochen1990/rainbow'
 Bundle 'airblade/vim-gitgutter'
 " use tabline to display buffers
 Bundle 'ap/vim-buftabline'
+" highlight all words under cursor
+Bundle 'itchyny/vim-cursorword'
 
 """ others
 " easily align text by spaces,=,ect.
@@ -74,8 +76,6 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'jayflo/vim-skip'
 " ui for changing to open buffer
 Bundle 'mihaifm/bufstop'
-
-Bundle 'itchyny/vim-cursorword'
 
 filetype plugin indent on
 
