@@ -76,7 +76,7 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'jayflo/vim-skip'
 " ui for changing to open buffer
 Bundle 'mihaifm/bufstop'
-
+" refactor names very easily
 Bundle 'adinapoli/vim-markmultiple'
 
 filetype plugin indent on
