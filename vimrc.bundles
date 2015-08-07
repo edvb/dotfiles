@@ -57,10 +57,9 @@ Bundle 'Shougo/neocomplete.vim'
 Bundle 'wellle/tmux-complete.vim'
 
 """ visual plug-ins
-" show where marks are
+" show where vim marks are
 Bundle 'kshenoy/vim-signature'
 " rainbow parentheses
-" Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'luochen1990/rainbow'
 " see where lines are added, removed, or changed in a git repo
 Bundle 'airblade/vim-gitgutter'
@@ -70,11 +69,11 @@ Bundle 'ap/vim-buftabline'
 Bundle 'itchyny/vim-cursorword'
 
 """ others
-" easily align text by spaces,=,ect.
+" easily align text by charaters
 Bundle 'junegunn/vim-easy-align'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
-" ui for changing to open buffer
+" ui for switching to open buffer
 Bundle 'mihaifm/bufstop'
 " refactor selected names in the file very easily
 Bundle 'adinapoli/vim-markmultiple'
