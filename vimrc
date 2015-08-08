@@ -79,8 +79,8 @@ nmap <silent> <F3> :TagbarToggle<CR>
 
 " GoldenView stuff
 let g:goldenview__enable_default_mapping = 0
-nmap <silent> <C-o>  <Plug>GoldenViewSplit
-nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+nmap <silent> <C-O>     <Plug>GoldenViewSplit
+nmap <silent> <leader>o <Plug>GoldenViewSwitchMain
 
 " Neocomplete tab to select
 imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -90,11 +90,6 @@ inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
 inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
 inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
 
-" Neosnippet mappings
-imap <C-l> <Plug>(neosnippet_expand_or_jump)
-smap <C-l> <Plug>(neosnippet_expand_or_jump)
-xmap <C-l> <Plug>(neosnippet_expand_target)
-
 " tmux-navigator plug-in mappings
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
@@ -102,9 +97,6 @@ nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
 nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
 nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
-
-" mapping for FZF plug-in
-nnoremap <silent> <C-I> :FZF!<CR>
 
 " Easy Align mappings
 vmap <Enter> <Plug>(EasyAlign)
