@@ -266,8 +266,8 @@ inoremap jj <Esc>
 " make ctrl+c completely like ESC
 inoremap <C-c> <Esc><Esc>
 
-" ZZ is save and quit and ZQ is just quit
-" make ZS save without closing
+" ZZ is save and quit and ZQ is just quit, so...
+" make ZS to save without closing
 nnoremap ZS :w<CR>
 " make ZA save and quit all windows
 nnoremap ZA :wqall<CR>
