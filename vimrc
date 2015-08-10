@@ -283,8 +283,8 @@ vnoremap > >gv
 vnoremap < <gv
 
 " easily change buffers
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+nnoremap <C-H> :bprev<CR>
+nnoremap <C-L> :bnext<CR>
 
 " improve up and down shortcuts
 nnoremap <C-J> <C-D>
