@@ -260,7 +260,7 @@ set statusline+=%#SLblue#\ %l/%L  " line/total lines
 set statusline+=%#ErrorMsg#%{SyntasticStatuslineFlag()} " Syntastic Error
 
 " mapping{{{1
-" make jj typed fast while in insert mode switch to normal mode :D
+" make jj typed quickly while in insert mode switch to normal mode :D
 inoremap jj <Esc>
 
 " make ctrl+c completely like ESC
