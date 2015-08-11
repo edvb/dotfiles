@@ -290,7 +290,7 @@ nnoremap <C-L> :bnext<CR>
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
 
-" TODO: Fix this
+" TODO: Improve this
 " stop ~ from shifting over one every use
 nnoremap ~ ~h
 
