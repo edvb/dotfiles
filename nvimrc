@@ -62,3 +62,7 @@ nnoremap ZS :w<CR>
 " make ZA save and quit all windows
 nnoremap ZA :wqall<CR>
 
+" easily change buffers
+nnoremap <C-H> :bprev<CR>
+nnoremap <C-L> :bnext<CR>
+
