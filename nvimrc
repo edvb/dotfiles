@@ -66,3 +66,7 @@ nnoremap ZA :wqall<CR>
 nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
 
+" improve up and down shortcuts
+nnoremap <C-J> <C-D>
+nnoremap <C-K> <C-U>
+
