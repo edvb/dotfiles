@@ -65,6 +65,10 @@ nnoremap ZA :wqall<CR>
 " C changes until end of line and D deletes until end of line, so why not Y?
 noremap Y y$
 
+" better indenting for visual mode
+vnoremap > >gv
+vnoremap < <gv
+
 " easily change buffers
 nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
