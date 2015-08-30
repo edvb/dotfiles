@@ -62,3 +62,6 @@ nnoremap ZS :w<CR>
 " make ZA save and quit all windows
 nnoremap ZA :wqall<CR>
 
+" C changes until end of line and D deletes until end of line, so why not Y?
+noremap Y y$
+
