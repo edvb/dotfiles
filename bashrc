@@ -71,6 +71,7 @@ export EDITOR='vim'
 # export EDITOR='emacs'
 
 export gh='https://github.com'
+export ghed='https://github.com/edvb54'
 
 # allow for color support in terminal
 if [ "$TERM" == "xterm" ]; then
