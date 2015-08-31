@@ -1,3 +1,4 @@
+" basic{{{1
 syntax on
 set autoindent                  " I hope you know what this does
 set autowrite                   " automatically write before running commands that need it to be written
@@ -53,6 +54,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" mapping{{{1
 " make jj typed quickly while in insert mode switch to normal mode :D
 inoremap jj <Esc>
 
