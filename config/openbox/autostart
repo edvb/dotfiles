@@ -33,8 +33,6 @@ hsetroot -solid "#2E3436" &
 (\
 nitrogen --restore && \
 cb-compositor --start \
-#sleep 2s && \
-#tint2 \
 ) &
 
 tint2 &
@@ -76,4 +74,6 @@ xset b off &
 
 ## Run the conky
 conky -q &
+
+nm-applet &
 
