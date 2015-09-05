@@ -54,6 +54,23 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" highlighting{{{1
+" highlight the 81st column so you know when your line is to long
+call matchadd('Error', '\%81v', 100)
+
+au BufRead,BufNewFile *.md  set filetype=markdown
+au BufRead,BufNewFile *bash_profile* set filetype=sh
+au BufRead,BufNewFile *tmux.conf*    set filetype=sh
+au BufRead,BufNewFile *conkyrc*      set filetype=sh
+au BufRead,BufNewFile *gitconfig*    set filetype=gitconfig
+
+" spell check
+hi SpellBad ctermfg=red cterm=underline
+if version >= 700
+  set spl=en spell
+  set nospell
+endif
+
 " mapping{{{1
 " make jj typed quickly while in insert mode switch to normal mode :D
 inoremap jj <Esc>
