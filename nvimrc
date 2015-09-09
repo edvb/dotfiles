@@ -96,3 +96,27 @@ nnoremap <C-L> :bnext<CR>
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
 
+" pair completion{{{2
+inoremap {        {}<Left>
+inoremap {<CR>    {<CR>}<Esc>O
+inoremap {<Space> {<Space><Space>}<Left><Left>
+inoremap {{       {
+inoremap {}       {}
+
+inoremap (        ()<Left>
+inoremap (<CR>    (<CR>)<Esc>O
+inoremap (<Space> (<Space><Space>)<Left><Left>
+inoremap ((       (
+inoremap ()       ()
+
+inoremap [        []<Left>
+inoremap [<CR>    [<CR>]<Esc>O
+inoremap [<Space> [<Space><Space>]<Left><Left>
+inoremap [[       [
+inoremap []       []
+
+inoremap <>    <><Left>
+inoremap ""    ""<Left>
+inoremap ''    ''<Left>
+inoremap ``    ``<Left>
+
