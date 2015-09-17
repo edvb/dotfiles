@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# EDit with your EDITOR
+
+if [[ "$@" == "" ]]; then
+	if [ -f .vim.sh ]; then
+		./.vim.sh
+	else
+		$EDITOR .
+	fi
+else
+	$EDITOR "$@"
+fi
