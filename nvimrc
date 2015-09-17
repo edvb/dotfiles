@@ -37,7 +37,7 @@ set wildmode=list,longest,full
 " make line numbers go 1,2,3,4...
 set number
 " make the line your cursor is on 0
-set relativenumber
+" set relativenumber
 
 " extra chars like the end of line one and when text raps to next line
 set list
@@ -52,6 +52,23 @@ au InsertLeave * if &mod && expand('%')!=''|write|endif
 " save line number line when reopening file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" highlighting{{{1
+" highlight the 81st column so you know when your line is to long
+call matchadd('Error', '\%81v', 100)
+
+au BufRead,BufNewFile *.md  set filetype=markdown
+au BufRead,BufNewFile *bash_profile* set filetype=sh
+au BufRead,BufNewFile *tmux.conf*    set filetype=sh
+au BufRead,BufNewFile *conkyrc*      set filetype=sh
+au BufRead,BufNewFile *gitconfig*    set filetype=gitconfig
+
+" spell check
+hi SpellBad ctermfg=red cterm=underline
+if version >= 700
+  set spl=en spell
+  set nospell
 endif
 
 " mapping{{{1
@@ -78,4 +95,28 @@ nnoremap <C-L> :bnext<CR>
 " improve up and down shortcuts
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
+
+" pair completion
+inoremap {        {}<Left>
+inoremap {<CR>    {<CR>}<Esc>O
+inoremap {<Space> {<Space><Space>}<Left><Left>
+inoremap {{       {
+inoremap {}       {}
+
+inoremap (        ()<Left>
+inoremap (<CR>    (<CR>)<Esc>O
+inoremap (<Space> (<Space><Space>)<Left><Left>
+inoremap ((       (
+inoremap ()       ()
+
+inoremap [        []<Left>
+inoremap [<CR>    [<CR>]<Esc>O
+inoremap [<Space> [<Space><Space>]<Left><Left>
+inoremap [[       [
+inoremap []       []
+
+inoremap <>    <><Left>
+inoremap ""    ""<Left>
+inoremap ''    ''<Left>
+inoremap ``    ``<Left>
 
