@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-# ed: EDit with your EDITOR
-ed() {
-	if [[ "$@" == "" ]]; then
-		$EDITOR .
-	else
-		$EDITOR "$@"
-	fi
-}
-
 # ED: Rotate between EDITORs
 ED() {
 	local EDITOR_new
