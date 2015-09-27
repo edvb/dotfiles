@@ -79,5 +79,7 @@ Bundle 'mihaifm/bufstop'
 Bundle 'adinapoli/vim-markmultiple'
 Bundle 'terryma/vim-expand-region'
 
+Bundle 'a.vim'
+
 filetype plugin indent on
 

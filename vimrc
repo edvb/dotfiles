@@ -102,6 +102,8 @@ nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
 vmap <Enter> <Plug>(EasyAlign)
 nmap gA      <Plug>(EasyAlign)
 
+nmap <leader>a :A<CR>
+
 " useful mapping for Vundle
 au BufRead,BufNewFile *vimrc* nmap gb :w<CR>:source %<CR>:VundleInstall<CR>
 au BufRead,BufNewFile *vimrc* nmap gB :w<CR>:source %<CR>:VundleClean<CR>
