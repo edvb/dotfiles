@@ -5,6 +5,8 @@
 if [[ "$@" == "" ]]; then
 	if [ -f .vim.sh ]; then
 		./.vim.sh
+	elif [[ "ls -l | wc -l" -le 5 ]]; then
+		$EDITOR *
 	else
 		$EDITOR .
 	fi
