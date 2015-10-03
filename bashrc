@@ -82,7 +82,7 @@ fi
 # [[ -z "$TMUX" ]] && exec tmux -2
 
 # load other files
-source ~/dotfiles/bin/edium.sh
+source ~/dotfiles/bin/ED.sh
 source ~/dotfiles/bin/checkium.sh
 source ~/dotfiles/bin/colors.sh
 source ~/dotfiles/bin/git-prompt.sh
