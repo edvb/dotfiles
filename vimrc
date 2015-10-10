@@ -285,6 +285,7 @@ vnoremap > >gv
 vnoremap < <gv
 
 " easily change buffers
+" TODO: Fix
 nnoremap <C-H> :bprev<CR>
 nnoremap <C-B> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
@@ -292,10 +293,6 @@ nnoremap <C-L> :bnext<CR>
 " improve up and down shortcuts
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
-
-" TODO: Improve this
-" stop ~ from shifting over one every use
-nnoremap ~ ~h
 
 " pair completion{{{2
 inoremap {        {}<Left>
