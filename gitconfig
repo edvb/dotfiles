@@ -27,3 +27,5 @@
 	c = commit
 	p = push
 
+[credential]
+	helper = cache --timeout=43200
