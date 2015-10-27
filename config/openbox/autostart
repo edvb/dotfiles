@@ -40,6 +40,9 @@ tint2 &
 ## Volume control for systray
 (sleep 2s && pnmixer) &
 
+## Gnome Pie
+gnome-pie &
+
 ## Volume keys daemon
 xfce4-volumed &
 
