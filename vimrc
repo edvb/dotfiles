@@ -294,6 +294,8 @@ nnoremap <C-L> :bnext<CR>
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
 
+inoremap /* /*  */<Left><Left><Left>
+
 " pair completion{{{2
 inoremap {        {}<Left>
 inoremap {<CR>    {<CR>}<Esc>O
