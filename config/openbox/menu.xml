@@ -333,7 +333,7 @@
 						</command>
 					</action>
 				</item>
-                <item label="Restart tint2">
+				<item label="Restart tint2">
 					<action name="Execute">
 						<command>
 							tint2restart
