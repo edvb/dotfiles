@@ -82,14 +82,10 @@ fi
 # [[ -z "$TMUX" ]] && exec tmux -2
 
 # load other files
-source ~/dotfiles/bin/ED.sh
-source ~/dotfiles/bin/checkium.sh
-source ~/dotfiles/bin/colors.sh
-source ~/dotfiles/bin/git-prompt.sh
-source ~/dotfiles/bin/z.sh
-if [ -f ~/.fzf.bash ]; then
-    source ~/.fzf.bash
-fi
+source ~/bin/ED.sh
+source ~/bin/checkium.sh
+source ~/bin/colors.sh
+source ~/bin/z.sh
 
 # aliases {{{1
 # better tab complete
