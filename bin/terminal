@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# terminal='terminator'
-# terminal='gnome-terminal'
-terminal='st'
-
-exec $terminal $@
-
