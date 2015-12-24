@@ -2,7 +2,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if found
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
 fi
 
