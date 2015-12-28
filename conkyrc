@@ -33,12 +33,12 @@ ${color 268BD2}SYSTEM ${hr 2}$color
 $alignc${color 6C71C4}$sysname $kernel on $machine
 $alignc${color 2AA198}${exec whoami}@$nodename$color
 ${color B58900}${cpugraph}$color
-${color FDF6E3}Core 1: ${color 2AA198}${cpu cpu0}% ${color B58900}${cpubar cpu0}$color
-${color FDF6E3}Core 2: ${color 2AA198}${cpu cpu1}% ${color B58900}${cpubar cpu1}$color
-${color FDF6E3}Core 3: ${color 2AA198}${cpu cpu2}% ${color B58900}${cpubar cpu2}$color
-${color FDF6E3}Core 4: ${color 2AA198}${cpu cpu3}% ${color B58900}${cpubar cpu3}$color
-${color FDF6E3}Core 5: ${color 2AA198}${cpu cpu4}% ${color B58900}${cpubar cpu4}$color
-${color FDF6E3}Core 6: ${color 2AA198}${cpu cpu5}% ${color B58900}${cpubar cpu5}$color
+${color FDF6E3}Core 1: ${color 2AA198}${cpu cpu1}% ${color B58900}${cpubar cpu1}$color
+${color FDF6E3}Core 2: ${color 2AA198}${cpu cpu2}% ${color B58900}${cpubar cpu2}$color
+${color FDF6E3}Core 3: ${color 2AA198}${cpu cpu3}% ${color B58900}${cpubar cpu3}$color
+${color FDF6E3}Core 4: ${color 2AA198}${cpu cpu4}% ${color B58900}${cpubar cpu4}$color
+${color FDF6E3}Core 5: ${color 2AA198}${cpu cpu5}% ${color B58900}${cpubar cpu5}$color
+${color FDF6E3}Core 6: ${color 2AA198}${cpu cpu6}% ${color B58900}${cpubar cpu6}$color
 
 ${color FDF6E3}RAM:  ${color 2AA198}$memperc% ${color CB4B16}${membar 6}$color
 ${color FDF6E3}Swap: ${color 2AA198}$swapperc% ${color DC322F} ${swapbar 6}$color
