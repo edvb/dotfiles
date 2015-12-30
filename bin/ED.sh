@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # ED: Rotate between EDITORs
+
 ED() {
 	local EDITOR_new
 	if [[ $EDITOR == "vim" ]]; then
