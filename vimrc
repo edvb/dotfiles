@@ -285,9 +285,7 @@ vnoremap > >gv
 vnoremap < <gv
 
 " easily change buffers
-" TODO: Fix
 nnoremap <C-H> :bprev<CR>
-nnoremap <C-B> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
 
 " improve up and down shortcuts
@@ -321,4 +319,6 @@ inoremap <>    <><Left>
 inoremap ""    ""<Left>
 inoremap ''    ''<Left>
 inoremap ``    ``<Left>
+
+inoremap /* /*  */<Left><Left><Left>
 
