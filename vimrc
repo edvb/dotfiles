@@ -185,6 +185,7 @@ au BufRead,BufNewFile *bash_profile* set filetype=sh
 au BufRead,BufNewFile *tmux.conf*    set filetype=sh
 au BufRead,BufNewFile *conkyrc*      set filetype=sh
 au BufRead,BufNewFile *gitconfig*    set filetype=gitconfig
+au BufRead,BufNewFile TODO           set filetype=markdown
 
 " spell check
 hi SpellBad ctermfg=red cterm=underline
