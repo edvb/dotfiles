@@ -1,4 +1,4 @@
-set nocompatible " make Vim not vi (see README for why)
+set nocompatible " make Vim not vi
 " plug-ins{{{1
 
 " run separate bundles vimrc
@@ -281,7 +281,7 @@ noremap Y y$
 " repeat colon commands
 nnoremap Q :<Up><CR>
 
-" better indenting for visual mode
+" keep selected area when indenting
 vnoremap > >gv
 vnoremap < <gv
 
