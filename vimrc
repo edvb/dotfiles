@@ -1,4 +1,4 @@
-set nocompatible " make Vim not vi (see README for why)
+set nocompatible " make Vim not vi
 " plug-ins{{{1
 
 " run separate bundles vimrc
@@ -185,6 +185,7 @@ au BufRead,BufNewFile *bash_profile* set filetype=sh
 au BufRead,BufNewFile *tmux.conf*    set filetype=sh
 au BufRead,BufNewFile *conkyrc*      set filetype=sh
 au BufRead,BufNewFile *gitconfig*    set filetype=gitconfig
+au BufRead,BufNewFile TODO           set filetype=markdown
 
 " spell check
 hi SpellBad ctermfg=red cterm=underline
@@ -280,7 +281,7 @@ noremap Y y$
 " repeat colon commands
 nnoremap Q :<Up><CR>
 
-" better indenting for visual mode
+" keep selected area when indenting
 vnoremap > >gv
 vnoremap < <gv
 
@@ -292,9 +293,8 @@ nnoremap <C-L> :bnext<CR>
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
 
-cnoremap mr<CR> make run<CR>
-
-inoremap /* /*  */<Left><Left><Left>
+nnoremap <leader>m :make run<CR>
+nnoremap <leader>c :!ctags -R .<CR>
 
 " pair completion{{{2
 inoremap {        {}<Left>

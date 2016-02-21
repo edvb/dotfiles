@@ -80,6 +80,7 @@ Bundle 'adinapoli/vim-markmultiple'
 Bundle 'terryma/vim-expand-region'
 
 Bundle 'a.vim'
+Bundle 'mhinz/vim-grepper'
 
 filetype plugin indent on
 
