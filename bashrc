@@ -68,18 +68,11 @@ PS2='\[${White}\]\$\[${Color_Off}\] '
 
 # basic {{{1
 export EDITOR='vim'
-# export EDITOR='emacs'
-
-export gh='https://github.com'
-export ghed='https://github.com/edvb54'
 
 # allow for color support in terminal
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
-
-# update TMUX if ssh'ed into computer in TMUX
-# [[ -z "$TMUX" ]] && exec tmux -2
 
 # load other files
 source ~/bin/ED.sh
