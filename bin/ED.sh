@@ -12,6 +12,5 @@ ED() {
 
 	echo "Setting EDITOR to $EDITOR_new"
 	EDITOR=$EDITOR_new
-	echo "EDITOR is now $EDITOR"
 }
 
