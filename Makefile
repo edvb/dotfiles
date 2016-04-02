@@ -4,6 +4,10 @@ TARGETCONH = ~/remote/code/downloads
 
 symlinks = bash_profile \
            bashrc \
+           config/clipit \
+           config/htop \
+           config/openbox \
+           config/tint2 \
            conkyrc \
            dircolors \
            emacs \
