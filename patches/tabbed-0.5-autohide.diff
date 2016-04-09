@@ -1,6 +1,6 @@
-diff -up ./tabbed.c ../tabbed-0.5/tabbed.c
---- ./tabbed.c	2013-06-24 14:34:47.208245039 +0200
-+++ ../tabbed-0.5/tabbed.c	2013-06-24 14:36:58.423921877 +0200
+diff -up a/tabbed.c b/tabbed.c
+--- a/tabbed.c	2013-06-24 14:34:47.208245039 +0200
++++ b/tabbed.c	2013-06-24 14:36:58.423921877 +0200
 @@ -311,6 +311,12 @@ drawbar(void) {
  		return;
  	}
@@ -12,5 +12,5 @@ diff -up ./tabbed.c ../tabbed-0.5/tabbed.c
 +		XMoveResizeWindow(dpy, clients[1]->win, 0, bh, ww, wh - bh);
 +
  	width = ww;
- 	clients[nclients-1]->tabx = -1;
- 	fc = getfirsttab();
+ 	cc = ww / tabwidth;
+ 	if (nclients > cc)
