@@ -272,6 +272,9 @@ inoremap jj <Esc>
 " make ctrl+c completely like ESC
 inoremap <C-c> <Esc><Esc>
 
+" extend ESC to also clear search highlight
+nnoremap <ESC> :noh<CR><ESC>
+
 " ZZ is save and quit and ZQ is just quit, so...
 " make ZS to save without closing
 nnoremap ZS :w<CR>
