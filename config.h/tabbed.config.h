@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]        = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
+static const char font[]        = "FantasqueSansMono:pixelsize=18:antialias=false:autohint=false";
 static const char* normbgcolor  = "#073642";
 static const char* normfgcolor  = "#657B83";
 static const char* selbgcolor   = "#EEE8D5";
@@ -38,7 +38,7 @@ static Key keys[] = {
 	/* modifier             key        function     argument */
 	{ MODKEY|ShiftMask,     XK_Return, focusonce,   { 0 } },
 	{ MODKEY|ShiftMask,     XK_Return, spawn,       { 0 } },
-	{ MODKEY,               XK_t,      spawn,       SETPROP("_TABBED_SELECT_TAB") },
+	{ MODKEY|ShiftMask,     XK_t,      spawn,       SETPROP("_TABBED_SELECT_TAB") },
 
 	{ MODKEY|ShiftMask,     XK_l,      rotate,      { .i = +1 } },
 	{ MODKEY|ShiftMask,     XK_h,      rotate,      { .i = -1 } },
