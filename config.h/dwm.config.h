@@ -39,6 +39,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "fibonacci.c"
 #include "gaplessgrid.c"
 #include "horizgrid.c"
+#include "tcl.c"
 static const Layout layouts[] = {
 	/* symbol   arrange function */
 	{ "",      tile        },
@@ -50,6 +51,7 @@ static const Layout layouts[] = {
 	{ "",      dwindle     },
 	{ "",      gaplessgrid },
 	{ "",      horizgrid   },
+	{ "|||",    tcl         },
 	{ "",      monocle     },
 };
 
@@ -109,7 +111,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_s,      setlayout,      {.v = &layouts[6]} },
 	{ MODKEY|ControlMask,           XK_g,      setlayout,      {.v = &layouts[7]} },
 	{ MODKEY|ControlMask|ShiftMask, XK_g,      setlayout,      {.v = &layouts[8]} },
-	{ MODKEY|ControlMask,           XK_m,      setlayout,      {.v = &layouts[9]} },
+	{ MODKEY|ControlMask,           XK_r,      setlayout,      {.v = &layouts[9]} },
+	{ MODKEY|ControlMask,           XK_m,      setlayout,      {.v = &layouts[10]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 
 	{ Mod1Mask,                     XK_space,  togglefloating, {0} },
