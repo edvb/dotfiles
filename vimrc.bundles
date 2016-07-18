@@ -30,7 +30,8 @@ Bundle 'tpope/vim-rsi'
 
 """ my plug-ins
 " add nyan cat to status bar
-Bundle 'edvb54/catium.vim'
+Bundle 'edvb/catium.vim'
+Bundle 'edvb/dmenu.vim'
 
 """ language specific plug-ins
 " syntax checker
