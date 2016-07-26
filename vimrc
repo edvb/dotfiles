@@ -64,14 +64,22 @@ let g:rainbow_conf = {
   \   },
   \ }
   \}
-
 let g:rainbow_active = 1
 
 " catium.vim options
 let g:catium#trail = 0
-let g:catium#body  = 3
-let g:catium#face  = 1
-let g:catium#space = 4
+let g:catium#body  = 0
+let g:catium#face  = 0
+let g:catium#space = 0
+
+" syntastic options
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_vim_checkers = ['vint']
+
+" gitgutter options
+let g:gitgutter_max_signs = 1000
 
 " mappings{{{2
 " allow for F3 ro turn on Tagbar plug-in
@@ -253,9 +261,9 @@ au InsertLeave * hi SLblue     ctermfg=4   ctermbg=0
 au InsertLeave * hi SLcyan     ctermfg=6   ctermbg=0
 
 hi statusline ctermfg=0 ctermbg=15
-hi SLgreen    ctermfg=2   ctermbg=0
-hi SLblue     ctermfg=4   ctermbg=0
-hi SLcyan     ctermfg=6   ctermbg=0
+hi SLgreen    ctermfg=2 ctermbg=0
+hi SLblue     ctermfg=4 ctermbg=0
+hi SLcyan     ctermfg=6 ctermbg=0
 
 set statusline=%#SLblue#%f        " file name
 set statusline+=%#SLgreen#\ %Y    " filetype
