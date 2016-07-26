@@ -26,6 +26,8 @@
 	A = add -A .
 	c = commit
 	p = push
+[pager]
+	diff = diff-highlight | less
 
 [credential]
 	helper = cache --timeout=43200
