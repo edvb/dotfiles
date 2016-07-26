@@ -276,7 +276,8 @@ inoremap jj <Esc>
 inoremap <C-c> <Esc><Esc>
 
 " extend ESC to also clear search highlight
-nnoremap <ESC> :noh<CR><ESC>
+nnoremap <silent> <ESC> :noh<CR>
+nnoremap <ESC>[ <ESC>[
 
 " ZZ is save and quit and ZQ is just quit, so...
 " make ZS to save without closing
