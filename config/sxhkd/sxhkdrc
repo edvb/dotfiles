@@ -1,0 +1,11 @@
+super + {F11,F10,F12}
+	cmus-remote {-u,-r,-n}
+
+super + x
+	/home/ed/.config/dmenu/dwm-mode.sh -c
+
+super + z
+	/home/ed/.config/dmenu/menu.sh
+
+super + ctrl + shift + l
+	slock
