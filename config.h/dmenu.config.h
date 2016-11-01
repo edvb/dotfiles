@@ -11,8 +11,8 @@ static const char *normbgcolor = "#073642"; /* -nb option; normal background    
 static const char *normfgcolor = "#EEE8D5"; /* -nf option; normal foreground                 */
 static const char *selbgcolor  = "#B58900"; /* -sb option; selected background               */
 static const char *selfgcolor  = "#EEE8D5"; /* -sf option; selected foreground               */
-static const char *outbgcolor  = "#00ffff";
-static const char *outfgcolor  = "#000000";
+static const char *outbgcolor  = "#CB4B16";
+static const char *outfgcolor  = "#EEE8D5";
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
 
