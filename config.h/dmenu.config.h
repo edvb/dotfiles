@@ -7,12 +7,12 @@ static const char *fonts[] = {
 	"FantasqueSansMono-Regular:pixelsize=18"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the elft of input field */
-static const char *normbgcolor = "#073642"; /* -nb option; normal background                 */
-static const char *normfgcolor = "#EEE8D5"; /* -nf option; normal foreground                 */
-static const char *selbgcolor  = "#B58900"; /* -sb option; selected background               */
-static const char *selfgcolor  = "#EEE8D5"; /* -sf option; selected foreground               */
-static const char *outbgcolor  = "#CB4B16";
-static const char *outfgcolor  = "#EEE8D5";
+static const char *colors[SchemeLast][2] = {
+	/*                  fg         bg       */
+	[SchemeNorm] = { "#EEE8D5", "#073642" },
+	[SchemeSel] = { "#EEE8D5", "#B58900" },
+	[SchemeOut] = { "#EEE8D5", "#CB4B16" },
+};
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
 
