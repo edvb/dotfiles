@@ -29,6 +29,10 @@ confighlink = dmenu \
 all:
 	@echo to install dotfiles to $(TARGET) run \'make install\'
 
+install-dotfiles: $(symlinks)
+
+install-config.h: $(symlinks)
+
 install: $(symlinks) $(confighlink)
 	ln -fsn $(CURDIR)/bin $(TARGET)/bin
 
@@ -49,4 +53,4 @@ $(confighlink):
 		ln -fsn $(CURDIR)/config.h/$@.config.h $(TARGETCONH)/$@/config.h; \
 	fi
 
-.PHONY: all install $(symlinks) $(confighlink)
+.PHONY: all install-dotfiles install-config.h install $(symlinks) $(confighlink)
