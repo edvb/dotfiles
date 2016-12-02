@@ -95,6 +95,7 @@ fi
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # better ls-ing
 alias ll='ls -alF'
