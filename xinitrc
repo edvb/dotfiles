@@ -15,6 +15,8 @@ nm-applet &           # network monitor
 pnmixer &             # volume control
 xfce4-power-manager & # enable power management
 
+sxhkd &
+
 screen.sh & # configure monitors
 
 ### window manager
