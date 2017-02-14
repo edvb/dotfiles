@@ -1,4 +1,4 @@
-# ED's Dotfiles
+# dotfiles
 
 This is the place I use to store all my configuration files for programs such
 as Vim, Bash, Tmux, etc. These files are designed to be used on Linux and most
@@ -39,13 +39,6 @@ enter this into Vim:
 
 After it has finished installing you can exit the Vundle window and the plug-ins
 should be installed.
-
-##Contact
-
-If you have any questions or comments please contact me at edvb54@gmail.com or
-leave a comment wherever.
-
--ED
 
 ## License
 
