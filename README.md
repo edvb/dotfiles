@@ -40,7 +40,3 @@ enter this into Vim:
 After it has finished installing you can exit the Vundle window and the plug-ins
 should be installed.
 
-## License
-
-GPL v3 License
-
