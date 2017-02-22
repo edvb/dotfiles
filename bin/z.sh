@@ -121,7 +121,7 @@ _z() {
         # if we hit enter on a completion just go there
         case "$last" in
             # completions will always start with /
-            /*) [ -z "$list" -a -d "$last" ] && cd "$last" && return;;
+            /*) [ -z "$list" -a -d "$last" ] && cd "$last" && sett && return;;
         esac
 
         # no file yet
@@ -200,6 +200,7 @@ _z() {
         ')"
         [ $? -gt 0 ] && return
         [ "$cd" ] && cd "$cd"
+        sett
     fi
 }
 
