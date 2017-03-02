@@ -46,17 +46,17 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "tcl.c"
 static const Layout layouts[] = {
 	/* symbol   arrange function */
-	{ "",      tile        },
-	{ "",      NULL        }, /* floating */
+	{ "[]=",    tile        },
+	{ "><>",    NULL        }, /* floating */
 	{ "",      htile       },
 	{ "D  ",    deck        },
 	{ "[o]",    centered    },
-	{ "",      spiral      },
-	{ "",      dwindle     },
-	{ "",      gaplessgrid },
-	{ "",      horizgrid   },
+	{ "[@]",    spiral      },
+	{ "[\\]",   dwindle     },
+	{ "###",      gaplessgrid },
+	{ "###",    horizgrid   },
 	{ "|||",    tcl         },
-	{ "",      monocle     },
+	{ "[M]",    monocle     },
 };
 
 /* key definitions */
