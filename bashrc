@@ -80,6 +80,14 @@ source ~/bin/checkium.sh
 source ~/bin/colors.sh
 source ~/bin/z.sh
 
+# add dart's bin to PATH
+if [ -d "/usr/lib/dart/bin" ] ; then
+    PATH="/usr/lib/dart/bin:$PATH"
+fi
+if [ -d "$HOME/code/dart/flutter/bin" ] ; then
+    PATH="$HOME/code/dart/flutter/bin:$PATH"
+fi
+
 # aliases {{{1
 # better tab complete
 bind '"\t":menu-complete'
