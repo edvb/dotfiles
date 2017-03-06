@@ -122,6 +122,7 @@ alias cpls='clear; pwd; ls'
 alias cmon='sudo "$BASH" -c "$(history -p !!)"'
 alias emacs='emacs --no-window-system'
 alias t='todoium'
+alias old='tg old'
 
 # mkdir and cd in one command
 mkcd () {
