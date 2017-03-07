@@ -13,6 +13,15 @@ checkium_color() {
     fi
 }
 
+checkium_color_simple() {
+    if [[ $? -eq 0 ]]; then
+        return 0
+    else
+        echo -ne "\033[0;31m"
+        return 1
+    fi
+}
+
 checkium_custom() {
     if [[ $? -eq 0 ]]; then
         local char=$1

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-title=$1
-if [[ -z $title ]]; then
-	title="$(basename "$PWD")"
-fi
-echo -n "]0;$title"
