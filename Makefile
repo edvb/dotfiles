@@ -1,6 +1,6 @@
 CURDIR ?= $(.CURDIR)
 TARGET = ~/remote
-TARGETCONH = ~/remote/code/downloads
+TARGETSL = ~/code/downloads
 
 symlinks = bash_profile \
            bashrc \
@@ -22,18 +22,20 @@ symlinks = bash_profile \
            vimrc.bundles \
            zshrc
 
-confighlink = dmenu \
-              tabbed \
-              st
+sllinks = dmenu \
+          dwm \
+          slock \
+          st \
+          tabbed
 
 all:
 	@echo to install dotfiles to $(TARGET) run \'make install\'
 
 install-dotfiles: $(symlinks)
 
-install-config.h: $(symlinks)
+install-sl: $(sllinks)
 
-install: $(symlinks) $(confighlink)
+install: $(symlinks) $(sllinks)
 	ln -fsn $(CURDIR)/bin $(TARGET)/bin
 
 $(symlinks):
@@ -47,10 +49,10 @@ $(symlinks):
 	fi
 	ln -sn $(CURDIR)/$@ $(TARGET)/.$@
 
-$(confighlink):
-	@if [ -e $(TARGETCONH)/$@ ]; then \
-		echo ln -fsn $(CURDIR)/config.h/$@.config.h $(TARGETCONH)/$@/config.h; \
-		ln -fsn $(CURDIR)/config.h/$@.config.h $(TARGETCONH)/$@/config.h; \
+$(sllinks):
+	@if [ -e $(TARGETSL)/$@ ]; then \
+		echo ln -fsn $(CURDIR)/sl/$@.h $(TARGETSL)/$@/config.h; \
+		ln -fsn $(CURDIR)/sl/$@.h $(TARGETSL)/$@/config.h; \
 	fi
 
-.PHONY: all install-dotfiles install-config.h install $(symlinks) $(confighlink)
+.PHONY: all install-dotfiles install-sl install $(symlinks) $(sllinks)

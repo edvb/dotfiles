@@ -48,12 +48,12 @@ static const Layout layouts[] = {
 	/* symbol   arrange function */
 	{ "[]=",    tile        },
 	{ "><>",    NULL        }, /* floating */
-	{ "",      htile       },
+	{ "[+]",    htile       },
 	{ "D  ",    deck        },
 	{ "[o]",    centered    },
 	{ "[@]",    spiral      },
 	{ "[\\]",   dwindle     },
-	{ "###",      gaplessgrid },
+	{ "###",    gaplessgrid },
 	{ "###",    horizgrid   },
 	{ "|||",    tcl         },
 	{ "[M]",    monocle     },
