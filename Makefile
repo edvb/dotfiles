@@ -1,5 +1,5 @@
 CURDIR ?= $(.CURDIR)
-TARGET = ~/remote
+TARGET = ~
 TARGETSL = ~/code/downloads
 
 symlinks = bash_profile \
@@ -26,6 +26,7 @@ sllinks = dmenu \
           dwm \
           slock \
           st \
+          surf \
           tabbed
 
 all:
