@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xidfile="$HOME/.surf/tabbed.xid"
+xidfile="$HOME/.surf/tabbed-surf.xid"
 uri=""
 
 if [ "$#" -gt 0 ]; then
