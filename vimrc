@@ -1,6 +1,8 @@
 set nocompatible " make Vim not vi
 " plug-ins{{{1
 
+let g:loaded_matchparen = 1
+
 " run separate bundles vimrc
 if filereadable(expand("~/dotfiles/vimrc.bundles"))
   source ~/dotfiles/vimrc.bundles
@@ -42,9 +44,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:tmuxcomplete#trigger  = 'omnifunc'
 
 " Neosnippet options
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " change netrw style to a tree
@@ -266,15 +265,16 @@ hi SLgreen    ctermfg=2 ctermbg=0
 hi SLblue     ctermfg=4 ctermbg=0
 hi SLcyan     ctermfg=6 ctermbg=0
 
-set statusline=%#SLblue#%f        " file name
-set statusline+=%#SLgreen#\ %Y    " filetype
-set statusline+=%#SLcyan#\ %M     " modified flag
+set statusline=%#SLblue#%f       " file name
+set statusline+=%#SLgreen#\ %Y   " filetype
+set statusline+=%#SLcyan#\ %M    " modified flag
 set statusline+=\ %{g:Catium()}
 
-set statusline+=\ %=              " align left
-set statusline+=%#SLcyan#%c       " column
-set statusline+=%#SLgreen#\ %p%%  " percent of file
-set statusline+=%#SLblue#\ %l/%L  " line/total lines
+set statusline+=\ %=             " move to right side
+
+set statusline+=%#SLcyan#%p%%    " column
+set statusline+=%#SLgreen#\ %c   " percent of file
+set statusline+=%#SLblue#\ %l/%L " line/total lines
 set statusline+=%#ErrorMsg#%{SyntasticStatuslineFlag()} " Syntastic Error
 
 " mapping{{{1
