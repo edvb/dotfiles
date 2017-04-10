@@ -76,8 +76,6 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'jayflo/vim-skip'
 " ui for switching to open buffer
 Bundle 'mihaifm/bufstop'
-" refactor selected names in the file very easily
-Bundle 'adinapoli/vim-markmultiple'
 Bundle 'terryma/vim-expand-region'
 
 Bundle 'a.vim'
