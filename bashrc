@@ -124,9 +124,4 @@ alias emacs='emacs --no-window-system'
 alias t='todoium'
 alias old='tg old'
 
-# mkdir and cd in one command
-mkcd () {
-    [ -n "$1" ] && mkdir -p "$@" && cd "$1"
-}
-
 #}}}
