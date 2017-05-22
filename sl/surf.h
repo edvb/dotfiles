@@ -7,7 +7,7 @@ static char *styledir       = "~/.surf/styles/";
 static char *cachefolder    = "~/.surf/cache/";
 
 static Bool kioskmode       = FALSE; /* Ignore shortcuts */
-static Bool showindicators  = FALSE;  /* Show indicators in window title */
+static Bool showindicators  = TRUE;  /* Show indicators in window title */
 static Bool zoomto96dpi     = TRUE;  /* Zoom pages to always emulate 96dpi */
 static Bool runinfullscreen = FALSE; /* Run in fullscreen mode by default */
 
