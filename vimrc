@@ -256,9 +256,9 @@ endfunction
 
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi statusline ctermfg=0 ctermbg=15
-au InsertLeave * hi SLgreen    ctermfg=2   ctermbg=0
-au InsertLeave * hi SLblue     ctermfg=4   ctermbg=0
-au InsertLeave * hi SLcyan     ctermfg=6   ctermbg=0
+au InsertLeave * hi SLgreen    ctermfg=2 ctermbg=0
+au InsertLeave * hi SLblue     ctermfg=4 ctermbg=0
+au InsertLeave * hi SLcyan     ctermfg=6 ctermbg=0
 
 hi statusline ctermfg=0 ctermbg=15
 hi SLgreen    ctermfg=2 ctermbg=0
