@@ -16,6 +16,8 @@ xfce4-power-manager & # enable power management
 
 sxhkd & # key commands
 
+rmdesktop.sh &
+
 dwmstatus.sh & # dwm status bar
 dwmmail.sh &   # email notifications for dwm
 
@@ -23,4 +25,4 @@ screen.sh & # configure monitors
 
 ### window manager
 wmname LG3D # fix JDK with dwm
-exec dwm # launch dwm
+dwmstart.sh # launch dwm
