@@ -2,7 +2,7 @@
 	email = edvb54@gmail.com
 	name = Ed van Bruggen
 [github]
-	user = edvb54
+	user = edvb
 [push]
 	default = matching
 [help]
@@ -28,6 +28,7 @@
 	p = push
 [pager]
 	diff = diff-highlight | less
-
 [credential]
 	helper = cache --timeout=43200
+[merge]
+	tool = vimdiff
