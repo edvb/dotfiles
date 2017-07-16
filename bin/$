@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# $: a script for blindly copying commands from the internet
+# $: blindly copy commands from the internet
 
 "$@"
-

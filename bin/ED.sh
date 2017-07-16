@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# ED: Rotate between $EDITORs
+# ED: change between $EDITORs
+#
+# To install add `source path/to/ED.sh` to your shell's rc file
 
 ED() {
 	local EDITOR_new

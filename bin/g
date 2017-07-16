@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# g: small script to alias git to g and automatically print status if no
-#    argument is given
+# g: tiny wrapper for git
 
 if [[ $# -eq 0 ]]; then
 	git status
