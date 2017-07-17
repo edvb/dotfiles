@@ -124,5 +124,7 @@ alias emacs='emacs --no-window-system'
 alias t='todoium'
 alias old='tg old'
 alias gdb='gdb -q'
+alias v='valgrind --leak-check=full --show-leak-kinds=all'
+alias gf='echo haha, you wish'
 
 #}}}
