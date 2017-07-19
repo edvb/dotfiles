@@ -199,8 +199,7 @@ _z() {
             }
         ')"
         [ $? -gt 0 ] && return
-        [ "$cd" ] && cd "$cd"
-        sett
+        [ "$cd" ] && cd "$cd" && sett
     fi
 }
 
