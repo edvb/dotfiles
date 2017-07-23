@@ -126,5 +126,6 @@ alias old='tg old'
 alias gdb='gdb -q'
 alias v='valgrind --leak-check=full --show-leak-kinds=all'
 alias gf='echo haha, you wish'
+alias ytdlp='youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
 
 #}}}
