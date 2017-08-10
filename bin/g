@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-# g: tiny wrapper for git
+# g: tiny git wrapper
 
 if [[ $# -eq 0 ]]; then
 	git status
 else
 	git "$@"
 fi
-

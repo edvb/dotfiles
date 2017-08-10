@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# sett: set title of a terminal
+#
+# Change the title of any terminal window. If no argument is given it sets the
+# title to the working directory, otherwise the supplied TITLE is used.
+
+title=$1
+if [[ -z $title ]]; then
+	title="$(basename "$PWD")"
+fi
+echo -n "]0;$title"

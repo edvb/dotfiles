@@ -2,17 +2,19 @@
 
 # ED: change between $EDITORs
 #
-# To install add `source path/to/ED.sh` to your shell's rc file
+# toggles your $EDITOR between your different editors.
+# To install add `source path/to/ED.sh` to your shell's rc file.
 
 ED() {
-	local EDITOR_new
-	if [[ $EDITOR == "vim" ]]; then
-		EDITOR_new="emacs"
-	elif [[ $EDITOR == "emacs" ]]; then
-		EDITOR_new="vim"
+	local new
+	if [[ "$1" != "" ]]; then
+		new="$1"
+	elif [[ $EDITOR == "vim" ]]; then
+		new="emacs"
+	else
+		new="vim"
 	fi
 
-	echo "Setting EDITOR to $EDITOR_new"
-	EDITOR=$EDITOR_new
+	echo "Setting \$EDITOR to $new"
+	EDITOR=$new
 }
-

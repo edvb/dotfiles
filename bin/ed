@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# ed: edit files with your $EDITOR
+#
+# Opens a file with your $EDITOR. If no argument is given then it opens the
+# whole directory into a tree view, or if there is only a few files in the
+# current directly then it just opens all of them.
+
+if [[ "$@" == "" ]]; then
+	if [[ $(ls -l | wc -l) -le 5 ]]; then
+		$EDITOR ./*
+	else
+		$EDITOR .
+	fi
+else
+	$EDITOR "$@"
+fi
