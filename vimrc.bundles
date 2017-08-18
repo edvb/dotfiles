@@ -28,10 +28,10 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 " change options with co or [o and ]o
 Bundle 'tpope/vim-unimpaired'
-" improve netrw file explorer
-Bundle 'tpope/vim-vinegar'
 " readline in insert mode
 Bundle 'tpope/vim-rsi'
+" unix commands in vim
+Bundle 'tpope/vim-eunuch'
 
 """ language specific plug-ins
 " syntax checker
@@ -77,7 +77,7 @@ Bundle 'itchyny/vim-cursorword'
 
 """ others
 " easily align text by characters
-Bundle 'junegunn/vim-easy-align'
+Bundle 'tommcdo/vim-lion'
 " use s and S to move through line
 Bundle 'jayflo/vim-skip'
 " increase or decrease select region automatically
