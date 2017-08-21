@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-char font[] = "FantasqueSansMono:pixelsize=18:antialias=false:autohint=false";
+char font[] = "FantasqueSansMono:pixelsize=16:antialias=false:autohint=false";
 int borderpx = 2;
 
 /*
