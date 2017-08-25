@@ -231,8 +231,8 @@ function! C_Syntax()
   syntax match _Semicolon "[;]"
   hi link _Operator Operator
   hi _Semicolon ctermfg=red
-  set sw=4
-  set ts=4
+  set sw=8
+  set ts=8
   set noexpandtab
 endfunction
 autocmd! BufRead,BufNewFile,BufEnter *.{c,cpp,h,hpp,} call C_Syntax()
