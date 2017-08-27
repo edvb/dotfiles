@@ -8,6 +8,7 @@ symlinks = bash_profile \
            config/htop \
            config/openbox \
            config/tint2 \
+           config/sxhkd \
            conkyrc \
            dircolors \
            emacs \
@@ -20,6 +21,7 @@ symlinks = bash_profile \
            vim \
            vimrc \
            vimrc.bundles \
+           xinitrc \
            zshrc
 
 sllinks = dmenu \
