@@ -127,16 +127,18 @@ set autowrite                   " automatically write before running commands th
 set hlsearch                    " turn on highlighting of searches
 set ignorecase                  " make search non case sensitive
 set incsearch                   " show the search result before you finish typing
-set noshowmode                  " turn off "--INSERT--" at bottom of screen
-set nowrap                      " change what happens when you get to edge of screen.
+set noshowmode                  " turn off '--INSERT--' at bottom of screen
+set nowrap                      " do not wrap text to newline when it gets to the end of the screen
 set shiftround                  " make indents always be at a multiple of the tab width
-set showcmd                     " show commands that you are typing
-set showmatch                   " when a bracket is inserted, briefly jump to the matching one.
+set showcmd                     " show normal mode commands that you are typing
+set showmatch                   " when a bracket is inserted, briefly highlight the matching one.
 set smartcase                   " allow you to search with more charters
+set splitbelow                  " create new splits under current window
+set splitright                  " create new vertical splits to the right
 set timeout                     " set timeout for mappings
-set notitle                     " turn off the Vim title at the top of the window
+set notitle                     " stop Vim from setting the terminal's title
 set ttyfast                     " makes Vim faster
-set visualbell                  " use visual bell instead of beeping
+set novisualbell                " disable screen flashes for error
 set backspace=2                 " turn on backspace
 set completeopt-=preview        " disable pop-up when using Neocomplete
 set cryptmethod=blowfish        " change the way Vim encrypts files to blowfish from zip
@@ -151,9 +153,8 @@ set t_ut=                       " needed if using Vim inside of tmux
 set textwidth=79                " set what line to wrap charters at.
 set ttimeoutlen=50              " change wait time for `timeout`
 set spell spelllang=en_us       " set language for spell check to United States
-"                                 Great Britain = gb, Canada = ca, Australia = au, New Zealand = nz
 set clipboard=unnamedplus       " Vim yanks go to OS's clipboard as well
-"                                 remove "plus" if not on Linux
+                                " remove 'plus' if not on Linux
 
 " set up menu stuff
 set wildmenu
