@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]        = "FantasqueSansMono:pixelsize=18:antialias=false:autohint=false";
+static const char font[]        = "FantasqueSansMono:pixelsize=18:antialias=true:autohint=false";
 static const char* normbgcolor  = "#073642";
 static const char* normfgcolor  = "#657B83";
 static const char* selbgcolor   = "#EEE8D5";
