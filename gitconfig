@@ -1,6 +1,7 @@
 [user]
 	email = ed@edryd.org
 	name = Ed van Bruggen
+	signingkey = 256B49D888C2857D
 [github]
 	user = edvb
 [push]
@@ -33,3 +34,4 @@
 	tool = vimdiff
 [commit]
 	verbose = true
+	gpgsign = true
