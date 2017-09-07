@@ -1,6 +1,6 @@
 CURDIR ?= $(.CURDIR)
 TARGET = ~
-TARGETSL = ~/code/downloads
+TARGETSL = ~/code/dl/sl
 
 symlinks = bash_profile \
            bashrc \
