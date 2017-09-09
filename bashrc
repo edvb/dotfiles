@@ -72,6 +72,8 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
+export GPG_TTY=$(tty)
+
 # load other files
 source ~/bin/ED.sh
 source ~/bin/checkium.sh
