@@ -9,17 +9,14 @@ xset fp rehash    # reload fonts
 ### autostart
 nitrogen --restore & # restore wallpaper
 
-megasync &            # mega client
-nm-applet &           # network monitor
-pnmixer &             # volume control
-xfce4-power-manager & # enable power management
+megasync &  # mega client
+nm-applet & # network monitor
+pnmixer &   # volume control
+slstatus &  # dwm status bar
 
 sxhkd & # key commands
 
 rmdesktop.sh &
-
-dwmstatus.sh & # dwm status bar
-dwmmail.sh &   # email notifications for dwm
 
 screen.sh & # configure monitors
 

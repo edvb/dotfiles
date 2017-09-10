@@ -27,6 +27,7 @@ symlinks = bash_profile \
 sllinks = dmenu \
           dwm \
           slock \
+          slstatus \
           st \
           surf \
           tabbed
