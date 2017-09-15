@@ -20,6 +20,7 @@
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	ls = "!git la -10"
 	l = "!git ll -1"
+	lsa = shortlog -sn
 	diffl = diff --cached HEAD^
 	diffc = diff --cached
 	s = stash list
