@@ -2,7 +2,8 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"FantasqueSansMono-Regular:pixelsize=18"
+	"FantasqueSansMono-Regular:pixelsize=18",
+	"FontAwesome:pixelsize=14"
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char normbordercolor[] = "#002b36";
