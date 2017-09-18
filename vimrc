@@ -179,6 +179,8 @@ if has("autocmd")
 
   " save line number line when reopening file
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  " don't for git commit file
+  autocmd FileType gitcommit normal gg
 
   " remove trailing whitespace
   autocmd BufWritePre * %s/\s\+$//e
