@@ -173,12 +173,15 @@ set listchars=tab:\|\ ,eol:¬,extends:❯,precedes:❮
 " make Vim's clipboard the same as OS's clipboard
 let g:clipbrdDefaultReg = '+'
 
-" make Vim save every time it leaves insert mode
-au InsertLeave * if &mod && expand('%')!=''|write|endif
-
-" save line number line when reopening file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  " make Vim save every time it leaves insert mode
+  autocmd InsertLeave * if &mod && expand('%')!=''|write|endif
+
+  " save line number line when reopening file
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+  " remove trailing whitespace
+  autocmd BufWritePre * %s/\s\+$//e
 endif
 
 " turn on alt key
