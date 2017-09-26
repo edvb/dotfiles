@@ -2,12 +2,12 @@
 
 while true; do
 	status=""
-	if [ -r ~/.msg ]; then
+	if [ -r ~/.dwm.msg ]; then
 		while read line; do
 			status+=" $line"
 			xsetroot -name "$(echo -e "$status")"
 			sleep 1
-		done < ~/.msg
+		done < ~/.dwm.msg
 	else
 		song=$(basename "$(cmus-remote -Q | grep file | cut -d ' ' -f 2-)" .mp3)
 		ramused=$(free -m  | grep Mem | awk '{print $3}')
