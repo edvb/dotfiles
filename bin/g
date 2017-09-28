@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 # g: tiny git wrapper
+#
+# To enable tab completion append `__git_complete g __git_main` to
+# /usr/share/bash-completion/completions/git
 
 if [[ $# -eq 0 ]]; then
 	git status
