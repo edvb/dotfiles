@@ -6,14 +6,11 @@ static const char *fonts[] = {
 	"FontAwesome:pixelsize=14"
 };
 static const char dmenufont[]       = "monospace:size=10";
-static const char normbordercolor[] = "#002b36";
-static const char normbgcolor[]     = "#073642";
-static const char normfgcolor[]     = "#93A1A1";
-static const char selbordercolor[]  = "#268bd2";
-static const char selbgcolor[]      = "#268bd2";
-static const char selfgcolor[]      = "#eee8d5";
-static const char normmarkcolor[]   = "#859900"; /*border color for marked client*/
-static const char selmarkcolor[]    = "#2aa198"; /*border color for marked client on focus*/
+static const char *colors[][3]      = {
+	/*               fg         bg         border   */
+	[SchemeNorm] = { "#93A1A1", "#073642", "#002b36" },
+	[SchemeSel]  = { "#eee8d5", "#268bd2",  "#268bd2" },
+};
 static const char urgbordercolor[]  = "#dc322f";
 static const unsigned int borderpx  = 1;         /* border pixel of windows */
 static const unsigned int gappx     = 6;         /* gap pixel between windows */
