@@ -74,13 +74,12 @@ static const char *dmenucmd[] = { "menu.sh", NULL };
 static const char *termcmd[]  = { "tabbed", "-c", "st", "-w", NULL };
 static const char *calcmd[]   = { "gsimplecal", NULL };
 
-#include "push.c"
 #include "shiftview.c"
-#include "switchcol.c"
+#include "push.c"
 #include "zoomswap.c"
+#include "switchcol.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_z,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd  } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 
@@ -101,11 +100,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, switchcol,      {0} },
 	{ MODKEY|ShiftMask,             XK_Return, zoomswap,       {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_x,      killclient,     {0} },
-
-	{ MODKEY,                       XK_semicolon,togglemark,   {0} },
-	{ Mod1Mask,                     XK_Tab,      swapfocus,    {0} },
-	{ Mod1Mask|ShiftMask,           XK_Tab,      swapclient,   {0} },
 
 	{ MODKEY|ControlMask,           XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ControlMask,           XK_f,      setlayout,      {.v = &layouts[1]} },
@@ -137,6 +131,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{ MODKEY|ShiftMask,             XK_x,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
