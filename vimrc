@@ -1,4 +1,3 @@
-set nocompatible " make Vim not vi
 " plug-ins{{{1
 
 let g:loaded_matchparen = 1
