@@ -109,7 +109,9 @@ nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
 vmap <Enter> <Plug>(EasyAlign)
 nmap gA      <Plug>(EasyAlign)
 
-nmap <leader>a :A<CR>
+nnoremap <leader>a :A<CR>
+
+nnoremap <silent> <leader>s :SyntasticToggleMode<CR>
 
 nmap <CR>    :DmenuFile "e"<CR>
 nmap <space> :DmenuBuf  "e"<CR>
