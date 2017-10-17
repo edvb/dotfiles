@@ -16,7 +16,6 @@ slstatus &  # dwm status bar
 
 sxhkd & # key commands
 
-rmdesktop.sh &
 
 screen.sh & # configure monitors
 
