@@ -1,8 +1,8 @@
-! remove Caps Lock
-clear lock
+! remove Caps Lock behavior
+clear Lock
 remove Lock = Caps_Lock
 remove Shift = Caps_Lock
-! add Mode_switch
+! set Caps Lock to Mode_switch
 keycode 66 = NoSymbol NoSymbol
 keycode 66 = Mode_switch
 

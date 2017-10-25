@@ -14,8 +14,10 @@ nm-applet & # network monitor
 pnmixer &   # volume control
 slstatus &  # dwm status bar
 
-sxhkd & # key commands
+sxhkd &     # key commands
 
+xmodmap ~/bin/vim-keys.xmodmap
+xcape -e 'Mode_switch=Escape'
 
 screen.sh & # configure monitors
 
