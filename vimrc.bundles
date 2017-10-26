@@ -82,6 +82,8 @@ Bundle 'tommcdo/vim-lion'
 Bundle 'jayflo/vim-skip'
 " increase or decrease select region automatically
 Bundle 'terryma/vim-expand-region'
+" increment values in visual mode
+Bundle 'triglav/vim-visual-increment'
 
 Bundle 'mhinz/vim-grepper'
 Bundle 'swapit'
