@@ -342,11 +342,13 @@ inoremap [<Space> [<Space><Space>]<Left><Left>
 inoremap [[       [
 inoremap []       []
 
-inoremap <>    <><Left>
-inoremap ""    ""<Left>
-inoremap ''    ''<Left>
-inoremap ``    ``<Left>
-inoremap $$    $$<Left>
+inoremap <>       <><Left>
+inoremap ""       ""<Left>
+inoremap ''       ''<Left>
+inoremap ``       ``<Left>
+inoremap `<CR>    ```<CR>```<Esc>O
+inoremap $$       $$<Left>
+inoremap %%       %%<Left>
 
-inoremap /* /*  */<Left><Left><Left>
+inoremap /*       /*  */<Left><Left><Left>
 
