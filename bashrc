@@ -64,7 +64,7 @@ $([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 
 PS2='\[${White}\]\$\[${Color_Off}\] '
 
-PROMPT_COMMAND="git rev-parse --git-dir > /dev/null 2>&1 && sett"
+PROMPT_COMMAND="[ -d .git ] && sett"
 
 # basic {{{1
 export EDITOR='vim'
