@@ -30,10 +30,13 @@ static Color colors[] = {
 #define URGENT_ATTR     NORMAL_ATTR
 /* curses attributes for the status bar */
 #define BAR_ATTR        (COLOR(BLUE) | A_NORMAL)
+/* characters for beginning and end of status bar message */
+#define BAR_BEGIN       '['
+#define BAR_END         ']'
 /* status bar (command line option -s) position */
-#define BAR_POS         BAR_BOTTOM /* BAR_BOTTOM, BAR_OFF */
+#define BAR_POS         BAR_TOP /* BAR_BOTTOM, BAR_OFF */
 /* whether status bar should be hidden if only one client exists */
-#define BAR_AUTOHIDE    false
+#define BAR_AUTOHIDE    true
 /* master width factor [0.1 .. 0.9] */
 #define MFACT 0.5
 /* number of clients in master area */
@@ -67,15 +70,22 @@ static Layout layouts[] = {
 };
 
 #define MOD  CTRL('g')
+#define TAGKEYS(KEY,TAG) \
+	{ { MOD, 'v', KEY,     }, { view,           { tags[TAG] }               } }, \
+	{ { MOD, 't', KEY,     }, { tag,            { tags[TAG] }               } }, \
+	{ { MOD, 'V', KEY,     }, { toggleview,     { tags[TAG] }               } }, \
+	{ { MOD, 'T', KEY,     }, { toggletag,      { tags[TAG] }               } },
 
-/* you can at most specifiy MAX_ARGS (3) number of arguments */
+/* you can specifiy at most 3 arguments */
 static KeyBinding bindings[] = {
 	{ { MOD, 'c',          }, { create,         { NULL }                    } },
 	{ { MOD, 'C',          }, { create,         { NULL, NULL, "$CWD" }      } },
-	{ { MOD, 'x',          }, { killclient,     { NULL }                    } },
+	{ { MOD, 'x', 'x',     }, { killclient,     { NULL }                    } },
 	{ { MOD, 'j',          }, { focusnext,      { NULL }                    } },
-	{ { MOD, 'J',          }, { focusnextnm,    { NULL }                    } },
-	{ { MOD, 'K',          }, { focusprevnm,    { NULL }                    } },
+	{ { MOD, 'J',          }, { focusdown,      { NULL }                    } },
+	{ { MOD, 'K',          }, { focusup,        { NULL }                    } },
+	{ { MOD, 'H',          }, { focusleft,      { NULL }                    } },
+	{ { MOD, 'L',          }, { focusright,     { NULL }                    } },
 	{ { MOD, 'k',          }, { focusprev,      { NULL }                    } },
 	{ { MOD, 'f',          }, { setlayout,      { "[]=" }                   } },
 	{ { MOD, 'g',          }, { setlayout,      { "+++" }                   } },
@@ -92,49 +102,44 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'M',          }, { togglemouse,    { NULL }                    } },
 	{ { MOD, '\n',         }, { zoom ,          { NULL }                    } },
 	{ { MOD, '\r',         }, { zoom ,          { NULL }                    } },
+	{ { MOD, '1',          }, { focusn,         { "1" }                     } },
+	{ { MOD, '2',          }, { focusn,         { "2" }                     } },
+	{ { MOD, '3',          }, { focusn,         { "3" }                     } },
+	{ { MOD, '4',          }, { focusn,         { "4" }                     } },
+	{ { MOD, '5',          }, { focusn,         { "5" }                     } },
+	{ { MOD, '6',          }, { focusn,         { "6" }                     } },
+	{ { MOD, '7',          }, { focusn,         { "7" }                     } },
+	{ { MOD, '8',          }, { focusn,         { "8" }                     } },
+	{ { MOD, '9',          }, { focusn,         { "9" }                     } },
 	{ { MOD, '\t',         }, { focuslast,      { NULL }                    } },
-	{ { MOD, 'q',          }, { quit,           { NULL }                    } },
+	{ { MOD, 'q', 'q',     }, { quit,           { NULL }                    } },
 	{ { MOD, 'a',          }, { togglerunall,   { NULL }                    } },
 	{ { MOD, CTRL('L'),    }, { redraw,         { NULL }                    } },
 	{ { MOD, 'r',          }, { redraw,         { NULL }                    } },
-	{ { MOD, 'e',          }, { copymode,       { NULL }                    } },
-	{ { MOD, '/',          }, { copymode,       { "/" }                     } },
+	{ { MOD, 'e',          }, { copymode,       { "dvtm-editor" }           } },
+	{ { MOD, 'E',          }, { copymode,       { "dvtm-pager" }            } },
+	{ { MOD, '/',          }, { copymode,       { "dvtm-pager", "/" }       } },
 	{ { MOD, 'p',          }, { paste,          { NULL }                    } },
 	{ { MOD, KEY_PPAGE,    }, { scrollback,     { "-1" }                    } },
 	{ { MOD, KEY_NPAGE,    }, { scrollback,     { "1"  }                    } },
 	{ { MOD, '?',          }, { create,         { "man dvtm", "dvtm help" } } },
 	{ { MOD, MOD,          }, { send,           { (const char []){MOD, 0} } } },
-	{ { KEY_PPAGE,         }, { scrollback,     { "-1" }                    } },
-	{ { KEY_NPAGE,         }, { scrollback,     { "1"  }                    } },
+	{ { KEY_SPREVIOUS,     }, { scrollback,     { "-1" }                    } },
+	{ { KEY_SNEXT,         }, { scrollback,     { "1"  }                    } },
 	{ { MOD, '0',          }, { view,           { NULL }                    } },
-	{ { MOD, '1',          }, { view,           { tags[0] }                 } },
-	{ { MOD, '2',          }, { view,           { tags[1] }                 } },
-	{ { MOD, '3',          }, { view,           { tags[2] }                 } },
-	{ { MOD, '4',          }, { view,           { tags[3] }                 } },
-	{ { MOD, '5',          }, { view,           { tags[4] }                 } },
+	{ { MOD, KEY_F(1),     }, { view,           { tags[0] }                 } },
+	{ { MOD, KEY_F(2),     }, { view,           { tags[1] }                 } },
+	{ { MOD, KEY_F(3),     }, { view,           { tags[2] }                 } },
+	{ { MOD, KEY_F(4),     }, { view,           { tags[3] }                 } },
+	{ { MOD, KEY_F(5),     }, { view,           { tags[4] }                 } },
 	{ { MOD, 'v', '0'      }, { view,           { NULL }                    } },
-	{ { MOD, 'v', '1'      }, { view,           { tags[0] }                 } },
-	{ { MOD, 'v', '2'      }, { view,           { tags[1] }                 } },
-	{ { MOD, 'v', '3'      }, { view,           { tags[2] }                 } },
-	{ { MOD, 'v', '4'      }, { view,           { tags[3] }                 } },
-	{ { MOD, 'v', '5'      }, { view,           { tags[4] }                 } },
 	{ { MOD, 'v', '\t',    }, { viewprevtag,    { NULL }                    } },
 	{ { MOD, 't', '0'      }, { tag,            { NULL }                    } },
-	{ { MOD, 't', '1'      }, { tag,            { tags[0] }                 } },
-	{ { MOD, 't', '2'      }, { tag,            { tags[1] }                 } },
-	{ { MOD, 't', '3'      }, { tag,            { tags[2] }                 } },
-	{ { MOD, 't', '4'      }, { tag,            { tags[3] }                 } },
-	{ { MOD, 't', '5'      }, { tag,            { tags[4] }                 } },
-	{ { MOD, 'V', '1'      }, { toggleview,     { tags[0] }                 } },
-	{ { MOD, 'V', '2'      }, { toggleview,     { tags[1] }                 } },
-	{ { MOD, 'V', '3'      }, { toggleview,     { tags[2] }                 } },
-	{ { MOD, 'V', '4'      }, { toggleview,     { tags[3] }                 } },
-	{ { MOD, 'V', '5'      }, { toggleview,     { tags[4] }                 } },
-	{ { MOD, 'T', '1'      }, { toggletag,      { tags[0] }                 } },
-	{ { MOD, 'T', '2'      }, { toggletag,      { tags[1] }                 } },
-	{ { MOD, 'T', '3'      }, { toggletag,      { tags[2] }                 } },
-	{ { MOD, 'T', '4'      }, { toggletag,      { tags[3] }                 } },
-	{ { MOD, 'T', '5'      }, { toggletag,      { tags[4] }                 } },
+	TAGKEYS( '1',                              0)
+	TAGKEYS( '2',                              1)
+	TAGKEYS( '3',                              2)
+	TAGKEYS( '4',                              3)
+	TAGKEYS( '5',                              4)
 };
 
 static const ColorRule colorrules[] = {
@@ -186,7 +191,12 @@ static Button buttons[] = {
 #endif /* CONFIG_MOUSE */
 
 static Cmd commands[] = {
+	/* create [cmd]: create a new window, run `cmd` in the shell if specified */
 	{ "create", { create,	{ NULL } } },
+	/* focus <win_id>: focus the window whose `DVTM_WINDOW_ID` is `win_id` */
+	{ "focus",  { focusid,	{ NULL } } },
+	/* tag <win_id> <tag> [tag ...]: add +tag, remove -tag or set tag of the window with the given identifier */
+	{ "tag",    { tagid,	{ NULL } } },
 };
 
 /* gets executed when dvtm is started */
@@ -196,19 +206,4 @@ static Action actions[] = {
 
 static char const * const keytable[] = {
 	/* add your custom key escape sequences */
-};
-
-/* editor to use for copy mode. If neither of DVTM_EDITOR, EDITOR and PAGER is
- * set the first entry is chosen. Otherwise the array is consulted for supported
- * options. A %d in argv is replaced by the line number at which the file should
- * be opened. If filter is true the editor is expected to work even if stdout is
- * redirected (i.e. not a terminal).
- */
-static Editor editors[] = {
-	{ .name = "vis",         .argv = { "vis", "+%d", "-", NULL  }, .filter = true  },
-	{ .name = "sandy",       .argv = { "sandy", "-d", "-", NULL }, .filter = true  },
-	{ .name = "dvtm-editor", .argv = { "dvtm-editor", "-", NULL }, .filter = true  },
-	{ .name = "vim",         .argv = { "vim", "+%d", "-", NULL  }, .filter = false },
-	{ .name = "less",        .argv = { "less", "+%d", NULL      }, .filter = false },
-	{ .name = "more",        .argv = { "more", "+%d", NULL      }, .filter = false },
 };
