@@ -26,6 +26,7 @@ symlinks = bash_profile \
 
 sllinks = dmenu \
           dwm \
+          dvtm \
           slock \
           slstatus \
           st \

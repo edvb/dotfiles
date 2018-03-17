@@ -54,7 +54,7 @@ static Color colors[] = {
 /* curses attributes for not selected tags which with urgent windows */
 #define TAG_URGENT (COLOR(BLUE) | A_NORMAL | A_BLINK)
 
-const char tags[][8] = { "1", "2", "3", "4", "5" };
+const char tags[][8] = { "1", "2", "3", "4", "5", "6", "8", "9" };
 
 #include "tile.c"
 #include "grid.c"
@@ -69,11 +69,11 @@ static Layout layouts[] = {
 	{ "[ ]", fullscreen },
 };
 
-#define MOD  CTRL('g')
-#define TAGKEYS(KEY,TAG) \
-	{ { MOD, 'v', KEY,     }, { view,           { tags[TAG] }               } }, \
+#define MOD  CTRL(' ')
+#define TAGKEYS(KEY,SKEY,TAG) \
+	{ { MOD,      KEY,     }, { view,           { tags[TAG] }               } }, \
 	{ { MOD, 't', KEY,     }, { tag,            { tags[TAG] }               } }, \
-	{ { MOD, 'V', KEY,     }, { toggleview,     { tags[TAG] }               } }, \
+	{ { MOD,      SKEY,    }, { toggleview,     { tags[TAG] }               } }, \
 	{ { MOD, 'T', KEY,     }, { toggletag,      { tags[TAG] }               } },
 
 /* you can specifiy at most 3 arguments */
@@ -102,15 +102,15 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'M',          }, { togglemouse,    { NULL }                    } },
 	{ { MOD, '\n',         }, { zoom ,          { NULL }                    } },
 	{ { MOD, '\r',         }, { zoom ,          { NULL }                    } },
-	{ { MOD, '1',          }, { focusn,         { "1" }                     } },
-	{ { MOD, '2',          }, { focusn,         { "2" }                     } },
-	{ { MOD, '3',          }, { focusn,         { "3" }                     } },
-	{ { MOD, '4',          }, { focusn,         { "4" }                     } },
-	{ { MOD, '5',          }, { focusn,         { "5" }                     } },
-	{ { MOD, '6',          }, { focusn,         { "6" }                     } },
-	{ { MOD, '7',          }, { focusn,         { "7" }                     } },
-	{ { MOD, '8',          }, { focusn,         { "8" }                     } },
-	{ { MOD, '9',          }, { focusn,         { "9" }                     } },
+	/* { { MOD, '1',          }, { focusn,         { "1" }                     } }, */
+	/* { { MOD, '2',          }, { focusn,         { "2" }                     } }, */
+	/* { { MOD, '3',          }, { focusn,         { "3" }                     } }, */
+	/* { { MOD, '4',          }, { focusn,         { "4" }                     } }, */
+	/* { { MOD, '5',          }, { focusn,         { "5" }                     } }, */
+	/* { { MOD, '6',          }, { focusn,         { "6" }                     } }, */
+	/* { { MOD, '7',          }, { focusn,         { "7" }                     } }, */
+	/* { { MOD, '8',          }, { focusn,         { "8" }                     } }, */
+	/* { { MOD, '9',          }, { focusn,         { "9" }                     } }, */
 	{ { MOD, '\t',         }, { focuslast,      { NULL }                    } },
 	{ { MOD, 'q', 'q',     }, { quit,           { NULL }                    } },
 	{ { MOD, 'a',          }, { togglerunall,   { NULL }                    } },
@@ -135,11 +135,15 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'v', '0'      }, { view,           { NULL }                    } },
 	{ { MOD, 'v', '\t',    }, { viewprevtag,    { NULL }                    } },
 	{ { MOD, 't', '0'      }, { tag,            { NULL }                    } },
-	TAGKEYS( '1',                              0)
-	TAGKEYS( '2',                              1)
-	TAGKEYS( '3',                              2)
-	TAGKEYS( '4',                              3)
-	TAGKEYS( '5',                              4)
+	TAGKEYS( '1', '!',                         0)
+	TAGKEYS( '2', '@',                         1)
+	TAGKEYS( '3', '#',                         2)
+	TAGKEYS( '4', '$',                         3)
+	TAGKEYS( '5', '%',                         4)
+	TAGKEYS( '6', '^',                         0)
+	TAGKEYS( '7', '&',                         1)
+	TAGKEYS( '8', '*',                         2)
+	TAGKEYS( '9', '(',                         3)
 };
 
 static const ColorRule colorrules[] = {
