@@ -53,7 +53,7 @@ git_color() {
 }
 
 PS1='\[${Blue}\]\u \
-\[$(checkium_color)\]$(checkium_random_face) \
+\[$(echk_color)\]$(echk_random_face) \
 \[$(git_color)\]$(__git_ps1 "%s ")\[${Yellow}\]\
 $([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 \$\[${Color_Off}\] '
@@ -78,7 +78,7 @@ export GPG_TTY=$(tty)
 
 # load other files
 source ~/bin/ED.sh
-source ~/bin/checkium.sh
+source ~/bin/echk
 source ~/bin/colors.sh
 source ~/bin/z.sh
 

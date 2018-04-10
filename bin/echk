@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# echk: functions to display shell error code
+
+echk_color() {
+    # set color depending on if the last command succeed or not
+    if [[ $? -eq 0 ]]; then
+        echo -ne "\033[0;32m"
+        return 0
+    else
+        echo -ne "\033[0;31m"
+        # need to return a value so that the other functions here will
+        # know if last command ran OK or not, the previous code will return 0
+        return 1 # TODO $?
+    fi
+}
+
+echk_color_simple() {
+    if [[ $? -eq 0 ]]; then
+        return 0
+    else
+        echo -ne "\033[0;31m"
+        return 1
+    fi
+}
+
+echk_char() {
+    if [[ $? -eq 0 ]]; then
+        echo "$1"
+    else
+        echo "$2"
+    fi
+}
+
+echk_check() {
+    echk_char "✓" "✗ "
+}
+
+echk_face() {
+    echk_char ":)" ":("
+}
+
+echk_random_face() {
+    # set arrays for different faces to randomly choose from
+    if [[ $? -eq 0 ]]; then
+        local faces=(":)" ":D")
+    else
+        local faces=(":P" ":(" ":/" ":O" ":\\" ":|" ":(" ":(")
+    fi
+
+    echo ${faces[$((RANDOM % ${#faces[*]}))]} # randomly choose an array element
+}
