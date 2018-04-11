@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# tg: quickly tag files
+#
+# Rename files based on the given tag. For example `tg old file.txt` changes
+# `file.txt` to `file-old.txt`. If the file already contains the suppied tag,
+# it is removed.
+
+if [[ $# != 2 ]]; then
+  echo "usage: tg TAG FILE"
+  exit 1
+fi
+
+if [ -z "${2##*.*}" ]; then
+  ext=".${2##*.}"
+else
+  ext=""
+fi
+file="${2%.*}"
+
+if [[ $(echo "$file" | rev | cut -d '-' -f 1 | rev) != "$1" ]]; then
+  mv "$2" "${file}-$1$ext"
+else
+  mv "$2" "$(echo "$file" | rev | cut -d '-' -f 2- | rev)$ext"
+fi
