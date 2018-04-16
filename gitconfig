@@ -27,6 +27,7 @@
 	A = add -A .
 	c = commit
 	p = push
+	slp = send-email --subject-prefix="${PWD##*/}][PATCH" --to hackers@suckless.org
 [pager]
 	diff = diff-highlight | less
 [credential]
@@ -36,3 +37,8 @@
 [commit]
 	verbose = true
 	gpgsign = true
+[sendemail]
+	smtpEncryption = tls
+	smtpServer = smtp.uw.edu
+	smtpUser = edvb@uw.edu
+	smtpServerPort = 587
