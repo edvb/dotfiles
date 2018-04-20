@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# pub: prepare post to be published
+#
+# Moves given draft into the posts directory and prefixes the filename with the
+# date so that it is ready to be published.
+
+if [[ $# == 0 || $# > 2 || ! -f "$1" ]]; then
+  echo "usage: pub FILE [POSTDIR]"
+  exit 1
+fi
+
+date=$(date +"%Y-%m-%d")
+file=$(basename "$1")
+postsdir=${2:-_posts}
+
+mv "$1" "$postsdir"/"$date"-"$file"
