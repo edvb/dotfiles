@@ -80,8 +80,11 @@ let g:syntastic_c_compiler_options="--std=gnu99 -DVERSION"
 " gitgutter options
 let g:gitgutter_max_signs = 1000
 
+" commentary extra languages
+autocmd FileType matlab setlocal commentstring=%\ %s
+
 " mappings{{{2
-" allow for F3 ro turn on Tagbar plug-in
+" turn on Tagbar plug-in
 nmap <silent> <F3> :TagbarToggle<CR>
 
 " GoldenView stuff
@@ -104,10 +107,6 @@ nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
 nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
 nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
-
-" Easy Align mappings
-vmap <Enter> <Plug>(EasyAlign)
-nmap gA      <Plug>(EasyAlign)
 
 nnoremap <leader>a :A<CR>
 
