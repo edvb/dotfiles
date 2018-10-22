@@ -112,9 +112,11 @@ nnoremap <leader>a :A<CR>
 
 nnoremap <silent> <leader>s :SyntasticToggleMode<CR>
 
-nmap <CR>    :DmenuFile "e"<CR>
-nmap <space> :DmenuBuf  "e"<CR>
-nmap <bs>    :DmenuTag<CR>
+nmap <leader>f :DmenuFile "e"<CR>
+nmap <leader>b :DmenuBuf  "e"<CR>
+nmap <leader>t :DmenuTag<CR>
+
+map <Leader>l <Plug>TaskList
 
 " useful mapping for Vundle
 au BufRead,BufNewFile *vimrc* nmap gb :w<CR>:source %<CR>:VundleInstall<CR>
