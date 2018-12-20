@@ -321,7 +321,7 @@ nnoremap <C-L> :bnext<CR>
 nnoremap <C-J> <C-D>
 nnoremap <C-K> <C-U>
 
-nnoremap <silent> <leader>m :make<CR>
+nnoremap <silent> <leader>m :silent! make<CR>
 nnoremap <silent> <leader>c :!ctags -R .<CR>
 
 " pair completion{{{2
