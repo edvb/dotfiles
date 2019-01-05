@@ -122,6 +122,9 @@ map <Leader>l <Plug>TaskList
 au BufRead,BufNewFile *vimrc* nmap gb :w<CR>:source %<CR>:VundleInstall<CR>
 au BufRead,BufNewFile *vimrc* nmap gB :w<CR>:source %<CR>:VundleClean<CR>
 
+vmap <C-A> <Plug>VisualIncrement
+vmap <C-X> <Plug>VisualDecrement
+
 "}}}
 " basic{{{1
 syntax on
