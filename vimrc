@@ -284,9 +284,9 @@ set statusline+=\ %{g:Catium()}
 
 set statusline+=\ %=             " move to right side
 
-set statusline+=%#SLcyan#%p%%    " column
-set statusline+=%#SLgreen#\ %c   " percent of file
-set statusline+=%#SLblue#\ %l/%L " line/total lines
+set statusline+=%#SLcyan#%p%%    " percent of file
+set statusline+=%#SLgreen#\ %v   " column
+set statusline+=%#SLblue#\ %l/%L " current line/total lines
 set statusline+=%#ErrorMsg#%{SyntasticStatuslineFlag()} " Syntastic Error
 
 " mapping{{{1
