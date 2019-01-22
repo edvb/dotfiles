@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# body: print the body of a file
+#
+# if only two arguments are given print the file given by the first at the line
+# number from the second. If a third argument is given print until that line.
+
+if [[ $# == 2 ]]; then
+  sed -n $2p $1
+elif [[ $# == 3 ]]; then
+  sed -n $2,$3p $1
+else
+  echo "usage: body FILE LINE [UNTIL]"
+  exit 1
+fi
