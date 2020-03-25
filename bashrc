@@ -60,7 +60,7 @@ $([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 
 # PS1='\[${White}\]\$\[${Color_Off}\] '
 # PS1="${Blue}\u@\h${Color_Off}:${Cyan}\w${White}❯❯${Color_Off} "
-# PS1='C:${PWD////\\\\}>'
+# PS1='C:${PWD////\\\\}> '
 
 PS2='\[${White}\]\$\[${Color_Off}\] '
 
@@ -133,9 +133,12 @@ alias emacs='emacs --no-window-system'
 alias t='todoium'
 alias old='tg old'
 alias gdb='gdb -q'
-alias db='gdb -q -ex run ./$(basename $PWD)'
+alias db='gdb -q -ex run ./$(basename $PWD)' # TODO smart script to allow argument
 alias v='valgrind --leak-check=full --show-leak-kinds=all'
 alias gf='echo haha, you wish'
 alias ytdlp='youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+alias nl='echo >>' # TODO diff name already taken
+alias term='tabbed -c st -w'
+alias f='feh --force-aliasing --auto-zoom --auto-rotate --scale-down'
 
 #}}}
