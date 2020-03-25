@@ -12,8 +12,10 @@ symlinks = bash_profile \
            conkyrc \
            dircolors \
            emacs \
+           gdbinit \
            gitconfig \
            nvimrc \
+           pylintrc \
            terminfo \
            themes \
            tmux \
@@ -43,6 +45,8 @@ install-sl: $(sllinks)
 install: $(symlinks) $(sllinks)
 	ln -fsn $(CURDIR)/bin $(TARGET)/bin
 
+# create symbolic link in home to dotfile
+# remove link if one already exists or save file as a backup
 $(symlinks):
 	@if [ -e $(TARGET)/.$@ ]; then \
 		if [ -L $(TARGET)/.$@ ]; then \
@@ -54,6 +58,7 @@ $(symlinks):
 	fi
 	ln -sn $(CURDIR)/$@ $(TARGET)/.$@
 
+# if suckless project is downloaded, link config header there
 $(sllinks):
 	@if [ -e $(TARGETSL)/$@ ]; then \
 		echo ln -fsn $(CURDIR)/sl/$@.h $(TARGETSL)/$@/config.h; \
