@@ -10,6 +10,7 @@ symlinks = bash_profile \
            config/tint2 \
            config/sxhkd \
            conkyrc \
+           ctags \
            dircolors \
            emacs \
            gdbinit \
