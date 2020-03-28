@@ -23,6 +23,9 @@
 	lsa = shortlog -sn
 	diffl = diff --cached HEAD^
 	diffc = diff --cached
+	stat = diff --stat
+	statc = "!git diffc --stat"
+	statl = "!git diffl --stat"
 	s = stash list
 	A = add -A .
 	c = commit
