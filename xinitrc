@@ -3,6 +3,8 @@ xset r rate 250 25 # keyboard rate
 xset mouse 20 30   # mouse settings
 xset b off         # turn off bell
 
+xinput set-button-map 15 1 1 1 # diable trackpad middle and right click
+
 xset +fp ~/.fonts  # add font directory to be loaded
 xset fp rehash     # reload fonts
 
