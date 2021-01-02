@@ -3,20 +3,23 @@
 # ed: edit files with your $EDITOR
 #
 # Opens a file with your $EDITOR. If no argument is given then it opens the
-# whole directory into a tree view, or if there is only a few files in the
-# current directly then it just opens all of them. If given directory open the
-# files within
+# whole directory into a tree view, or if there is a vim session file run that.
+# If there is only a few files in the current directly then it just opens all
+# of them. If given directory open the files within
+
+VIM_SESSION="Session.vim"
 
 if [[ "$@" == "" ]]; then
-	# if less than 5 files in cwd open all of them
-	if [[ $(ls -l | wc -l) -le 5 ]]; then
-		$EDITOR ./*
+	if [ -f $VIM_SESSION ]; then
+		$EDITOR -S $VIM_SESSION # open vim session file
+	elif [[ $(ls -l | wc -l) -le 5 ]]; then
+		$EDITOR ./* # if less than 5 files in cwd open all of them
 	else
-		$EDITOR .
+		$EDITOR . # open directory
 	fi
-else # open files given
-	if [ -d "$1" ]; then # if given directory open files within
-		$EDITOR $1/*
+else # open files/directory given
+	if [ -d "$1" ]; then
+		$EDITOR $1/* # if given directory open files within
 	else
 		$EDITOR "$@"
 	fi
