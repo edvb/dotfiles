@@ -4,14 +4,20 @@
 #
 # Opens a file with your $EDITOR. If no argument is given then it opens the
 # whole directory into a tree view, or if there is only a few files in the
-# current directly then it just opens all of them.
+# current directly then it just opens all of them. If given directory open the
+# files within
 
 if [[ "$@" == "" ]]; then
+	# if less than 5 files in cwd open all of them
 	if [[ $(ls -l | wc -l) -le 5 ]]; then
 		$EDITOR ./*
 	else
 		$EDITOR .
 	fi
-else
-	$EDITOR "$@"
+else # open files given
+	if [ -d "$1" ]; then # if given directory open files within
+		$EDITOR $1/*
+	else
+		$EDITOR "$@"
+	fi
 fi
