@@ -126,18 +126,15 @@ alias rm='rm -i'
 
 # shortcuts
 alias sb='source ~/.bashrc'
-alias cls='clear; ls'
-alias cpls='clear; pwd; ls'
 alias cmon='sudo "$BASH" -c "$(history -p !!)"'
 alias emacs='emacs --no-window-system'
-alias t='todoium'
 alias old='tg old'
 alias gdb='gdb -q'
 alias db='gdb -q -ex run ./$(basename $PWD)' # TODO smart script to allow argument
 alias v='valgrind --leak-check=full --show-leak-kinds=all'
 alias gf='echo haha, you wish'
 alias ytdlp='youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-alias nl='echo >>' # TODO diff name already taken
+alias newline='echo >>'
 alias term='tabbed -c st -w'
 alias f='feh --force-aliasing --auto-zoom --auto-rotate --scale-down'
 
