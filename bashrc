@@ -137,5 +137,9 @@ alias ytdlp='youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(pl
 alias newline='echo >>'
 alias term='tabbed -c st -w'
 alias f='feh --force-aliasing --auto-zoom --auto-rotate --scale-down'
+alias py='python3 -q'
+alias exif='identify -verbose' # TODO only get exif info
+alias venv='source ~/code/epe/venv/bin/activate'
+alias todo='grep -RI TODO * --exclude-dir=public'
 
 #}}}
