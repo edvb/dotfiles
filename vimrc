@@ -108,7 +108,7 @@ nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
 nnoremap <silent> <M-\> :TmuxNavigatePrevious<CR>
 
-nnoremap <leader>a :A<CR>
+nnoremap <leader>a :AS<CR>
 
 nnoremap <silent> <leader>s :SyntasticToggleMode<CR>
 
@@ -130,7 +130,7 @@ vmap <C-X> <Plug>VisualDecrement
 syntax on
 set autoindent                  " I hope you know what this does
 set autowrite                   " automatically write before running commands that need it to be written
-set hlsearch                    " turn on highlighting of searches
+set nohlsearch                  " turn off highlighting of searches
 set ignorecase                  " make search non case sensitive
 set incsearch                   " show the search result before you finish typing
 set noshowmode                  " turn off '--INSERT--' at bottom of screen
@@ -139,6 +139,7 @@ set shiftround                  " make indents always be at a multiple of the ta
 set showcmd                     " show normal mode commands that you are typing
 set showmatch                   " when a bracket is inserted, briefly highlight the matching one.
 set smartcase                   " allow you to search with more charters
+set hidden                      " keep buffers loaded when not visible
 set splitbelow                  " create new splits under current window
 set splitright                  " create new vertical splits to the right
 set timeout                     " set timeout for mappings
