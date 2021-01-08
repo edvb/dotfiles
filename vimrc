@@ -52,11 +52,20 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 let g:rainbow_conf = {
   \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-  \ 'ctermfgs': ['red', 'darkred', 'red', 'darkred'],
+  \ 'ctermfgs': ['red', 'darkred', 'brown'],
   \ 'operators': '_,_',
   \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
   \ 'separately': {
   \   '*': {},
+  \   'markdown': {
+  \     'parentheses_options': 'containedin=markdownCode contained',
+  \   },
+  \   'lisp': {
+  \     'ctermfgs': ['darkred', 'darkmagenta', 'darkcyan', 'darkgreen', 'darkblue', 'magenta'],
+  \   },
+  \   'tisp': {
+  \     'ctermfgs': ['darkred', 'darkmagenta', 'brown', 'darkgreen', 'darkblue', 'magenta'],
+  \   },
   \   'vim': {
   \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
   \   },
@@ -157,7 +166,7 @@ set mouse=a                     " turn on the mouse
 set nrformats=octal,hex,alpha   " allow you to ctrl-a/ctrl-x to increase/decrease letters and numbers
 set scrolloff=7                 " make Vim have 7 lines below cursor when moving down
 set t_ut=                       " needed if using Vim inside of tmux
-set textwidth=79                " set what line to wrap charters at.
+set textwidth=98                " wrap lines which exceed 100 charters long
 set ttimeoutlen=50              " change wait time for `timeout`
 set spell spelllang=en_us       " set language for spell check to United States
 set clipboard=unnamedplus       " Vim yanks go to OS's clipboard as well
@@ -201,8 +210,8 @@ while c <= 'z'
 endw
 
 " highlighting{{{1
-" highlight the 81st column so you know when your line is to long
-call matchadd('Error', '\%81v', 100)
+" highlight the 100th column so you know when your line is to long
+call matchadd('Error', '\%100v', 100)
 
 au BufRead,BufNewFile *.md  set filetype=markdown
 au BufRead,BufNewFile *bash_profile* set filetype=sh
@@ -356,4 +365,3 @@ inoremap $$       $$<Left>
 inoremap %%       %%<Left>
 
 inoremap /*       /*  */<Left><Left><Left>
-
