@@ -1,0 +1,5 @@
+#!/bin/sh
+
+IMAGEJ="$HOME/downloads/ImageJ/"
+
+$IMAGEJ/jre/bin/java -Xmx512m -jar $IMAGEJ/ij.jar -ijpath $IMAGEJ "$@"
