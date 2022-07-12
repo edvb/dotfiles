@@ -128,6 +128,7 @@ alias rm='rm -i'
 alias sb='source ~/.bashrc'
 alias cmon='sudo "$BASH" -c "$(history -p !!)"'
 alias emacs='emacs --no-window-system'
+alias matlab='matlab -nodesktop'
 alias old='tg old'
 alias gdb='gdb -q'
 alias db='gdb -q -ex run ./$(basename $PWD)' # TODO smart script to allow argument
@@ -139,7 +140,9 @@ alias term='tabbed -c st -w'
 alias f='feh --force-aliasing --auto-zoom --auto-rotate --scale-down'
 alias py='python3 -q'
 alias exif='identify -verbose' # TODO only get exif info
-alias venv='source ~/code/epe/venv/bin/activate'
-alias todo='grep -RI TODO * --exclude-dir=public'
+alias todo='grep -RI TODO * --exclude-dir=public' # TODO use git grep if in git repo
+alias gg='git grep --untracked'
+alias dock-run='docker run -it --rm --detach-keys='ctrl-e,e' -v $PWD:$PWD -w $PWD'
+alias fonts-reload='fc-cache -f -v'
 
 #}}}
