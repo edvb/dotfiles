@@ -64,7 +64,7 @@ $([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 
 PS2='\[${White}\]\$\[${Color_Off}\] '
 
-PROMPT_COMMAND="[ -d .git ] && sett"
+PROMPT_COMMAND="[ -d .git -o -f .sett ] && sett"
 
 # basic {{{1
 export EDITOR='vim'
