@@ -45,3 +45,5 @@
 	smtpServer = smtp.uw.edu
 	smtpUser = edvb@uw.edu
 	smtpServerPort = 587
+[init]
+	defaultBranch = main
