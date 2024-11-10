@@ -139,7 +139,7 @@ alias v='valgrind --leak-check=full --show-leak-kinds=all'
 alias gf='echo haha, you wish'
 alias ytdlp='youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
 alias newline='echo >>'
-alias term='tabbed -c st -w'
+alias term='tabbed -ck st -w'
 alias f='feh --force-aliasing --auto-zoom --auto-rotate --scale-down'
 alias py='python3 -q'
 alias exif='identify -verbose' # TODO only get exif info
