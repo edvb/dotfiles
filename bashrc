@@ -1,8 +1,8 @@
 # stuff {{{1
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+	*i*) ;;
+	*) return ;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -24,32 +24,35 @@ shopt -s checkwinsize
 
 # enable programmable completion features
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
 fi
+
+source /usr/share/git-core/contrib/completion/git-prompt.sh
+
 #}}}
 # prompt statement {{{1
 # change color of branch name
 git_color() {
-    if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then
-        local color="${Cyan}"
+	if [ -d .git ] || git rev-parse --git-dir >/dev/null 2>&1; then
+		local color="${Cyan}"
 
-        # modified
-        git diff --no-ext-diff --quiet --exit-code || color="${Red}"
+		# modified
+		git diff --no-ext-diff --quiet --exit-code || color="${Red}"
 
-        # staged
-        if git rev-parse --quiet --verify HEAD >/dev/null; then
-            git diff-index --cached --quiet HEAD -- || color="${IRed}"
-        fi
+		# staged
+		if git rev-parse --quiet --verify HEAD >/dev/null; then
+			git diff-index --cached --quiet HEAD -- || color="${IRed}"
+		fi
 
-        # stashed
-        git rev-parse --verify refs/stash >/dev/null 2>&1 && color="${Yellow}"
+		# stashed
+		git rev-parse --verify refs/stash >/dev/null 2>&1 && color="${Yellow}"
 
-        echo "$color"
-    fi
+		echo "$color"
+	fi
 }
 
 PS1='\[${Blue}\]\u \
@@ -71,7 +74,7 @@ export EDITOR='vim'
 
 # allow for color support in terminal
 if [ "$TERM" == "xterm" ]; then
-    export TERM=xterm-256color
+	export TERM=xterm-256color
 fi
 
 export GPG_TTY=$(tty)
@@ -83,11 +86,11 @@ source ~/bin/colors.sh
 source ~/bin/z.sh
 
 # add dart's bin to PATH
-if [ -d "/usr/lib/dart/bin" ] ; then
-    PATH="/usr/lib/dart/bin:$PATH"
+if [ -d "/usr/lib/dart/bin" ]; then
+	PATH="/usr/lib/dart/bin:$PATH"
 fi
-if [ -d "$HOME/code/dart/flutter/bin" ] ; then
-    PATH="$HOME/code/dart/flutter/bin:$PATH"
+if [ -d "$HOME/code/dart/flutter/bin" ]; then
+	PATH="$HOME/code/dart/flutter/bin:$PATH"
 fi
 
 # aliases {{{1
@@ -96,16 +99,16 @@ bind '"\t":menu-complete'
 
 # enable color support
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto -F'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto -F'
+	alias dir='dir --color=auto'
+	alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 
-    alias diff='diff --color=auto'
+	alias diff='diff --color=auto'
 fi
 
 # easily change back directories
@@ -115,7 +118,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # better ls-ing
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 
 # make these commands safer
