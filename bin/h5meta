@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""
+Print metadata from H5 files.
+Specially designed for Pocar Lab DAQ data files.
+
+Created on June 22, 2023
+
+@author: Ed van Bruggen (evanbruggen@umass.edu)
+"""
+
+import sys
+import h5py
+import pprint
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('h5file', nargs='+')
+parser.add_argument('-q', dest='quite_mode', action='store_true')
+parser.add_argument('-v', dest='quite_mode', action='store_false')
+parser.add_argument('-V', dest='volt_mode',  action='store_true')
+parser.set_defaults(quite_mode=False)
+args = parser.parse_args()
+
+extra_attrs = [ 'AcquisitionMode', 'LowerLevel', 'Offset', 'OffsetTime', 'Preamp', 'Quota',
+                'Range', 'SampleTime', 'Shaper', 'ShaperGain1', 'ShaperGain2', 'SlowControlUser',
+                # 'TemperatureMean', 'TemperatureStdDev',  'Xe(g)',
+                'TriggerSlope', 'TriggerSource']
+
+# Print all group's metadata
+for f in args.h5file:
+    with h5py.File(f, 'r') as hdf:
+        if args.volt_mode: # print just the bias voltage
+            print(f, end=': ')
+            print(hdf['RunData'][next(iter(hdf['RunData'].keys()))].attrs['Bias(V)'])
+            continue
+        print(f"Run metadata: {dict(hdf['RunData'].attrs)}")
+        for groupname in list(hdf['RunData'].keys()):
+            metadata = dict(hdf['RunData'][groupname].attrs)
+            print(f"{groupname}:")
+            print(f"size: {hdf['RunData'][groupname][:].shape[1]}")
+            if args.quite_mode: # if in quite mode don't print extra attributes
+                for attr in extra_attrs:
+                    metadata.pop(attr)
+            pprint.pprint(metadata) # ['Bias(V)']
