@@ -25,6 +25,8 @@ symlinks = bash_profile \
            vimrc \
            vimrc.bundles \
            xinitrc \
+           xmonad/xmonad.hs \
+           xmonad/xmobarrc \
            zshrc
 
 sllinks = dmenu \
