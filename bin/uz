@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# uz: safe unzip
+#
+# unzip file into its own directory
+
 if [[ $# != 1 ]]; then
   echo "usage: uz ZIPFILE"
   exit 1
@@ -8,6 +12,5 @@ fi
 # TODO don't create new directory if zip already contains one
 mkdir "${1%.zip}"
 mv "$1" "${1%.zip}"
-cd "${1%.zip}"
-unzip "$1"
-rm -f "$1"
+cd "${1%.zip}" || exit
+unzip "$1" && rm -f "$1"
