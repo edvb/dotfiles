@@ -31,7 +31,9 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+if [ -f "/usr/share/git-core/contrib/completion/git-prompt.sh" ] ; then
+	source /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
 
 #}}}
 # prompt statement {{{1
@@ -55,9 +57,15 @@ git_color() {
 	fi
 }
 
+git_ps1_wrap() {
+	if type "__git_ps1" &> /dev/null ; then
+		__git_ps1 "$@"
+	fi
+}
+
 PS1='\[${Blue}\]\u \
 \[$(echk_color)\]$(echk_random_face) \
-\[$(git_color)\]$(__git_ps1 "%s ")\[${Yellow}\]\
+\[$(git_color)\]$(git_ps1_wrap "%s ")\[${Yellow}\]\
 $([ \j -gt 0 ] && echo "\j ")\[${White}\]\
 \$\[${Color_Off}\] '
 
