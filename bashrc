@@ -94,13 +94,23 @@ source ~/bin/echk
 source ~/bin/colors.sh
 source ~/bin/z.sh
 
-# add dart's bin to PATH
+# add bins to PATH
+if [ -d "$HOME/.local/bin" ] ; then
+	PATH="$HOME/.local/bin:$PATH"
+fi
 if [ -d "/usr/lib/dart/bin" ]; then
 	PATH="/usr/lib/dart/bin:$PATH"
 fi
 if [ -d "$HOME/code/dart/flutter/bin" ]; then
 	PATH="$HOME/code/dart/flutter/bin:$PATH"
 fi
+if [ -d "$HOME/.cargo/bin" ] ; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
+if [ -f "$HOME/code/dl/emsdk/emsdk_env.sh" ] ; then
+	EMSDK_QUIET=1 source "$HOME/code/dl/emsdk/emsdk_env.sh"
+fi
+export GOPATH="$HOME/.local/"
 
 # aliases {{{1
 # better tab complete
