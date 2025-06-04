@@ -155,16 +155,18 @@ alias old='tg old'
 alias gdb='gdb -q'
 alias db='gdb -q -ex run ./$(basename $PWD)' # TODO smart script to allow argument
 alias v='valgrind --leak-check=full --show-leak-kinds=all'
-alias gf='echo haha, you wish'
 alias ytdlp='youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
 alias newline='echo >>'
 alias term='tabbed -ck st -w'
 alias f='feh --force-aliasing --auto-zoom --auto-rotate --scale-down'
 alias py='python3 -q'
+alias ipy='ipython --no-autoindent'
 alias exif='identify -verbose' # TODO only get exif info
 alias todo='grep -RI TODO * --exclude-dir=public' # TODO use git grep if in git repo
 alias gg='git grep --untracked'
 alias dock-run='docker run -it --rm --detach-keys='ctrl-e,e' -v $PWD:$PWD -w $PWD'
 alias fonts-reload='fc-cache -f -v'
+alias wifi='sudo nmcli --ask dev wifi connect' # wifi wifi-name
+alias cat='bat --style "snip"'
 
 #}}}
