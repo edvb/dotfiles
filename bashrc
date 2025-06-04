@@ -162,7 +162,6 @@ alias f='feh --force-aliasing --auto-zoom --auto-rotate --scale-down'
 alias py='python3 -q'
 alias ipy='ipython --no-autoindent'
 alias exif='identify -verbose' # TODO only get exif info
-alias todo='grep -RI TODO * --exclude-dir=public' # TODO use git grep if in git repo
 alias gg='git grep --untracked'
 alias dock-run='docker run -it --rm --detach-keys='ctrl-e,e' -v $PWD:$PWD -w $PWD'
 alias fonts-reload='fc-cache -f -v'

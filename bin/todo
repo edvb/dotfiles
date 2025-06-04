@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# todo: list TODOs in current directory
+#
+# TODO support FIX HACK WARNING etc
+# TODO optionally include file and line number at end
+# TODO include code if inline comment
+
+# Select grep to use: if in git repo use git grep, or regular grep if not
+if git -C . rev-parse 2>/dev/null; then
+	SEARCH_CMD="git grep TODO *"
+else
+	SEARCH_CMD="grep -RI TODO *"
+fi
+
+# Run search and trim everything around the note
+eval $SEARCH_CMD | sed -n -e 's/^.*TODO[ \t:]*//p' | sed -e 's@\*/$@@'
