@@ -1,10 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # uz: safe unzip
 #
 # unzip file into its own directory
 
-if [[ $# != 1 ]]; then
+set -e # exit on error
+
+if [ $# -ne 1 ]; then
   echo "usage: uz ZIPFILE"
   exit 1
 fi
