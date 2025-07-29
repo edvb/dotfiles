@@ -15,6 +15,7 @@ symlinks = bash_profile \
            emacs \
            gdbinit \
            gitconfig \
+           gitignore \
            nvimrc \
            pylintrc \
            terminfo \

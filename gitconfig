@@ -47,3 +47,5 @@
 	smtpServerPort = 587
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = /home/ed/.gitignore

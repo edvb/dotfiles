@@ -1,0 +1,9 @@
+# swap files
+*~
+*.swp
+*.swo
+\#*\#
+
+# misc
+tags
+*Session.vim
